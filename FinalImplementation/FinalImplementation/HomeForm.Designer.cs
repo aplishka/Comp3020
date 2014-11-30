@@ -42,10 +42,10 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addMovieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addMovieButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,7 +78,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(279, 64);
+            this.label2.Location = new System.Drawing.Point(323, 64);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 17);
             this.label2.TabIndex = 3;
@@ -90,7 +90,7 @@
             this.topMoviesList.ItemHeight = 16;
             this.topMoviesList.Location = new System.Drawing.Point(12, 84);
             this.topMoviesList.Name = "topMoviesList";
-            this.topMoviesList.Size = new System.Drawing.Size(229, 404);
+            this.topMoviesList.Size = new System.Drawing.Size(262, 436);
             this.topMoviesList.TabIndex = 6;
             this.topMoviesList.SelectedIndexChanged += new System.EventHandler(this.topMoviesList_SelectedIndexChanged);
             // 
@@ -98,16 +98,16 @@
             // 
             this.topActorsList.FormattingEnabled = true;
             this.topActorsList.ItemHeight = 16;
-            this.topActorsList.Location = new System.Drawing.Point(282, 84);
+            this.topActorsList.Location = new System.Drawing.Point(326, 84);
             this.topActorsList.Name = "topActorsList";
-            this.topActorsList.Size = new System.Drawing.Size(225, 404);
+            this.topActorsList.Size = new System.Drawing.Size(262, 436);
             this.topActorsList.TabIndex = 7;
             this.topActorsList.SelectedIndexChanged += new System.EventHandler(this.topActorsList_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(703, 53);
+            this.label3.Location = new System.Drawing.Point(659, 64);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 17);
             this.label3.TabIndex = 8;
@@ -116,7 +116,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(703, 279);
+            this.label4.Location = new System.Drawing.Point(659, 304);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 17);
             this.label4.TabIndex = 9;
@@ -126,9 +126,9 @@
             // 
             this.topGenresList.FormattingEnabled = true;
             this.topGenresList.ItemHeight = 16;
-            this.topGenresList.Location = new System.Drawing.Point(706, 84);
+            this.topGenresList.Location = new System.Drawing.Point(662, 84);
             this.topGenresList.Name = "topGenresList";
-            this.topGenresList.Size = new System.Drawing.Size(270, 180);
+            this.topGenresList.Size = new System.Drawing.Size(346, 196);
             this.topGenresList.TabIndex = 10;
             this.topGenresList.SelectedIndexChanged += new System.EventHandler(this.topGenresList_SelectedIndexChanged);
             // 
@@ -136,10 +136,11 @@
             // 
             this.topDecadesList.FormattingEnabled = true;
             this.topDecadesList.ItemHeight = 16;
-            this.topDecadesList.Location = new System.Drawing.Point(706, 310);
+            this.topDecadesList.Location = new System.Drawing.Point(662, 324);
             this.topDecadesList.Name = "topDecadesList";
-            this.topDecadesList.Size = new System.Drawing.Size(270, 180);
+            this.topDecadesList.Size = new System.Drawing.Size(346, 196);
             this.topDecadesList.TabIndex = 11;
+            this.topDecadesList.SelectedIndexChanged += new System.EventHandler(this.topDecadesList_SelectedIndexChanged);
             // 
             // menuStrip1
             // 
@@ -157,6 +158,7 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
             this.dataEntryToolStripMenuItem,
+            this.addMovieToolStripMenuItem,
             this.toolStripMenuItem1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -166,25 +168,32 @@
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(147, 24);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.homeToolStripMenuItem.Text = "Home";
             // 
             // dataEntryToolStripMenuItem
             // 
             this.dataEntryToolStripMenuItem.Name = "dataEntryToolStripMenuItem";
-            this.dataEntryToolStripMenuItem.Size = new System.Drawing.Size(147, 24);
+            this.dataEntryToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.dataEntryToolStripMenuItem.Text = "Data Entry";
             this.dataEntryToolStripMenuItem.Click += new System.EventHandler(this.dataEntryToolStripMenuItem_Click);
+            // 
+            // addMovieToolStripMenuItem
+            // 
+            this.addMovieToolStripMenuItem.Name = "addMovieToolStripMenuItem";
+            this.addMovieToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.addMovieToolStripMenuItem.Text = "Add Movie";
+            this.addMovieToolStripMenuItem.Click += new System.EventHandler(this.addMovieToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(144, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(172, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(147, 24);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -194,22 +203,11 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // addMovieButton
-            // 
-            this.addMovieButton.Location = new System.Drawing.Point(802, 29);
-            this.addMovieButton.Name = "addMovieButton";
-            this.addMovieButton.Size = new System.Drawing.Size(173, 23);
-            this.addMovieButton.TabIndex = 13;
-            this.addMovieButton.Text = "Add Movie to Database";
-            this.addMovieButton.UseVisualStyleBackColor = true;
-            this.addMovieButton.Click += new System.EventHandler(this.addMovieButton_Click);
-            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 536);
-            this.Controls.Add(this.addMovieButton);
             this.Controls.Add(this.topDecadesList);
             this.Controls.Add(this.topGenresList);
             this.Controls.Add(this.label4);
@@ -253,7 +251,7 @@
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dataEntryToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.Button addMovieButton;
+        private System.Windows.Forms.ToolStripMenuItem addMovieToolStripMenuItem;
     }
 }
 

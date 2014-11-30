@@ -14,7 +14,13 @@ namespace FinalImplementation
 {
     public partial class HomeForm : Form
     {
+        private List<Movie> movies = new List<Movie>();
+        private List<Actor> actors = new List<Actor>();
+        private HashSet<string> genres = new HashSet<string>();
+        private string genreState = "genre";
+        private string decadeState = "decade";
         private const int EM_SETCUEBANNER = 0x1501;
+        private string[] decades = {"1900s","1910s","1920s","1930s","1940s","1950s","1960s","1970s","1980s","1990s","2000s","2010s"};
         [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = CharSet.Auto)]
         private static extern Int32 SendMessage(IntPtr hWnd, int msg, int wParam, [MarshalAs(UnmanagedType.LPWStr)]string lParam);
 
@@ -23,12 +29,12 @@ namespace FinalImplementation
             InitializeComponent();
             loadData();
             SendMessage(searchTextBox.Handle, EM_SETCUEBANNER, 0, "Enter Search Query...");
-
         }
 
         private void loadData()
         {
             loadXML();
+            setDecades();
         }
 
         private void loadXML()
@@ -37,10 +43,6 @@ namespace FinalImplementation
             xml.Load("../../../../movies.xml");
 
             XmlNode movieList = xml.DocumentElement.SelectSingleNode("/movielist");
-
-            List<Movie> movies = new List<Movie>();
-            List<Actor> actors = new List<Actor>();
-            HashSet<string> genres = new HashSet<string>();
 
             foreach (XmlNode movie in movieList.ChildNodes)
             {
@@ -88,12 +90,44 @@ namespace FinalImplementation
                 }
             }
 
-                // Add movie titles to list
-                topMoviesList.Items.AddRange(movies.ToArray());
-                AddActorsToTopList(actors);
+            // Add movie titles to list
+            List<Movie> topMovies = new List<Movie>();
+            for (int x = 0; x < movies.Count; x++)
+            {
+                if (movies[x].GetRating() >= 9)
+                {
+                    topMovies.Add(movies[x]);
+                }
+            }
+            topMoviesList.Items.AddRange(topMovies.ToArray());
 
-                // Add genres to UI
-                topGenresList.Items.AddRange(genres.ToArray());
+            // Add actor titles to list
+            List<Actor> topActors = new List<Actor>();
+            for (int x = 0; x < actors.Count; x++)
+            {
+                Boolean found = false;
+                for (int y = 0; y < topMovies.Count; y++)
+                {
+                    if (topMovies[y].GetActors().Contains(actors[x]))
+                    {
+                        found = true;
+                    }
+                }
+                if (found)
+                {
+                    topActors.Add(actors[x]);
+                }
+            }
+
+            AddActorsToTopList(topActors);
+
+            // Add genres to UI
+            topGenresList.Items.AddRange(genres.ToArray());
+        }
+
+        private void setDecades()
+        {
+            topDecadesList.Items.AddRange(decades);
         }
 
         private void AddActorsToTopList(List<Actor> actors)
@@ -160,16 +194,70 @@ namespace FinalImplementation
 
         private void topGenresList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string[] list = new string[2];
-
-            list[0] = "<< Back";
-            list[1] = "Some random movie..";
-
-            topGenresList.Items.Clear();
-            topGenresList.Items.AddRange(list);
+            if (genreState == "genre")
+            {
+                string selected = (string)topGenresList.SelectedItem;
+                topGenresList.Items.Clear();
+                topGenresList.Items.Add("<< Back");
+                for (int x = 0; x < movies.Count; x++)
+                {
+                    if (movies[x].GetGenres().Contains(selected))
+                    {
+                        topGenresList.Items.Add(movies[x]);
+                    }
+                }
+                genreState = "movies";
+            }
+            else if (genreState == "movies")
+            {
+                if (topGenresList.SelectedItem.GetType() == "".GetType())
+                {
+                    topGenresList.Items.Clear();
+                    topGenresList.Items.AddRange(genres.ToArray());
+                    genreState = "genre";
+                }
+                else
+                {
+                    ItemDetailForm form = new ItemDetailForm((Movie)topGenresList.SelectedItem);
+                    form.ShowDialog();
+                }
+            }
         }
 
-        private void addMovieButton_Click(object sender, EventArgs e)
+        private void topDecadesList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (decadeState == "decade")
+            {
+                string selected = (string)topDecadesList.SelectedItem;
+                int currDec = Convert.ToInt32(selected.Substring(0,4));
+                topDecadesList.Items.Clear();
+                topDecadesList.Items.Add("<< Back");
+                for (int x = 0; x < movies.Count; x++)
+                {
+                    if (movies[x].GetYear() >= currDec && movies[x].GetYear() <= currDec+9)
+                    {
+                        topDecadesList.Items.Add(movies[x]);
+                    }
+                }
+                decadeState = "movies";
+            }
+            else if (decadeState == "movies")
+            {
+                if (topDecadesList.SelectedItem.GetType() == "".GetType())
+                {
+                    topDecadesList.Items.Clear();
+                    topDecadesList.Items.AddRange(decades);
+                    decadeState = "decade";
+                }
+                else
+                {
+                    ItemDetailForm form = new ItemDetailForm((Movie)topDecadesList.SelectedItem);
+                    form.ShowDialog();
+                }
+            }
+        }
+
+        private void addMovieToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddMovieForm form = new AddMovieForm();
             form.ShowDialog();

@@ -11,6 +11,11 @@ namespace FinalImplementation
         private string name;
         private List<Movie> movies;
 
+        public Actor()
+        {
+
+        }
+
         public Actor(string name)
         {
             this.name = name;
@@ -19,6 +24,7 @@ namespace FinalImplementation
 
         public string GetName() { return this.name; }
         public int NumberOfMovies() { return this.movies.Count; }
+        public List<Movie> GetMovies() { return movies; }
 
         public void AddMovie(Movie movie)
         {
