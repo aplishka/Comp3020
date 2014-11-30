@@ -34,13 +34,14 @@
             this.plotReview = new System.Windows.Forms.TextBox();
             this.actorsReview = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.starRatingControl1 = new RatingControls.StarRatingControl();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 22);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(207, 32);
             this.label1.TabIndex = 0;
@@ -49,7 +50,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 87);
+            this.label2.Location = new System.Drawing.Point(23, 104);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 17);
             this.label2.TabIndex = 1;
@@ -58,7 +59,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 204);
+            this.label3.Location = new System.Drawing.Point(23, 220);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 17);
             this.label3.TabIndex = 2;
@@ -66,7 +67,7 @@
             // 
             // plotReview
             // 
-            this.plotReview.Location = new System.Drawing.Point(26, 108);
+            this.plotReview.Location = new System.Drawing.Point(26, 124);
             this.plotReview.Multiline = true;
             this.plotReview.Name = "plotReview";
             this.plotReview.Size = new System.Drawing.Size(676, 93);
@@ -74,7 +75,7 @@
             // 
             // actorsReview
             // 
-            this.actorsReview.Location = new System.Drawing.Point(26, 224);
+            this.actorsReview.Location = new System.Drawing.Point(26, 240);
             this.actorsReview.Multiline = true;
             this.actorsReview.Name = "actorsReview";
             this.actorsReview.Size = new System.Drawing.Size(676, 118);
@@ -90,19 +91,41 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // starRatingControl1
+            // 
+            this.starRatingControl1.BottomMargin = 2;
+            this.starRatingControl1.HoverColor = System.Drawing.Color.Gold;
+            this.starRatingControl1.LeftMargin = 2;
+            this.starRatingControl1.Location = new System.Drawing.Point(26, 44);
+            this.starRatingControl1.Name = "starRatingControl1";
+            this.starRatingControl1.OutlineColor = System.Drawing.Color.DarkGray;
+            this.starRatingControl1.OutlineThickness = 1;
+            this.starRatingControl1.RightMargin = 2;
+            this.starRatingControl1.SelectedColor = System.Drawing.Color.Yellow;
+            this.starRatingControl1.Size = new System.Drawing.Size(676, 57);
+            this.starRatingControl1.StarCount = 10;
+            this.starRatingControl1.StarSpacing = 8;
+            this.starRatingControl1.TabIndex = 6;
+            this.starRatingControl1.Text = "starRatingControl1";
+            this.starRatingControl1.TopMargin = 2;
+            // 
             // ReviewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 399);
+            this.Controls.Add(this.starRatingControl1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.actorsReview);
             this.Controls.Add(this.plotReview);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ReviewForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Write a Review";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,5 +139,6 @@
         private System.Windows.Forms.TextBox plotReview;
         private System.Windows.Forms.TextBox actorsReview;
         private System.Windows.Forms.Button button1;
+        private RatingControls.StarRatingControl starRatingControl1;
     }
 }

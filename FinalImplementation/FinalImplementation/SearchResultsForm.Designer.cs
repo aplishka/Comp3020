@@ -61,9 +61,9 @@
             this.toSlider = new System.Windows.Forms.TrackBar();
             this.fromDateBox = new System.Windows.Forms.TextBox();
             this.toDateBox = new System.Windows.Forms.TextBox();
+            this.backButton = new System.Windows.Forms.Button();
             this.starRatingTo = new RatingControls.StarRatingControl();
             this.starRatingFrom = new RatingControls.StarRatingControl();
-            this.backButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fromSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toSlider)).BeginInit();
@@ -369,6 +369,16 @@
             this.toDateBox.Text = "2014";
             this.toDateBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // backButton
+            // 
+            this.backButton.Location = new System.Drawing.Point(13, 35);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(44, 23);
+            this.backButton.TabIndex = 49;
+            this.backButton.Text = "<--";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
             // starRatingTo
             // 
             this.starRatingTo.BottomMargin = 2;
@@ -404,16 +414,6 @@
             this.starRatingFrom.TabIndex = 26;
             this.starRatingFrom.Text = "starRatingControl1";
             this.starRatingFrom.TopMargin = 2;
-            // 
-            // backButton
-            // 
-            this.backButton.Location = new System.Drawing.Point(13, 35);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(44, 23);
-            this.backButton.TabIndex = 49;
-            this.backButton.Text = "<--";
-            this.backButton.UseVisualStyleBackColor = true;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // SearchResultsForm
             // 

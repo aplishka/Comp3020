@@ -31,6 +31,11 @@ namespace FinalImplementation
             this.director = director;
         }
 
+        public Movie()
+        {
+
+        }
+
         public string GetTitle() { return this.title; }
         public int GetYear() { return this.year;  }
         public int GetRating() { return this.rating;  }

@@ -29,6 +29,13 @@ namespace FinalImplementation
 
             titleLabel.Text = movie.GetTitle() + " (" + movie.GetYear().ToString() + ")";
             this.Text = "Movie Detail Page";
+            timeBox.Text = movie.GetMovieLength()+"min";
+            directorBox.Text = movie.GetDirectorsName();
+            certificationBox.Text = movie.GetCertification();
+            genreBox.Items.AddRange(movie.GetGenres().ToArray());
+            actorBox.Items.AddRange(movie.GetActors().ToArray());
+            movieLabel.Visible = false;
+            movieBox.Visible = false;
         }
 
         public ItemDetailForm(Actor actor)
@@ -39,6 +46,21 @@ namespace FinalImplementation
 
             titleLabel.Text = actor.GetName();
             this.Text = "Actor Detail Page";
+            movieBox.Items.AddRange(actor.GetMovies().ToArray());
+            timeBox.Visible = false;
+            directorBox.Visible = false;
+            certificationBox.Visible = false;
+            genreBox.Visible = false;
+            actorBox.Visible = false;
+            timeLabel.Visible = false;
+            directorBox.Visible = false;
+            certificationLabel.Visible = false;
+            genreLabel.Visible = false;
+            actorLabel.Visible = false;
+            stars.Visible = false;
+            reviewBox.Visible = false;
+            reviewButton.Visible = false;
+            directorLabel.Visible = false;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -72,6 +94,26 @@ namespace FinalImplementation
         private void backButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void actorBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Actor temp = new Actor();
+            if (actorBox.SelectedItem != null && actorBox.SelectedItem.GetType() == temp.GetType())
+            {
+                ItemDetailForm form = new ItemDetailForm((Actor)actorBox.SelectedItem);
+                form.ShowDialog();
+            }
+        }
+
+        private void movieBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Movie temp = new Movie();
+            if (movieBox.SelectedItem != null && movieBox.SelectedItem.GetType() == temp.GetType())
+            {
+                ItemDetailForm form = new ItemDetailForm((Movie)movieBox.SelectedItem);
+                form.ShowDialog();
+            }
         }
     }
 }
