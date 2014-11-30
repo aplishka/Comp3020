@@ -52,11 +52,11 @@
     <Compile Include="AddMovieForm.Designer.cs">
       <DependentUpon>AddMovieForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataEntryForm.cs">
+    <Compile Include="AddMovieToUserListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataEntryForm.Designer.cs">
-      <DependentUpon>DataEntryForm.cs</DependentUpon>
+    <Compile Include="AddMovieToUserListForm.Designer.cs">
+      <DependentUpon>AddMovieToUserListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EditMovieForm.cs">
       <SubType>Form</SubType>
@@ -95,11 +95,17 @@
     <Compile Include="StarRatingControl.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UserListsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserListsForm.Designer.cs">
+      <DependentUpon>UserListsForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddMovieForm.resx">
       <DependentUpon>AddMovieForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataEntryForm.resx">
-      <DependentUpon>DataEntryForm.cs</DependentUpon>
+    <EmbeddedResource Include="AddMovieToUserListForm.resx">
+      <DependentUpon>AddMovieToUserListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditMovieForm.resx">
       <DependentUpon>EditMovieForm.cs</DependentUpon>
@@ -127,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StarRatingControl.resx">
       <DependentUpon>StarRatingControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserListsForm.resx">
+      <DependentUpon>UserListsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

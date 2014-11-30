@@ -33,7 +33,6 @@
             this.editMovieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,6 +52,7 @@
             this.certificationBox = new System.Windows.Forms.TextBox();
             this.movieLabel = new System.Windows.Forms.Label();
             this.movieBox = new System.Windows.Forms.ListBox();
+            this.addToListButton = new System.Windows.Forms.Button();
             this.stars = new RatingControls.StarRatingControl();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -74,7 +74,6 @@
             this.editMovieToolStripMenuItem,
             this.toolStripMenuItem2,
             this.homeToolStripMenuItem,
-            this.dataEntryToolStripMenuItem,
             this.toolStripMenuItem1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -99,13 +98,6 @@
             this.homeToolStripMenuItem.Size = new System.Drawing.Size(149, 24);
             this.homeToolStripMenuItem.Text = "Back";
             this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
-            // 
-            // dataEntryToolStripMenuItem
-            // 
-            this.dataEntryToolStripMenuItem.Name = "dataEntryToolStripMenuItem";
-            this.dataEntryToolStripMenuItem.Size = new System.Drawing.Size(149, 24);
-            this.dataEntryToolStripMenuItem.Text = "Data Entry";
-            this.dataEntryToolStripMenuItem.Click += new System.EventHandler(this.dataEntryToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -274,6 +266,16 @@
             this.movieBox.TabIndex = 64;
             this.movieBox.SelectedIndexChanged += new System.EventHandler(this.movieBox_SelectedIndexChanged);
             // 
+            // addToListButton
+            // 
+            this.addToListButton.Location = new System.Drawing.Point(447, 85);
+            this.addToListButton.Name = "addToListButton";
+            this.addToListButton.Size = new System.Drawing.Size(125, 23);
+            this.addToListButton.TabIndex = 65;
+            this.addToListButton.Text = "Save to a list...";
+            this.addToListButton.UseVisualStyleBackColor = true;
+            this.addToListButton.Click += new System.EventHandler(this.addToListButton_Click);
+            // 
             // stars
             // 
             this.stars.BottomMargin = 2;
@@ -298,6 +300,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 536);
+            this.Controls.Add(this.addToListButton);
             this.Controls.Add(this.certificationBox);
             this.Controls.Add(this.directorBox);
             this.Controls.Add(this.timeBox);
@@ -335,7 +338,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dataEntryToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
@@ -358,5 +360,6 @@
         private System.Windows.Forms.TextBox certificationBox;
         private System.Windows.Forms.Label movieLabel;
         private System.Windows.Forms.ListBox movieBox;
+        private System.Windows.Forms.Button addToListButton;
     }
 }

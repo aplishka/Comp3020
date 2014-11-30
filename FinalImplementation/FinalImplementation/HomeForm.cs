@@ -79,15 +79,15 @@ namespace FinalImplementation
                 }
 
                 Movie newMovie = new Movie(movie.SelectSingleNode("title").InnerText,
-                                            Int32.Parse(movie.SelectSingleNode("year").InnerText),
-                                            currActors,
-                                            currGenres,
-                                            movie.SelectSingleNode("certification") == null ? "" : movie.SelectSingleNode("certification").InnerText,
-                                            Int32.Parse(movie.SelectSingleNode("rating").InnerText),
-                                            Int32.Parse((movie.SelectSingleNode("length").InnerText.Split(' '))[0]),
+                                             Int32.Parse(movie.SelectSingleNode("year").InnerText),
+                                             currActors,
+                                             currGenres,
+                                             movie.SelectSingleNode("certification") == null ? "" : movie.SelectSingleNode("certification").InnerText,
+                                             Int32.Parse(movie.SelectSingleNode("rating").InnerText),
+                                             Int32.Parse((movie.SelectSingleNode("length").InnerText.Split(' '))[0]),
                                             movie.SelectSingleNode("director").InnerText,
                                             currReviews
-                                            );
+                                             );
 
                 movies.Add(newMovie);
 
@@ -179,12 +179,6 @@ namespace FinalImplementation
             this.Close();
         }
 
-        private void dataEntryToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DataEntryForm form = new DataEntryForm();
-            form.ShowDialog();
-        }
-
         private void topMoviesList_SelectedIndexChanged(object sender, EventArgs e)
         {
             ItemDetailForm form = new ItemDetailForm((Movie)topMoviesList.SelectedItem);
@@ -270,6 +264,12 @@ namespace FinalImplementation
         private void addMovieToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddMovieForm form = new AddMovieForm();
+            form.ShowDialog();
+        }
+
+        private void userListsButton_Click(object sender, EventArgs e)
+        {
+            UserListsForm form = new UserListsForm();
             form.ShowDialog();
         }
 

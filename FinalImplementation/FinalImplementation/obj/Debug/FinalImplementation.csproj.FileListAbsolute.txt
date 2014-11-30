@@ -6,7 +6,6 @@ E:\University\Comp 3020\A3\FinalImplementation\FinalImplementation\obj\Debug\Fin
 E:\University\Comp 3020\A3\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.csproj.GenerateResource.Cache
 E:\University\Comp 3020\A3\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.exe
 E:\University\Comp 3020\A3\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.pdb
-E:\University\Comp 3020\A3\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.DataEntryForm.resources
 E:\University\Comp 3020\A3\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.SearchResultsForm.resources
 E:\University\Comp 3020\A3\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.HomeForm.resources
 E:\University\Comp 3020\A3\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.ItemDetailForm.resources
@@ -30,3 +29,5 @@ E:\University\Comp 3020\A3\FinalImplementation\FinalImplementation\obj\Debug\Fin
 E:\University\Comp 3020\A3\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.EditMovieForm.resources
 C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.AddMovieForm.resources
 C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.EditMovieForm.resources
+E:\University\Comp 3020\A3\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.UserListsForm.resources
+E:\University\Comp 3020\A3\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.AddMovieToUserListForm.resources

@@ -64,17 +64,12 @@ namespace FinalImplementation
             reviewBox.Visible = false;
             reviewButton.Visible = false;
             directorLabel.Visible = false;
+            addToListButton.Visible = false;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void dataEntryToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DataEntryForm form = new DataEntryForm();
-            form.ShowDialog();
         }
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -165,6 +160,12 @@ namespace FinalImplementation
                 ItemDetailForm form = new ItemDetailForm((Movie)movieBox.SelectedItem);
                 form.ShowDialog();
             }
+        }
+
+        private void addToListButton_Click(object sender, EventArgs e)
+        {
+            AddMovieToUserListForm form = new AddMovieToUserListForm(this.movie);
+            form.ShowDialog();
         }
     }
 }
