@@ -70,7 +70,15 @@ namespace FinalImplementation
 
         protected virtual void saveButton_Click(object sender, EventArgs e)
         {
+            string oldTitle = this.movie.GetTitle();
             this.movie = SaveMovieDetails();
+
+            XDocument doc = XDocument.Load("../../../../movies.xml");
+            XElement element = doc.Root.Descendants("movie").SingleOrDefault(m => (string)m.Element("title") == oldTitle);
+            
+            element.ReplaceAll(this.movie.ToXElement());
+            doc.Save("../../../../movies.xml");
+
             this.Close();
         }
 
@@ -107,7 +115,7 @@ namespace FinalImplementation
                                     genres,
                                     this.certificationTextBox.Text,
                                     this.starRatingControl1.SelectedStar,
-                                    Int32.Parse(this.lengthTextBox.Text),
+                                    Int32.Parse(this.lengthTextBox.Text.Split(' ')[0]),
                                     this.directorTextBox.Text
                                     );
         }
