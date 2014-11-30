@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using System.Xml;
+using System.Text.RegularExpressions;
 
 namespace FinalImplementation
 {
@@ -68,18 +69,66 @@ namespace FinalImplementation
             this.Close();
         }
 
+        protected bool ValidateMovieFields()
+        {
+            bool allFieldsValid = true;
+
+            if (string.IsNullOrWhiteSpace(this.titleTextBox.Text))
+            {
+                errorProvider1.SetError(this.titleTextBox, "Title is a required field");
+                allFieldsValid = false;
+            }
+
+            Match match = Regex.Match(this.yearTextBox.Text, @"\d{4}");
+            if (string.IsNullOrWhiteSpace(this.yearTextBox.Text) || !match.Success)
+            {
+                errorProvider1.SetError(this.yearTextBox, "Year is a required field, and must be of the format ####");
+                allFieldsValid = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(this.directorTextBox.Text))
+            {
+                errorProvider1.SetError(this.directorTextBox, "Director is a required field");
+                allFieldsValid = false;
+            }
+
+            match = Regex.Match(this.lengthTextBox.Text, @"\d{2,4} min");
+            if (string.IsNullOrWhiteSpace(this.lengthTextBox.Text) || !match.Success)
+            {
+                errorProvider1.SetError(this.lengthTextBox, "Length is a required field, and should be of the format '## min'");
+                allFieldsValid = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(this.actorsTextBox.Text))
+            {
+                errorProvider1.SetError(this.actorsTextBox, "Must be at least one actor in film");
+                allFieldsValid = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(this.genresTextBox.Text))
+            {
+                errorProvider1.SetError(this.genresTextBox, "Film must have at least one genre");
+                allFieldsValid = false;
+            }
+
+            return allFieldsValid;
+        }
+
         protected virtual void saveButton_Click(object sender, EventArgs e)
         {
-            string oldTitle = this.movie.GetTitle();
-            this.movie = SaveMovieDetails();
+            if (ValidateMovieFields())
+            {
+                string oldTitle = this.movie.GetTitle();
+                this.movie = SaveMovieDetails();
 
-            XDocument doc = XDocument.Load("../../../../movies.xml");
-            XElement element = doc.Root.Descendants("movie").SingleOrDefault(m => (string)m.Element("title") == oldTitle);
-            
-            element.ReplaceAll(this.movie.ToXElement());
-            doc.Save("../../../../movies.xml");
+                XDocument doc = XDocument.Load("../../../../movies.xml");
+                XElement element = doc.Root.Descendants("movie").SingleOrDefault(m => (string)m.Element("title") == oldTitle);
 
-            this.Close();
+                element.ReplaceAll(this.movie.ToXElement());
+                doc.Save("../../../../movies.xml");
+
+                this.Close();
+            }
         }
 
         protected void WriteChangesToXML(Movie movie)

@@ -31,9 +31,12 @@ namespace FinalImplementation
 
         protected override void saveButton_Click(object sender, EventArgs e)
         {
-            Movie newMovie = SaveMovieDetails();
-            WriteChangesToXML(newMovie);
-            this.Close();
+            if (ValidateMovieFields())
+            {
+                Movie newMovie = SaveMovieDetails();
+                WriteChangesToXML(newMovie);
+                this.Close();
+            }
         }
     }
 }

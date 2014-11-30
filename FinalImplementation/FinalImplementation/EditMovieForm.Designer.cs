@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.titleTextBox = new System.Windows.Forms.TextBox();
             this.formLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,7 +47,10 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.lengthTextBox = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.starRatingControl1 = new RatingControls.StarRatingControl();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // titleTextBox
@@ -90,7 +94,7 @@
             // 
             this.yearTextBox.Location = new System.Drawing.Point(74, 109);
             this.yearTextBox.Name = "yearTextBox";
-            this.yearTextBox.Size = new System.Drawing.Size(100, 22);
+            this.yearTextBox.Size = new System.Drawing.Size(257, 22);
             this.yearTextBox.TabIndex = 4;
             // 
             // label4
@@ -150,7 +154,7 @@
             // actorsTextBox
             // 
             this.actorsTextBox.AcceptsReturn = true;
-            this.actorsTextBox.Location = new System.Drawing.Point(434, 71);
+            this.actorsTextBox.Location = new System.Drawing.Point(433, 70);
             this.actorsTextBox.Multiline = true;
             this.actorsTextBox.Name = "actorsTextBox";
             this.actorsTextBox.Size = new System.Drawing.Size(255, 215);
@@ -160,7 +164,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(715, 70);
+            this.label8.Location = new System.Drawing.Point(704, 70);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 17);
             this.label8.TabIndex = 13;
@@ -168,7 +172,7 @@
             // 
             // genresTextBox
             // 
-            this.genresTextBox.Location = new System.Drawing.Point(792, 70);
+            this.genresTextBox.Location = new System.Drawing.Point(781, 69);
             this.genresTextBox.Multiline = true;
             this.genresTextBox.Name = "genresTextBox";
             this.genresTextBox.Size = new System.Drawing.Size(247, 216);
@@ -176,7 +180,7 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(963, 17);
+            this.deleteButton.Location = new System.Drawing.Point(953, 17);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(75, 23);
             this.deleteButton.TabIndex = 15;
@@ -186,7 +190,7 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(882, 17);
+            this.saveButton.Location = new System.Drawing.Point(872, 17);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.TabIndex = 16;
@@ -198,7 +202,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(21, 264);
+            this.label9.Location = new System.Drawing.Point(18, 264);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(68, 17);
             this.label9.TabIndex = 17;
@@ -208,8 +212,12 @@
             // 
             this.lengthTextBox.Location = new System.Drawing.Point(96, 264);
             this.lengthTextBox.Name = "lengthTextBox";
-            this.lengthTextBox.Size = new System.Drawing.Size(127, 22);
+            this.lengthTextBox.Size = new System.Drawing.Size(235, 22);
             this.lengthTextBox.TabIndex = 18;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // starRatingControl1
             // 
@@ -255,6 +263,7 @@
             this.Controls.Add(this.titleTextBox);
             this.Name = "EditMovieForm";
             this.Text = "EditMovieForm";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,5 +290,7 @@
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox lengthTextBox;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
