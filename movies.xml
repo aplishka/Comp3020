@@ -170,15 +170,20 @@
   <movie>
     <title>Bau lit do see </title>
     <year>2004</year>
-    <length>99 min</length>
-    <director>Tak-Sam Leong</director>
+    <certification></certification>
     <rating>9</rating>
-    <genre>Action</genre>
+    <length>99</length>
+    <director>Tak-Sam Leong</director>
     <actor>Tung Cho 'Joe' Cheung</actor>
     <actor>Sonny Chiba</actor>
     <actor>Alex Fong</actor>
     <actor>Eddy Ko</actor>
     <actor>Wai Kwok</actor>
+    <genre>Action</genre>
+    <review>6|break|Ya|break|Dog</review>
+    <review>5|break||break|</review>
+    <review>6|break||break|</review>
+    <review>2|break|This is a really long review becasue i want to test how muc i can write in here and it will still work yo|break|</review>
   </movie>
   <movie>
     <title>Behind Enemy Lines </title>
@@ -660,33 +665,20 @@
   <movie>
     <title>Child's Play </title>
     <year>1988</year>
-    <length>87 min</length>
     <certification>R</certification>
-    <director>Tom Holland</director>
     <rating>1</rating>
-    <genre>Action</genre>
-    <genre>Horror</genre>
-    <genre>Thriller</genre>
+    <length>87</length>
+    <director>Tom Holland</director>
     <actor>Catherine Hicks</actor>
     <actor>Chris Sarandon</actor>
     <actor>Alex Vincent</actor>
     <actor>Brad Dourif</actor>
     <actor>Dinah Manoff</actor>
-  </movie>
-  <movie>
-    <title>Chou </title>
-    <year>1974</year>
-    <length>92 min</length>
-    <certification>R</certification>
-    <director>Florence Yu Fung Chi</director>
-    <rating>9</rating>
     <genre>Action</genre>
-    <genre>Drama</genre>
-    <actor>Ling Chia</actor>
-    <actor>Kwan Yeung</actor>
-    <actor>Kuan Tai Chen</actor>
-    <actor>Feng Hsu</actor>
-    <actor>Tim Kim</actor>
+    <genre>Horror</genre>
+    <genre>Thriller</genre>
+    <review>4|break|sdf|break|sssss</review>
+    <review>10|break|It was Epic yo.|break|The were alright I guess</review>
   </movie>
   <movie>
     <title>Citizen Toxie: The Toxic Avenger IV </title>
@@ -1160,17 +1152,19 @@
   <movie>
     <title>Eskapo </title>
     <year>1995</year>
-    <length>114 min</length>
-    <director>Chito S. Roo</director>
+    <certification></certification>
     <rating>9</rating>
-    <genre>Drama</genre>
-    <genre>Thriller</genre>
-    <genre>Action</genre>
+    <length>114</length>
+    <director>Chito S. Roo</director>
     <actor>Christopher De Leon</actor>
     <actor>Richard Gomez</actor>
     <actor>Dina Bonnevie</actor>
     <actor>Ricky Davao</actor>
     <actor>Armando Goyena</actor>
+    <genre>Drama</genre>
+    <genre>Thriller</genre>
+    <genre>Action</genre>
+    <review>4|break||break|</review>
   </movie>
   <movie>
     <title>Estrella del sur </title>
@@ -2585,16 +2579,18 @@
   <movie>
     <title>Nafaka </title>
     <year>2006</year>
-    <length>115 min</length>
-    <director>Jasmin Durakovic</director>
+    <certification></certification>
     <rating>9</rating>
-    <genre>Action</genre>
-    <genre>War</genre>
+    <length>115</length>
+    <director>Jasmin Durakovic</director>
     <actor>Senad Basic</actor>
     <actor>Sead Bejtovic</actor>
     <actor>Gordana Boban</actor>
     <actor>Haris Burina</actor>
     <actor>Vanessa Glodjo</actor>
+    <genre>Action</genre>
+    <genre>War</genre>
+    <review>3|break|Plot rating|break|actor rating</review>
   </movie>
   <movie>
     <title>Napoli violenta </title>
@@ -43266,5 +43262,21 @@
     <actor>Lon Chaney Jr.</actor>
     <actor>John Agar</actor>
     <actor>Richard Arlen</actor>
+  </movie>
+  <movie>
+    <title>Chou </title>
+    <year>1974</year>
+    <certification>R</certification>
+    <rating>9</rating>
+    <length>92</length>
+    <director>Florence Yu Fung Chi</director>
+    <actor>Ling Chia</actor>
+    <actor>Kwan Yeung</actor>
+    <actor>Kuan Tai Chen</actor>
+    <actor>Feng Hsu</actor>
+    <actor>Tim Kim</actor>
+    <genre>Action</genre>
+    <genre>Drama</genre>
+    <review>10|break|It was alright|break|it sucked</review>
   </movie>
 </movielist>

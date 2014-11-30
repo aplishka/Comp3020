@@ -165,7 +165,8 @@ namespace FinalImplementation
                                     this.certificationTextBox.Text,
                                     this.starRatingControl1.SelectedStar,
                                     Int32.Parse(this.lengthTextBox.Text.Split(' ')[0]),
-                                    this.directorTextBox.Text
+                                    this.directorTextBox.Text,
+                                    this.movie.GetReviews()
                                     );
         }
     }

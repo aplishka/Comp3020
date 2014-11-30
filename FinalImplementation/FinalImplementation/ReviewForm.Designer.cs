@@ -33,8 +33,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.plotReview = new System.Windows.Forms.TextBox();
             this.actorsReview = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.starRatingControl1 = new RatingControls.StarRatingControl();
+            this.PublishReviewButton = new System.Windows.Forms.Button();
+            this.starRating = new RatingControls.StarRatingControl();
+            this.errorText = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -81,41 +82,50 @@
             this.actorsReview.Size = new System.Drawing.Size(676, 118);
             this.actorsReview.TabIndex = 4;
             // 
-            // button1
+            // PublishReviewButton
             // 
-            this.button1.Location = new System.Drawing.Point(575, 364);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Publish Review";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.PublishReviewButton.Location = new System.Drawing.Point(575, 364);
+            this.PublishReviewButton.Name = "PublishReviewButton";
+            this.PublishReviewButton.Size = new System.Drawing.Size(127, 23);
+            this.PublishReviewButton.TabIndex = 5;
+            this.PublishReviewButton.Text = "Publish Review";
+            this.PublishReviewButton.UseVisualStyleBackColor = true;
+            this.PublishReviewButton.Click += new System.EventHandler(this.PublishReviewButton_Click);
             // 
-            // starRatingControl1
+            // starRating
             // 
-            this.starRatingControl1.BottomMargin = 2;
-            this.starRatingControl1.HoverColor = System.Drawing.Color.Gold;
-            this.starRatingControl1.LeftMargin = 2;
-            this.starRatingControl1.Location = new System.Drawing.Point(26, 44);
-            this.starRatingControl1.Name = "starRatingControl1";
-            this.starRatingControl1.OutlineColor = System.Drawing.Color.DarkGray;
-            this.starRatingControl1.OutlineThickness = 1;
-            this.starRatingControl1.RightMargin = 2;
-            this.starRatingControl1.SelectedColor = System.Drawing.Color.Yellow;
-            this.starRatingControl1.Size = new System.Drawing.Size(676, 57);
-            this.starRatingControl1.StarCount = 10;
-            this.starRatingControl1.StarSpacing = 8;
-            this.starRatingControl1.TabIndex = 6;
-            this.starRatingControl1.Text = "starRatingControl1";
-            this.starRatingControl1.TopMargin = 2;
+            this.starRating.BottomMargin = 2;
+            this.starRating.HoverColor = System.Drawing.Color.Gold;
+            this.starRating.LeftMargin = 2;
+            this.starRating.Location = new System.Drawing.Point(26, 44);
+            this.starRating.Name = "starRating";
+            this.starRating.OutlineColor = System.Drawing.Color.DarkGray;
+            this.starRating.OutlineThickness = 1;
+            this.starRating.RightMargin = 2;
+            this.starRating.SelectedColor = System.Drawing.Color.Yellow;
+            this.starRating.Size = new System.Drawing.Size(676, 57);
+            this.starRating.StarCount = 10;
+            this.starRating.StarSpacing = 8;
+            this.starRating.TabIndex = 6;
+            this.starRating.Text = "starRatingControl1";
+            this.starRating.TopMargin = 2;
+            // 
+            // errorText
+            // 
+            this.errorText.AutoSize = true;
+            this.errorText.Location = new System.Drawing.Point(26, 370);
+            this.errorText.Name = "errorText";
+            this.errorText.Size = new System.Drawing.Size(0, 17);
+            this.errorText.TabIndex = 7;
             // 
             // ReviewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 399);
-            this.Controls.Add(this.starRatingControl1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.errorText);
+            this.Controls.Add(this.starRating);
+            this.Controls.Add(this.PublishReviewButton);
             this.Controls.Add(this.actorsReview);
             this.Controls.Add(this.plotReview);
             this.Controls.Add(this.label3);
@@ -138,7 +148,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox plotReview;
         private System.Windows.Forms.TextBox actorsReview;
-        private System.Windows.Forms.Button button1;
-        private RatingControls.StarRatingControl starRatingControl1;
+        private System.Windows.Forms.Button PublishReviewButton;
+        private RatingControls.StarRatingControl starRating;
+        private System.Windows.Forms.Label errorText;
     }
 }

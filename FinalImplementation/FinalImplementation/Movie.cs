@@ -13,13 +13,14 @@ namespace FinalImplementation
         private int year;
         private List<Actor> actors;
         private List<string> genres;
+        private List<Review> reviews;
         private string certification;
         private int rating;
         private int time;
         private string director;
 
         public Movie(string title, int year, List<Actor> actors, List<string> genres, string certification,
-            int rating, int time, string director)
+            int rating, int time, string director, List<Review> _reviews)
         {
             this.title = title;
             this.year = year;
@@ -29,11 +30,34 @@ namespace FinalImplementation
             this.rating = rating;
             this.time = time;
             this.director = director;
+            this.reviews = _reviews;
+        }
+
+        public Movie(string title, int year, List<Actor> actors, List<string> genres, string certification,
+                        int rating, int time, string director)
+        {
+            this.title = title;
+            this.year = year;
+            this.actors = actors;
+            this.genres = genres;
+            this.certification = certification;
+            this.rating = rating;
+            this.time = time;
+            this.director = director;
+            this.reviews = new List<Review>();
         }
 
         public Movie()
         {
-
+            this.title = "";
+            this.year = -1;
+            this.actors = null;
+            this.genres = null;
+            this.reviews = null;
+            this.certification = "";
+            this.rating = -1;
+            this.time = -1;
+            this.director = "";
         }
 
         public string GetTitle() { return this.title; }
@@ -48,11 +72,13 @@ namespace FinalImplementation
             }
             return results;
         }
-        public List<string> GetGenres() { return genres; }
+        public List<string> GetGenres() { return this.genres; }
         public List<Actor> GetActors() { return this.actors; }
+        public List<Review> GetReviews() { return this.reviews; }
         public string GetCertification() { return this.certification; }
         public int GetMovieLength() { return this.time; }
         public string GetDirectorsName() { return this.director; }
+        public void AddReview(Review _review) { this.reviews.Add(_review); }
 
         public override string ToString()
         {
@@ -78,6 +104,11 @@ namespace FinalImplementation
             foreach (string genre in this.genres)
             {
                 movieXElement.Add(new XElement("genre", genre));
+            }
+
+            foreach (Review review in this.reviews)
+            {
+                movieXElement.Add(new XElement("review", review.GetRating()+"|break|"+review.GetPlot()+"|break|"+review.GetActor()));
             }
 
             return movieXElement;

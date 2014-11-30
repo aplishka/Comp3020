@@ -292,6 +292,7 @@ namespace FinalImplementation
             {
                 List<Actor> currActors = new List<Actor>();
                 List<string> currGenres = new List<string>();
+                List<Review> currReviews = new List<Review>();
 
                 foreach (XmlNode actor in movie.SelectNodes("actor"))
                 {
@@ -314,6 +315,13 @@ namespace FinalImplementation
                     genres.Add(genre.InnerText);
                 }
 
+                foreach (XmlNode review in movie.SelectNodes("review"))
+                {
+                    string[] splitOn = { "|break|" };
+                    string[] arr = review.InnerText.Split(splitOn, System.StringSplitOptions.None);
+                    currReviews.Add(new Review(Convert.ToInt32(arr[0]), arr[1], arr[2]));
+                }
+
                 Movie newMovie = new Movie(movie.SelectSingleNode("title").InnerText,
                                              Int32.Parse(movie.SelectSingleNode("year").InnerText),
                                              currActors,
@@ -321,7 +329,8 @@ namespace FinalImplementation
                                              movie.SelectSingleNode("certification") == null ? "" : movie.SelectSingleNode("certification").InnerText,
                                              Int32.Parse(movie.SelectSingleNode("rating").InnerText),
                                              Int32.Parse((movie.SelectSingleNode("length").InnerText.Split(' '))[0]),
-                                             movie.SelectSingleNode("director").InnerText
+                                             movie.SelectSingleNode("director").InnerText,
+                                             currReviews
                                              );
 
                 movies.Add(newMovie);

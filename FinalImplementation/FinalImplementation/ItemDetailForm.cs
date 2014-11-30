@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace FinalImplementation
 {
@@ -34,6 +36,7 @@ namespace FinalImplementation
             certificationBox.Text = movie.GetCertification();
             genreBox.Items.AddRange(movie.GetGenres().ToArray());
             actorBox.Items.AddRange(movie.GetActors().ToArray());
+            reviewBox.Items.AddRange(movie.GetReviews().ToArray());
             movieLabel.Visible = false;
             movieBox.Visible = false;
         }
@@ -81,8 +84,56 @@ namespace FinalImplementation
 
         private void reviewButton_Click(object sender, EventArgs e)
         {
-            ReviewForm form = new ReviewForm();
+            ReviewForm form = new ReviewForm(movie);
             form.ShowDialog();
+
+            // refresh reviews
+            XmlDocument xml = new XmlDocument();
+            xml.Load("../../../../movies.xml");
+            XmlNode movieList = xml.DocumentElement.SelectSingleNode("/movielist");
+
+            foreach (XmlNode mov in movieList.ChildNodes)
+            {
+                if (mov.SelectSingleNode("title").InnerText == this.movie.GetTitle())
+                {
+                    List<Actor> currActors = new List<Actor>();
+                    List<string> currGenres = new List<string>();
+                    List<Review> currReviews = new List<Review>();
+
+                    foreach (XmlNode actor in mov.SelectNodes("actor"))
+                    {
+                        Actor newActor = new Actor(actor.InnerText);
+                        currActors.Add(newActor);
+                    }
+
+                    foreach (XmlNode genre in mov.SelectNodes("genre"))
+                    {
+                        currGenres.Add(genre.InnerText);
+                    }
+
+                    foreach (XmlNode review in mov.SelectNodes("review"))
+                    {
+                        string[] splitOn = { "|break|" };
+                        string[] arr = review.InnerText.Split(splitOn, System.StringSplitOptions.None);
+                        currReviews.Add(new Review(Convert.ToInt32(arr[0]), arr[1], arr[2]));
+                    }
+
+                    Movie newMovie = new Movie(mov.SelectSingleNode("title").InnerText,
+                                            Int32.Parse(mov.SelectSingleNode("year").InnerText),
+                                            currActors,
+                                            currGenres,
+                                            mov.SelectSingleNode("certification") == null ? "" : mov.SelectSingleNode("certification").InnerText,
+                                            Int32.Parse(mov.SelectSingleNode("rating").InnerText),
+                                            Int32.Parse((mov.SelectSingleNode("length").InnerText.Split(' '))[0]),
+                                            mov.SelectSingleNode("director").InnerText,
+                                            currReviews
+                                            );
+                    this.movie = newMovie;
+                }
+            }
+            reviewBox.Items.Clear();
+
+            reviewBox.Items.AddRange(this.movie.GetReviews().ToArray());
         }
 
         private void editMovieToolStripMenuItem_Click(object sender, EventArgs e)
