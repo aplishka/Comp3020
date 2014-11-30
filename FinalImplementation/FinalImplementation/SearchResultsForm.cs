@@ -12,7 +12,7 @@ namespace FinalImplementation
 {
     public partial class SearchResultsForm : Form
     {
-        public SearchResultsForm()
+        public SearchResultsForm(string _searchstring)
         {
             InitializeComponent();
             toolTip1.SetToolTip(plus1, "Add another actor to search on");
@@ -21,6 +21,7 @@ namespace FinalImplementation
             toolTip1.SetToolTip(minus2, "Remove this actor from search");
             toolTip1.SetToolTip(minus3, "Remove this actor from search");
             toolTip1.SetToolTip(minus4, "Remove this actor from search");
+            searchTextBox.Text = _searchstring;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)

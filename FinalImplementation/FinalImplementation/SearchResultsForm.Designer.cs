@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchButton = new System.Windows.Forms.Button();
@@ -84,37 +81,15 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.homeToolStripMenuItem,
-            this.dataEntryToolStripMenuItem,
-            this.toolStripMenuItem1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // homeToolStripMenuItem
-            // 
-            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(147, 24);
-            this.homeToolStripMenuItem.Text = "Home";
-            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
-            // 
-            // dataEntryToolStripMenuItem
-            // 
-            this.dataEntryToolStripMenuItem.Name = "dataEntryToolStripMenuItem";
-            this.dataEntryToolStripMenuItem.Size = new System.Drawing.Size(147, 24);
-            this.dataEntryToolStripMenuItem.Text = "Data Entry";
-            this.dataEntryToolStripMenuItem.Click += new System.EventHandler(this.dataEntryToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(144, 6);
-            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(147, 24);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -467,9 +442,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dataEntryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.Button searchButton;

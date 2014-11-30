@@ -53,8 +53,7 @@
             this.searchTextBox.Location = new System.Drawing.Point(12, 31);
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(495, 22);
-            this.searchTextBox.TabIndex = 0;
-            this.searchTextBox.Text = "Enter search query...";
+            this.searchTextBox.TabIndex = 12;
             // 
             // searchButton
             // 
