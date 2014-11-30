@@ -36,7 +36,6 @@ namespace FinalImplementation
 
             XmlNode movieList = xml.DocumentElement.SelectSingleNode("/movielist");
 
-            List<string> movieStrings = new List<string>();
             List<Movie> movies = new List<Movie>();
             List<Actor> actors = new List<Actor>();
 
@@ -76,7 +75,6 @@ namespace FinalImplementation
                                              );
 
                 movies.Add(newMovie);
-                movieStrings.Add(newMovie.GetTitle());
 
                 // Add movie to Actors credits
                 foreach (Actor currActor in currActors)
@@ -87,12 +85,25 @@ namespace FinalImplementation
             }
 
                 // Add movie titles to list
-                topMoviesList.Items.AddRange(movieStrings.ToArray());
+                topMoviesList.Items.AddRange(movies.ToArray());
+                AddActorsToTopList(actors);
         }
 
-        private void AddActorsToTopList()
+        private void AddActorsToTopList(List<Actor> actors)
         {
+            int threshold = 4;
 
+            List<Actor> topActors = new List<Actor>();
+            foreach (Actor actor in actors)
+            {
+                if (actor.NumberOfMovies() > threshold)
+                {
+                    topActors.Add(actor);
+                }
+            }
+
+            // Add to UI
+            topActorsList.Items.AddRange(topActors.ToArray());
         }
 
         private void searchData() 

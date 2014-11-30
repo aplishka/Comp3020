@@ -24,5 +24,10 @@ namespace FinalImplementation
         {
             this.movies.Add(movie);
         }
+
+        public override string ToString()
+        {
+            return this.name;
+        }
     }
 }

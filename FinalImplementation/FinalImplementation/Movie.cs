@@ -32,5 +32,10 @@ namespace FinalImplementation
 
         public string GetTitle() { return this.title; }
         public int GetYear() { return this.year;  }
+
+        public override string ToString()
+        {
+            return this.title + " (" + this.year.ToString() + ")";
+        }
     }
 }
