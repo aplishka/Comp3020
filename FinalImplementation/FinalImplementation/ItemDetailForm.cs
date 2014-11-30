@@ -18,12 +18,20 @@ namespace FinalImplementation
             InitializeComponent();
         }
 
-        public ItemDetailForm(List<string> args)
+        public ItemDetailForm(Movie movie)
         {
             InitializeComponent();
 
-            titleLabel.Text = args.ElementAt(0);
+            titleLabel.Text = movie.GetTitle() + " (" + movie.GetYear().ToString() + ")";
             this.Text = "Movie Detail Page";
+        }
+
+        public ItemDetailForm(Actor actor)
+        {
+            InitializeComponent();
+
+            titleLabel.Text = actor.GetName();
+            this.Text = "Actor Detail Page";
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)

@@ -143,10 +143,7 @@ namespace FinalImplementation
 
         private void topMoviesList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<String> args = new List<string>();
-            args.Add(topMoviesList.GetItemText(topMoviesList.SelectedItem));
-
-            ItemDetailForm form = new ItemDetailForm(args);
+            ItemDetailForm form = new ItemDetailForm((Movie)topMoviesList.SelectedItem);
             form.ShowDialog();
         }
 
@@ -157,7 +154,7 @@ namespace FinalImplementation
 
         private void topActorsList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ItemDetailForm form = new ItemDetailForm();
+            ItemDetailForm form = new ItemDetailForm((Actor)topActorsList.SelectedItem);
             form.ShowDialog();
         }
 
