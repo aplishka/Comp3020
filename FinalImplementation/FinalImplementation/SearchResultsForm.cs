@@ -187,7 +187,7 @@ namespace FinalImplementation
                             {
                                 for(int y=0; y<mResults[x].GetActors().Count; y++)
                                 {
-                                    if(mResults[x].GetActors()[y].Contains(actor4.Text.ToLower()))
+                                    if(mResults[x].GetActorNames()[y].Contains(actor4.Text.ToLower()))
                                     {
                                         foundit = true;
                                     }
@@ -200,7 +200,7 @@ namespace FinalImplementation
                                 {
                                     for(int y=0; y<mResults[x].GetActors().Count; y++)
                                     {
-                                        if(mResults[x].GetActors()[y].Contains(actor3.Text.ToLower()))
+                                        if(mResults[x].GetActorNames()[y].Contains(actor3.Text.ToLower()))
                                         {
                                             foundit = true;
                                         }
@@ -213,7 +213,7 @@ namespace FinalImplementation
                                     {
                                         for(int y=0; y<mResults[x].GetActors().Count; y++)
                                         {
-                                            if(mResults[x].GetActors()[y].Contains(actor2.Text.ToLower()))
+                                            if(mResults[x].GetActorNames()[y].Contains(actor2.Text.ToLower()))
                                             {
                                                 foundit = true;
                                             }
@@ -226,7 +226,7 @@ namespace FinalImplementation
                                         {
                                             for (int y = 0; y < mResults[x].GetActors().Count; y++)
                                             {
-                                                if (mResults[x].GetActors()[y].Contains(actor1.Text.ToLower()))
+                                                if (mResults[x].GetActorNames()[y].Contains(actor1.Text.ToLower()))
                                                 {
                                                     foundit = true;
                                                 }

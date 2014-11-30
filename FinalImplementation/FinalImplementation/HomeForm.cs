@@ -168,5 +168,11 @@ namespace FinalImplementation
             topGenresList.Items.Clear();
             topGenresList.Items.AddRange(list);
         }
+
+        private void addMovieButton_Click(object sender, EventArgs e)
+        {
+            EditMovieForm form = new EditMovieForm();
+            form.ShowDialog();
+        }
     }
 }

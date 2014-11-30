@@ -42,6 +42,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.reviewButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
+            this.editMovieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +62,8 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editMovieToolStripMenuItem,
+            this.toolStripMenuItem2,
             this.homeToolStripMenuItem,
             this.dataEntryToolStripMenuItem,
             this.toolStripMenuItem1,
@@ -166,6 +170,18 @@
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
+            // editMovieToolStripMenuItem
+            // 
+            this.editMovieToolStripMenuItem.Name = "editMovieToolStripMenuItem";
+            this.editMovieToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.editMovieToolStripMenuItem.Text = "Edit Movie";
+            this.editMovieToolStripMenuItem.Click += new System.EventHandler(this.editMovieToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(172, 6);
+            // 
             // ItemDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -210,5 +226,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button reviewButton;
         private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.ToolStripMenuItem editMovieToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
     }
 }
