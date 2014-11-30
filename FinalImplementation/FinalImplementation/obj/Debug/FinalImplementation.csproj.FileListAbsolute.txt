@@ -12,3 +12,17 @@ E:\University\Comp 3020\A3\FinalImplementation\FinalImplementation\obj\Debug\Fin
 E:\University\Comp 3020\A3\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.ItemDetailForm.resources
 E:\University\Comp 3020\A3\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.ReviewForm.resources
 E:\University\Comp 3020\A3\FinalImplementation\FinalImplementation\obj\Debug\RatingControls.StarRatingControl.resources
+C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\bin\Debug\FinalImplementation.exe.config
+C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.exe
+C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.pdb
+C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\bin\Debug\FinalImplementation.exe
+C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\bin\Debug\FinalImplementation.pdb
+C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.csprojResolveAssemblyReference.cache
+C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.DataEntryForm.resources
+C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.HomeForm.resources
+C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.ItemDetailForm.resources
+C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.Properties.Resources.resources
+C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.ReviewForm.resources
+C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.SearchResultsForm.resources
+C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\obj\Debug\RatingControls.StarRatingControl.resources
+C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.csproj.GenerateResource.Cache
