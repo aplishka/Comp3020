@@ -13,6 +13,9 @@ namespace FinalImplementation
 {
     public partial class ItemDetailForm : Form
     {
+        private Movie movie;
+        private Actor actor;
+
         public ItemDetailForm()
         {
             InitializeComponent();
@@ -22,6 +25,8 @@ namespace FinalImplementation
         {
             InitializeComponent();
 
+            this.movie = movie;
+
             titleLabel.Text = movie.GetTitle() + " (" + movie.GetYear().ToString() + ")";
             this.Text = "Movie Detail Page";
         }
@@ -29,6 +34,8 @@ namespace FinalImplementation
         public ItemDetailForm(Actor actor)
         {
             InitializeComponent();
+
+            this.actor = actor;
 
             titleLabel.Text = actor.GetName();
             this.Text = "Actor Detail Page";
@@ -53,6 +60,12 @@ namespace FinalImplementation
         private void reviewButton_Click(object sender, EventArgs e)
         {
             ReviewForm form = new ReviewForm();
+            form.ShowDialog();
+        }
+
+        private void editMovieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditMovieForm form = new EditMovieForm(this.movie);
             form.ShowDialog();
         }
     }

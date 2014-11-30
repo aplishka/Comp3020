@@ -26,3 +26,5 @@ C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\
 C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.SearchResultsForm.resources
 C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\obj\Debug\RatingControls.StarRatingControl.resources
 C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.csproj.GenerateResource.Cache
+E:\University\Comp 3020\A3\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.AddMovieForm.resources
+E:\University\Comp 3020\A3\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.EditMovieForm.resources
