@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FinalImplementation
 {
-    public partial class DataEntryForm : Form
+    public partial class UserListsForm : Form
     {
-        public DataEntryForm()
+        public UserListsForm()
         {
             InitializeComponent();
         }

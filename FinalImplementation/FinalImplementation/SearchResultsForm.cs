@@ -80,12 +80,6 @@ namespace FinalImplementation
             this.Close();
         }
 
-        private void dataEntryToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DataEntryForm form = new DataEntryForm();
-            form.ShowDialog();
-        }
-
         private void plus1_Click(object sender, EventArgs e)
         {
             plus1.Visible = false;

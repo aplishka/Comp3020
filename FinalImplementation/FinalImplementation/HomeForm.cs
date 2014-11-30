@@ -169,12 +169,6 @@ namespace FinalImplementation
             this.Close();
         }
 
-        private void dataEntryToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DataEntryForm form = new DataEntryForm();
-            form.ShowDialog();
-        }
-
         private void topMoviesList_SelectedIndexChanged(object sender, EventArgs e)
         {
             ItemDetailForm form = new ItemDetailForm((Movie)topMoviesList.SelectedItem);

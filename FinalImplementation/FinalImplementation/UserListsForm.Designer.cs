@@ -1,6 +1,6 @@
 ﻿namespace FinalImplementation
 {
-    partial class DataEntryForm
+    partial class UserListsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // DataEntryForm
+            // UserListsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1046, 507);
-            this.Name = "DataEntryForm";
-            this.Text = "DataEntryForm";
+            this.ClientSize = new System.Drawing.Size(1024, 521);
+            this.Name = "UserListsForm";
+            this.Text = "UserListsForm";
             this.ResumeLayout(false);
 
         }

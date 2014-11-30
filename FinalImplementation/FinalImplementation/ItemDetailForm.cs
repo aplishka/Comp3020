@@ -68,12 +68,6 @@ namespace FinalImplementation
             this.Close();
         }
 
-        private void dataEntryToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DataEntryForm form = new DataEntryForm();
-            form.ShowDialog();
-        }
-
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
