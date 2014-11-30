@@ -25,3 +25,4 @@ C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\
 C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.csproj.GenerateResource.Cache
 C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.exe
 C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.pdb
+C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.csprojResolveAssemblyReference.cache

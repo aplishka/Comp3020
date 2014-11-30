@@ -36,19 +36,14 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.searchResultList = new System.Windows.Forms.ListBox();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.fromDate = new System.Windows.Forms.DateTimePicker();
-            this.toDate = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.genreSelector = new System.Windows.Forms.ComboBox();
-            this.plotBox = new System.Windows.Forms.RichTextBox();
             this.actor1 = new System.Windows.Forms.TextBox();
             this.actor2 = new System.Windows.Forms.TextBox();
             this.actor3 = new System.Windows.Forms.TextBox();
@@ -62,9 +57,16 @@
             this.minus4 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.minus1 = new System.Windows.Forms.Button();
+            this.fromSlider = new System.Windows.Forms.TrackBar();
+            this.toSlider = new System.Windows.Forms.TrackBar();
+            this.fromDateBox = new System.Windows.Forms.TextBox();
+            this.toDateBox = new System.Windows.Forms.TextBox();
             this.starRatingTo = new RatingControls.StarRatingControl();
             this.starRatingFrom = new RatingControls.StarRatingControl();
+            this.backButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fromSlider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toSlider)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -74,7 +76,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(993, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1020, 28);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -89,7 +91,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -101,18 +103,19 @@
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(513, 30);
+            this.searchButton.Location = new System.Drawing.Point(559, 35);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);
             this.searchButton.TabIndex = 15;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // searchTextBox
             // 
-            this.searchTextBox.Location = new System.Drawing.Point(12, 31);
+            this.searchTextBox.Location = new System.Drawing.Point(63, 36);
             this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(495, 22);
+            this.searchTextBox.Size = new System.Drawing.Size(490, 22);
             this.searchTextBox.TabIndex = 14;
             this.searchTextBox.Text = "Enter search query...";
             // 
@@ -122,21 +125,16 @@
             this.searchResultList.ItemHeight = 16;
             this.searchResultList.Location = new System.Drawing.Point(12, 75);
             this.searchResultList.Name = "searchResultList";
-            this.searchResultList.Size = new System.Drawing.Size(623, 436);
+            this.searchResultList.ScrollAlwaysVisible = true;
+            this.searchResultList.Size = new System.Drawing.Size(622, 452);
             this.searchResultList.TabIndex = 16;
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(613, 75);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(21, 436);
-            this.vScrollBar1.TabIndex = 17;
+            this.searchResultList.SelectedIndexChanged += new System.EventHandler(this.searchResultList_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(740, 31);
+            this.label1.Location = new System.Drawing.Point(763, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(190, 25);
             this.label1.TabIndex = 18;
@@ -145,7 +143,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(649, 77);
+            this.label2.Location = new System.Drawing.Point(661, 251);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 17);
             this.label2.TabIndex = 19;
@@ -154,7 +152,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(649, 142);
+            this.label3.Location = new System.Drawing.Point(659, 78);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 17);
             this.label3.TabIndex = 20;
@@ -163,50 +161,25 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(649, 185);
+            this.label4.Location = new System.Drawing.Point(660, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 17);
             this.label4.TabIndex = 21;
             this.label4.Text = "Genre:";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(649, 244);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 17);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Plot:";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(650, 369);
+            this.label6.Location = new System.Drawing.Point(659, 359);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 17);
             this.label6.TabIndex = 23;
             this.label6.Text = "Actors:";
             // 
-            // fromDate
-            // 
-            this.fromDate.Location = new System.Drawing.Point(708, 75);
-            this.fromDate.Name = "fromDate";
-            this.fromDate.Size = new System.Drawing.Size(273, 22);
-            this.fromDate.TabIndex = 24;
-            this.fromDate.Value = new System.DateTime(2014, 11, 29, 17, 31, 14, 0);
-            // 
-            // toDate
-            // 
-            this.toDate.Location = new System.Drawing.Point(708, 103);
-            this.toDate.Name = "toDate";
-            this.toDate.Size = new System.Drawing.Size(273, 22);
-            this.toDate.TabIndex = 25;
-            this.toDate.Value = new System.DateTime(2014, 11, 29, 17, 31, 14, 0);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(834, 143);
+            this.label7.Location = new System.Drawing.Point(842, 81);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(20, 17);
             this.label7.TabIndex = 28;
@@ -215,7 +188,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(688, 105);
+            this.label8.Location = new System.Drawing.Point(843, 252);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(20, 17);
             this.label8.TabIndex = 29;
@@ -224,29 +197,21 @@
             // genreSelector
             // 
             this.genreSelector.FormattingEnabled = true;
-            this.genreSelector.Location = new System.Drawing.Point(708, 185);
+            this.genreSelector.Location = new System.Drawing.Point(717, 133);
             this.genreSelector.Name = "genreSelector";
             this.genreSelector.Size = new System.Drawing.Size(273, 24);
             this.genreSelector.TabIndex = 30;
             // 
-            // plotBox
-            // 
-            this.plotBox.Location = new System.Drawing.Point(708, 241);
-            this.plotBox.Name = "plotBox";
-            this.plotBox.Size = new System.Drawing.Size(273, 117);
-            this.plotBox.TabIndex = 31;
-            this.plotBox.Text = "";
-            // 
             // actor1
             // 
-            this.actor1.Location = new System.Drawing.Point(708, 367);
+            this.actor1.Location = new System.Drawing.Point(717, 357);
             this.actor1.Name = "actor1";
             this.actor1.Size = new System.Drawing.Size(183, 22);
             this.actor1.TabIndex = 32;
             // 
             // actor2
             // 
-            this.actor2.Location = new System.Drawing.Point(708, 395);
+            this.actor2.Location = new System.Drawing.Point(717, 391);
             this.actor2.Name = "actor2";
             this.actor2.Size = new System.Drawing.Size(183, 22);
             this.actor2.TabIndex = 33;
@@ -254,7 +219,7 @@
             // 
             // actor3
             // 
-            this.actor3.Location = new System.Drawing.Point(708, 423);
+            this.actor3.Location = new System.Drawing.Point(717, 425);
             this.actor3.Name = "actor3";
             this.actor3.Size = new System.Drawing.Size(183, 22);
             this.actor3.TabIndex = 34;
@@ -262,7 +227,7 @@
             // 
             // actor4
             // 
-            this.actor4.Location = new System.Drawing.Point(708, 451);
+            this.actor4.Location = new System.Drawing.Point(717, 458);
             this.actor4.Name = "actor4";
             this.actor4.Size = new System.Drawing.Size(183, 22);
             this.actor4.TabIndex = 35;
@@ -270,17 +235,17 @@
             // 
             // advancedSearchButton
             // 
-            this.advancedSearchButton.Location = new System.Drawing.Point(708, 486);
+            this.advancedSearchButton.Location = new System.Drawing.Point(717, 501);
             this.advancedSearchButton.Name = "advancedSearchButton";
-            this.advancedSearchButton.Size = new System.Drawing.Size(273, 23);
+            this.advancedSearchButton.Size = new System.Drawing.Size(263, 23);
             this.advancedSearchButton.TabIndex = 36;
-            this.advancedSearchButton.Text = "Search";
+            this.advancedSearchButton.Text = "Advanced Search";
             this.advancedSearchButton.UseVisualStyleBackColor = true;
             this.advancedSearchButton.Click += new System.EventHandler(this.advancedSearchButton_Click);
             // 
             // plus1
             // 
-            this.plus1.Location = new System.Drawing.Point(897, 366);
+            this.plus1.Location = new System.Drawing.Point(906, 356);
             this.plus1.Name = "plus1";
             this.plus1.Size = new System.Drawing.Size(33, 23);
             this.plus1.TabIndex = 37;
@@ -290,7 +255,7 @@
             // 
             // plus2
             // 
-            this.plus2.Location = new System.Drawing.Point(897, 395);
+            this.plus2.Location = new System.Drawing.Point(906, 391);
             this.plus2.Name = "plus2";
             this.plus2.Size = new System.Drawing.Size(33, 23);
             this.plus2.TabIndex = 38;
@@ -301,7 +266,7 @@
             // 
             // plus3
             // 
-            this.plus3.Location = new System.Drawing.Point(897, 423);
+            this.plus3.Location = new System.Drawing.Point(906, 425);
             this.plus3.Name = "plus3";
             this.plus3.Size = new System.Drawing.Size(33, 23);
             this.plus3.TabIndex = 39;
@@ -312,7 +277,7 @@
             // 
             // minus2
             // 
-            this.minus2.Location = new System.Drawing.Point(936, 395);
+            this.minus2.Location = new System.Drawing.Point(945, 391);
             this.minus2.Name = "minus2";
             this.minus2.Size = new System.Drawing.Size(33, 23);
             this.minus2.TabIndex = 41;
@@ -323,7 +288,7 @@
             // 
             // minus3
             // 
-            this.minus3.Location = new System.Drawing.Point(936, 423);
+            this.minus3.Location = new System.Drawing.Point(945, 425);
             this.minus3.Name = "minus3";
             this.minus3.Size = new System.Drawing.Size(33, 23);
             this.minus3.TabIndex = 42;
@@ -334,7 +299,7 @@
             // 
             // minus4
             // 
-            this.minus4.Location = new System.Drawing.Point(936, 450);
+            this.minus4.Location = new System.Drawing.Point(945, 457);
             this.minus4.Name = "minus4";
             this.minus4.Size = new System.Drawing.Size(33, 23);
             this.minus4.TabIndex = 43;
@@ -349,7 +314,7 @@
             // 
             // minus1
             // 
-            this.minus1.Location = new System.Drawing.Point(936, 366);
+            this.minus1.Location = new System.Drawing.Point(945, 356);
             this.minus1.Name = "minus1";
             this.minus1.Size = new System.Drawing.Size(33, 23);
             this.minus1.TabIndex = 44;
@@ -357,12 +322,59 @@
             this.minus1.UseVisualStyleBackColor = true;
             this.minus1.Click += new System.EventHandler(this.minus1_Click);
             // 
+            // fromSlider
+            // 
+            this.fromSlider.LargeChange = 10;
+            this.fromSlider.Location = new System.Drawing.Point(717, 197);
+            this.fromSlider.Maximum = 2014;
+            this.fromSlider.Minimum = 1900;
+            this.fromSlider.Name = "fromSlider";
+            this.fromSlider.Size = new System.Drawing.Size(273, 56);
+            this.fromSlider.SmallChange = 5;
+            this.fromSlider.TabIndex = 45;
+            this.fromSlider.Value = 1900;
+            this.fromSlider.Scroll += new System.EventHandler(this.fromSlider_Scroll);
+            // 
+            // toSlider
+            // 
+            this.toSlider.LargeChange = 10;
+            this.toSlider.Location = new System.Drawing.Point(717, 283);
+            this.toSlider.Maximum = 2014;
+            this.toSlider.Minimum = 1900;
+            this.toSlider.Name = "toSlider";
+            this.toSlider.Size = new System.Drawing.Size(273, 56);
+            this.toSlider.SmallChange = 5;
+            this.toSlider.TabIndex = 46;
+            this.toSlider.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.toSlider.Value = 2014;
+            this.toSlider.Scroll += new System.EventHandler(this.toSlider_Scroll);
+            // 
+            // fromDateBox
+            // 
+            this.fromDateBox.Location = new System.Drawing.Point(728, 249);
+            this.fromDateBox.Name = "fromDateBox";
+            this.fromDateBox.ReadOnly = true;
+            this.fromDateBox.Size = new System.Drawing.Size(100, 22);
+            this.fromDateBox.TabIndex = 47;
+            this.fromDateBox.Text = "1900";
+            this.fromDateBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toDateBox
+            // 
+            this.toDateBox.Location = new System.Drawing.Point(880, 249);
+            this.toDateBox.Name = "toDateBox";
+            this.toDateBox.ReadOnly = true;
+            this.toDateBox.Size = new System.Drawing.Size(100, 22);
+            this.toDateBox.TabIndex = 48;
+            this.toDateBox.Text = "2014";
+            this.toDateBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // starRatingTo
             // 
             this.starRatingTo.BottomMargin = 2;
             this.starRatingTo.HoverColor = System.Drawing.Color.Gold;
             this.starRatingTo.LeftMargin = 1;
-            this.starRatingTo.Location = new System.Drawing.Point(857, 141);
+            this.starRatingTo.Location = new System.Drawing.Point(861, 78);
             this.starRatingTo.Name = "starRatingTo";
             this.starRatingTo.OutlineColor = System.Drawing.Color.DarkGray;
             this.starRatingTo.OutlineThickness = 1;
@@ -380,7 +392,7 @@
             this.starRatingFrom.BottomMargin = 2;
             this.starRatingFrom.HoverColor = System.Drawing.Color.Gold;
             this.starRatingFrom.LeftMargin = 1;
-            this.starRatingFrom.Location = new System.Drawing.Point(708, 141);
+            this.starRatingFrom.Location = new System.Drawing.Point(717, 78);
             this.starRatingFrom.Name = "starRatingFrom";
             this.starRatingFrom.OutlineColor = System.Drawing.Color.DarkGray;
             this.starRatingFrom.OutlineThickness = 1;
@@ -393,11 +405,26 @@
             this.starRatingFrom.Text = "starRatingControl1";
             this.starRatingFrom.TopMargin = 2;
             // 
+            // backButton
+            // 
+            this.backButton.Location = new System.Drawing.Point(13, 35);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(44, 23);
+            this.backButton.TabIndex = 49;
+            this.backButton.Text = "<--";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
             // SearchResultsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(993, 521);
+            this.ClientSize = new System.Drawing.Size(1020, 536);
+            this.Controls.Add(this.backButton);
+            this.Controls.Add(this.toDateBox);
+            this.Controls.Add(this.fromDateBox);
+            this.Controls.Add(this.toSlider);
+            this.Controls.Add(this.fromSlider);
             this.Controls.Add(this.minus1);
             this.Controls.Add(this.minus4);
             this.Controls.Add(this.minus3);
@@ -410,29 +437,31 @@
             this.Controls.Add(this.actor3);
             this.Controls.Add(this.actor2);
             this.Controls.Add(this.actor1);
-            this.Controls.Add(this.plotBox);
             this.Controls.Add(this.genreSelector);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.starRatingTo);
             this.Controls.Add(this.starRatingFrom);
-            this.Controls.Add(this.toDate);
-            this.Controls.Add(this.fromDate);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.searchResultList);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.searchTextBox);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label7);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SearchResultsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SearchResultsForm";
+            this.TopMost = true;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fromSlider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toSlider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -447,21 +476,16 @@
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.ListBox searchResultList;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker fromDate;
-        private System.Windows.Forms.DateTimePicker toDate;
         private RatingControls.StarRatingControl starRatingFrom;
         private RatingControls.StarRatingControl starRatingTo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox genreSelector;
-        private System.Windows.Forms.RichTextBox plotBox;
         private System.Windows.Forms.TextBox actor1;
         private System.Windows.Forms.TextBox actor2;
         private System.Windows.Forms.TextBox actor3;
@@ -475,5 +499,10 @@
         private System.Windows.Forms.Button minus4;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button minus1;
+        private System.Windows.Forms.TrackBar fromSlider;
+        private System.Windows.Forms.TrackBar toSlider;
+        private System.Windows.Forms.TextBox fromDateBox;
+        private System.Windows.Forms.TextBox toDateBox;
+        private System.Windows.Forms.Button backButton;
     }
 }

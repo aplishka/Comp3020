@@ -50,14 +50,14 @@
             // 
             // searchTextBox
             // 
-            this.searchTextBox.Location = new System.Drawing.Point(12, 31);
+            this.searchTextBox.Location = new System.Drawing.Point(12, 36);
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(495, 22);
             this.searchTextBox.TabIndex = 12;
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(513, 30);
+            this.searchButton.Location = new System.Drawing.Point(513, 35);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);
             this.searchButton.TabIndex = 1;
@@ -209,8 +209,11 @@
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.searchTextBox);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "HomeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Film Finder";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

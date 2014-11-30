@@ -55,5 +55,10 @@ namespace FinalImplementation
             ReviewForm form = new ReviewForm();
             form.ShowDialog();
         }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

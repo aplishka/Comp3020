@@ -126,7 +126,7 @@ namespace FinalImplementation
             else
             {
                 SearchResultsForm form = new SearchResultsForm(searchTextBox.Text);
-                form.Show();
+                form.ShowDialog();
             }
         }
 

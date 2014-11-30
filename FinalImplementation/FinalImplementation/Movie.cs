@@ -32,6 +32,17 @@ namespace FinalImplementation
 
         public string GetTitle() { return this.title; }
         public int GetYear() { return this.year;  }
+        public int GetRating() { return this.rating;  }
+        public List<string> GetActors()
+        {
+            List<string> results = new List<string>();
+            for(int x=0; x<actors.Count; x++)
+            {
+                results.Add(actors[x].GetName().ToLower());
+            }
+            return results;
+        }
+        public List<string> GetGenres() { return genres; }
 
         public override string ToString()
         {
