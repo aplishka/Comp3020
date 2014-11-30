@@ -102,7 +102,7 @@ namespace FinalImplementation
             {
                 foreach (XElement movie in element.Descendants("movieTitle"))
                 {
-                    listBox.Items.Add(movie.Element("movieTitle"));
+                    listBox.Items.Add(movie.Value);
                 }
             }            
         }
