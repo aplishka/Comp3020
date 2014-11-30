@@ -18,6 +18,9 @@ namespace FinalImplementation
         string MUST_WATCH = "Must-Watch";
         string MUST_BUY = "Must-Buy";
 
+        string mustWatchXmlFile = "../../../../mustWatch.xml";
+        string mustBuyXmlFile = "../../../../mustBuy.xml";
+
         public AddMovieToUserListForm()
         {
             InitializeComponent();
@@ -47,9 +50,6 @@ namespace FinalImplementation
 
         private void listTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string mustWatchXmlFile = "../../../../mustWatch.xml";
-            string mustBuyXmlFile = "../../../../mustBuy.xml";
-
             string selected = listTypeComboBox.SelectedText;
             if (selected == MUST_WATCH)
             {
