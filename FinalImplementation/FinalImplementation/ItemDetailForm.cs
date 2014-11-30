@@ -68,5 +68,10 @@ namespace FinalImplementation
             EditMovieForm form = new EditMovieForm(this.movie);
             form.ShowDialog();
         }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

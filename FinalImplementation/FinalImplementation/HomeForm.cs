@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,10 +14,16 @@ namespace FinalImplementation
 {
     public partial class HomeForm : Form
     {
+        private const int EM_SETCUEBANNER = 0x1501;
+        [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = CharSet.Auto)]
+        private static extern Int32 SendMessage(IntPtr hWnd, int msg, int wParam, [MarshalAs(UnmanagedType.LPWStr)]string lParam);
+
         public HomeForm()
         {
             InitializeComponent();
             loadData();
+            SendMessage(searchTextBox.Handle, EM_SETCUEBANNER, 0, "Enter Search Query...");
+
         }
 
         private void loadData()
@@ -108,8 +115,19 @@ namespace FinalImplementation
 
         private void searchData() 
         {
-            SearchResultsForm form = new SearchResultsForm();
-            form.ShowDialog();
+            if (searchTextBox.Text.Length == 0)
+            {
+                MessageBox.Show("Please enter text in the search box..",
+                                    "Invalid Search",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Exclamation,
+                                    MessageBoxDefaultButton.Button1);
+            }
+            else
+            {
+                SearchResultsForm form = new SearchResultsForm(searchTextBox.Text);
+                form.ShowDialog();
+            }
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)

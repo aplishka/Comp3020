@@ -33,10 +33,19 @@ namespace FinalImplementation
 
         public string GetTitle() { return this.title; }
         public int GetYear() { return this.year;  }
+        public int GetRating() { return this.rating;  }
+        public List<string> GetActorNames()
+        {
+            List<string> results = new List<string>();
+            for(int x=0; x<actors.Count; x++)
+            {
+                results.Add(actors[x].GetName().ToLower());
+            }
+            return results;
+        }
+        public List<string> GetGenres() { return genres; }
         public List<Actor> GetActors() { return this.actors; }
-        public List<string> GetGenres() { return this.genres; }
         public string GetCertification() { return this.certification; }
-        public int GetRating() { return this.rating; }
         public int GetMovieLength() { return this.time; }
         public string GetDirectorsName() { return this.director; }
 

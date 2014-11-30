@@ -41,6 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.reviewButton = new System.Windows.Forms.Button();
+            this.backButton = new System.Windows.Forms.Button();
             this.editMovieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
@@ -54,7 +55,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1045, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1020, 28);
             this.menuStrip1.TabIndex = 14;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -115,7 +116,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(21, 42);
+            this.pictureBox1.Location = new System.Drawing.Point(559, 42);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(81, 25);
             this.pictureBox1.TabIndex = 16;
@@ -159,6 +160,16 @@
             this.reviewButton.UseVisualStyleBackColor = true;
             this.reviewButton.Click += new System.EventHandler(this.reviewButton_Click);
             // 
+            // backButton
+            // 
+            this.backButton.Location = new System.Drawing.Point(13, 35);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(44, 23);
+            this.backButton.TabIndex = 50;
+            this.backButton.Text = "<--";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
             // editMovieToolStripMenuItem
             // 
             this.editMovieToolStripMenuItem.Name = "editMovieToolStripMenuItem";
@@ -175,7 +186,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1045, 511);
+            this.ClientSize = new System.Drawing.Size(1020, 536);
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.reviewButton);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
@@ -183,8 +195,13 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ItemDetailForm";
-            this.Text = "ItemDetailForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Movie Viewer";
+            this.TopMost = true;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -208,6 +225,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button reviewButton;
+        private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.ToolStripMenuItem editMovieToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
     }
