@@ -34,10 +34,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1046, 505);
+            this.ClientSize = new System.Drawing.Size(1046, 303);
             this.Name = "AddMovieForm";
-            this.Text = "AddMovieForm";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

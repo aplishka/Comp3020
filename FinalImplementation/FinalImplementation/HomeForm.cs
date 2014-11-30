@@ -259,7 +259,7 @@ namespace FinalImplementation
 
         private void addMovieToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EditMovieForm form = new EditMovieForm();
+            AddMovieForm form = new AddMovieForm();
             form.ShowDialog();
         }
     }
