@@ -22,11 +22,6 @@ namespace FinalImplementation
         private void loadData()
         {
             loadXML();
-            string[] list = new string[2];
-
-            list[0] = "Horror";
-            list[1] = "Action";
-            topGenresList.Items.AddRange(list);
         }
 
         private void loadXML()
@@ -38,11 +33,12 @@ namespace FinalImplementation
 
             List<Movie> movies = new List<Movie>();
             List<Actor> actors = new List<Actor>();
+            HashSet<string> genres = new HashSet<string>();
 
             foreach (XmlNode movie in movieList.ChildNodes)
             {
                 List<Actor> currActors = new List<Actor>();
-                List<string> genres = new List<string>();
+                List<string> currGenres = new List<string>();
 
                 foreach (XmlNode actor in movie.SelectNodes("actor"))
                 {
@@ -61,13 +57,14 @@ namespace FinalImplementation
 
                 foreach (XmlNode genre in movie.SelectNodes("genre"))
                 {
+                    currGenres.Add(genre.InnerText);
                     genres.Add(genre.InnerText);
                 }
 
                 Movie newMovie = new Movie(movie.SelectSingleNode("title").InnerText,
                                              Int32.Parse(movie.SelectSingleNode("year").InnerText),
                                              currActors,
-                                             genres,
+                                             currGenres,
                                              movie.SelectSingleNode("certification") == null ? "" : movie.SelectSingleNode("certification").InnerText,
                                              Int32.Parse(movie.SelectSingleNode("rating").InnerText),
                                              Int32.Parse((movie.SelectSingleNode("length").InnerText.Split(' '))[0]),
@@ -87,6 +84,9 @@ namespace FinalImplementation
                 // Add movie titles to list
                 topMoviesList.Items.AddRange(movies.ToArray());
                 AddActorsToTopList(actors);
+
+                // Add genres to UI
+                topGenresList.Items.AddRange(genres.ToArray());
         }
 
         private void AddActorsToTopList(List<Actor> actors)
