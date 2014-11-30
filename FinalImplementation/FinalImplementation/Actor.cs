@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinalImplementation
 {
-    class Actor
+    public class Actor
     {
         private string name;
         private List<Movie> movies;
