@@ -253,8 +253,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.formLabel);
             this.Controls.Add(this.titleTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "EditMovieForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "EditMovieForm";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 
