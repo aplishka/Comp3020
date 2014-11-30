@@ -256,5 +256,11 @@ namespace FinalImplementation
             AddMovieForm form = new AddMovieForm();
             form.ShowDialog();
         }
+
+        private void userListsButton_Click(object sender, EventArgs e)
+        {
+            UserListsForm form = new UserListsForm();
+            form.ShowDialog();
+        }
     }
 }

@@ -52,6 +52,12 @@
     <Compile Include="AddMovieForm.Designer.cs">
       <DependentUpon>AddMovieForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddMovieToUserListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMovieToUserListForm.Designer.cs">
+      <DependentUpon>AddMovieToUserListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditMovieForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </Compile>
     <EmbeddedResource Include="AddMovieForm.resx">
       <DependentUpon>AddMovieForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddMovieToUserListForm.resx">
+      <DependentUpon>AddMovieToUserListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditMovieForm.resx">
       <DependentUpon>EditMovieForm.cs</DependentUpon>

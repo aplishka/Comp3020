@@ -52,6 +52,7 @@
             this.certificationBox = new System.Windows.Forms.TextBox();
             this.movieLabel = new System.Windows.Forms.Label();
             this.movieBox = new System.Windows.Forms.ListBox();
+            this.addToListButton = new System.Windows.Forms.Button();
             this.stars = new RatingControls.StarRatingControl();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -82,31 +83,31 @@
             // editMovieToolStripMenuItem
             // 
             this.editMovieToolStripMenuItem.Name = "editMovieToolStripMenuItem";
-            this.editMovieToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.editMovieToolStripMenuItem.Size = new System.Drawing.Size(149, 24);
             this.editMovieToolStripMenuItem.Text = "Edit Movie";
             this.editMovieToolStripMenuItem.Click += new System.EventHandler(this.editMovieToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(172, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(146, 6);
             // 
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(149, 24);
             this.homeToolStripMenuItem.Text = "Back";
             this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(172, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(146, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(149, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -265,6 +266,16 @@
             this.movieBox.TabIndex = 64;
             this.movieBox.SelectedIndexChanged += new System.EventHandler(this.movieBox_SelectedIndexChanged);
             // 
+            // addToListButton
+            // 
+            this.addToListButton.Location = new System.Drawing.Point(447, 85);
+            this.addToListButton.Name = "addToListButton";
+            this.addToListButton.Size = new System.Drawing.Size(125, 23);
+            this.addToListButton.TabIndex = 65;
+            this.addToListButton.Text = "Save to a list...";
+            this.addToListButton.UseVisualStyleBackColor = true;
+            this.addToListButton.Click += new System.EventHandler(this.addToListButton_Click);
+            // 
             // stars
             // 
             this.stars.BottomMargin = 2;
@@ -289,6 +300,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 536);
+            this.Controls.Add(this.addToListButton);
             this.Controls.Add(this.certificationBox);
             this.Controls.Add(this.directorBox);
             this.Controls.Add(this.timeBox);
@@ -348,5 +360,6 @@
         private System.Windows.Forms.TextBox certificationBox;
         private System.Windows.Forms.Label movieLabel;
         private System.Windows.Forms.ListBox movieBox;
+        private System.Windows.Forms.Button addToListButton;
     }
 }

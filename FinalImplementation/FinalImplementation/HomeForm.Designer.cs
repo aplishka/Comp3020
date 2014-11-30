@@ -45,6 +45,7 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userListsButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -166,25 +167,25 @@
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
             this.homeToolStripMenuItem.Text = "Home";
             // 
             // addMovieToolStripMenuItem
             // 
             this.addMovieToolStripMenuItem.Name = "addMovieToolStripMenuItem";
-            this.addMovieToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.addMovieToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
             this.addMovieToolStripMenuItem.Text = "Add Movie";
             this.addMovieToolStripMenuItem.Click += new System.EventHandler(this.addMovieToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(172, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(148, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -194,11 +195,22 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.helpToolStripMenuItem.Text = "Help";
             // 
+            // userListsButton
+            // 
+            this.userListsButton.Location = new System.Drawing.Point(881, 35);
+            this.userListsButton.Name = "userListsButton";
+            this.userListsButton.Size = new System.Drawing.Size(126, 23);
+            this.userListsButton.TabIndex = 13;
+            this.userListsButton.Text = "View saved lists";
+            this.userListsButton.UseVisualStyleBackColor = true;
+            this.userListsButton.Click += new System.EventHandler(this.userListsButton_Click);
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 536);
+            this.Controls.Add(this.userListsButton);
             this.Controls.Add(this.topDecadesList);
             this.Controls.Add(this.topGenresList);
             this.Controls.Add(this.label4);
@@ -242,6 +254,7 @@
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem addMovieToolStripMenuItem;
+        private System.Windows.Forms.Button userListsButton;
     }
 }
 
