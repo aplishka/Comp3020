@@ -10,14 +10,14 @@ namespace FinalImplementation
     {
         private string title;
         private int year;
-        private List<string> actors;
+        private List<Actor> actors;
         private List<string> genres;
         private string certification;
         private int rating;
         private int time;
         private string director;
 
-        public Movie(string title, int year, List<string> actors, List<string> genres, string certification,
+        public Movie(string title, int year, List<Actor> actors, List<string> genres, string certification,
             int rating, int time, string director)
         {
             this.title = title;

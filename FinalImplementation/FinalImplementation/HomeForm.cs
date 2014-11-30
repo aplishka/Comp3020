@@ -24,10 +24,6 @@ namespace FinalImplementation
             loadXML();
             string[] list = new string[2];
 
-            list[0] = "Brad Pitt";
-            list[1] = "Will Smith";
-            topActorsList.Items.AddRange(list);
-
             list[0] = "Horror";
             list[1] = "Action";
             topGenresList.Items.AddRange(list);
@@ -42,14 +38,26 @@ namespace FinalImplementation
 
             List<string> movieStrings = new List<string>();
             List<Movie> movies = new List<Movie>();
+            List<Actor> actors = new List<Actor>();
+
             foreach (XmlNode movie in movieList.ChildNodes)
             {
-                List<string> actors = new List<string>();
+                List<Actor> currActors = new List<Actor>();
                 List<string> genres = new List<string>();
 
                 foreach (XmlNode actor in movie.SelectNodes("actor"))
                 {
-                    actors.Add(actor.InnerText);
+                    if (!actors.Exists(a => a.GetName() == actor.InnerText))
+                    {
+                        Actor newActor = new Actor(actor.InnerText);
+                        actors.Add(newActor);
+                        currActors.Add(newActor);
+                    }
+                    else
+                    {
+                        int index = actors.FindIndex(a => a.GetName() == actor.InnerText);
+                        currActors.Add(actors.ElementAt(index));
+                    }
                 }
 
                 foreach (XmlNode genre in movie.SelectNodes("genre"))
@@ -57,30 +65,33 @@ namespace FinalImplementation
                     genres.Add(genre.InnerText);
                 }
 
-                string str = movie.SelectSingleNode("year").InnerText;
-                str = movie.SelectSingleNode("title").InnerText;
-                str = movie.SelectSingleNode("certification") == null ? "" : movie.SelectSingleNode("certification").InnerText;
-                str = movie.SelectSingleNode("director").InnerText;
-
-                int kl = Int32.Parse((movie.SelectSingleNode("length").InnerText.Split(' '))[0]);
-                kl = Int32.Parse(movie.SelectSingleNode("year").InnerText);
-                kl = Int32.Parse(movie.SelectSingleNode("rating").InnerText);
-
                 Movie newMovie = new Movie(movie.SelectSingleNode("title").InnerText,
                                              Int32.Parse(movie.SelectSingleNode("year").InnerText),
-                                             actors,
+                                             currActors,
                                              genres,
                                              movie.SelectSingleNode("certification") == null ? "" : movie.SelectSingleNode("certification").InnerText,
                                              Int32.Parse(movie.SelectSingleNode("rating").InnerText),
                                              Int32.Parse((movie.SelectSingleNode("length").InnerText.Split(' '))[0]),
                                              movie.SelectSingleNode("director").InnerText
                                              );
+
                 movies.Add(newMovie);
                 movieStrings.Add(newMovie.GetTitle());
+
+                // Add movie to Actors credits
+                foreach (Actor currActor in currActors)
+                {
+                    //int index = actors.FindIndex(a => a.GetName() == name);
+                    currActor.AddMovie(newMovie);
+                }
             }
 
                 // Add movie titles to list
                 topMoviesList.Items.AddRange(movieStrings.ToArray());
+        }
+
+        private void AddActorsToTopList()
+        {
 
         }
 
