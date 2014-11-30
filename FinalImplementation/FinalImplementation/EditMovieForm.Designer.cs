@@ -44,9 +44,9 @@
             this.genresTextBox = new System.Windows.Forms.TextBox();
             this.deleteButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
-            this.starRatingControl1 = new RatingControls.StarRatingControl();
             this.label9 = new System.Windows.Forms.Label();
             this.lengthTextBox = new System.Windows.Forms.TextBox();
+            this.starRatingControl1 = new RatingControls.StarRatingControl();
             this.SuspendLayout();
             // 
             // titleTextBox
@@ -153,7 +153,7 @@
             this.actorsTextBox.Location = new System.Drawing.Point(434, 71);
             this.actorsTextBox.Multiline = true;
             this.actorsTextBox.Name = "actorsTextBox";
-            this.actorsTextBox.Size = new System.Drawing.Size(255, 179);
+            this.actorsTextBox.Size = new System.Drawing.Size(255, 215);
             this.actorsTextBox.TabIndex = 12;
             // 
             // label8
@@ -171,7 +171,7 @@
             this.genresTextBox.Location = new System.Drawing.Point(792, 70);
             this.genresTextBox.Multiline = true;
             this.genresTextBox.Name = "genresTextBox";
-            this.genresTextBox.Size = new System.Drawing.Size(247, 180);
+            this.genresTextBox.Size = new System.Drawing.Size(247, 216);
             this.genresTextBox.TabIndex = 14;
             // 
             // deleteButton
@@ -194,6 +194,23 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(21, 264);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(68, 17);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Length: ";
+            // 
+            // lengthTextBox
+            // 
+            this.lengthTextBox.Location = new System.Drawing.Point(96, 264);
+            this.lengthTextBox.Name = "lengthTextBox";
+            this.lengthTextBox.Size = new System.Drawing.Size(127, 22);
+            this.lengthTextBox.TabIndex = 18;
+            // 
             // starRatingControl1
             // 
             this.starRatingControl1.BottomMargin = 2;
@@ -211,23 +228,6 @@
             this.starRatingControl1.TabIndex = 10;
             this.starRatingControl1.Text = "starRatingControl1";
             this.starRatingControl1.TopMargin = 2;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(21, 264);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(68, 17);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Length: ";
-            // 
-            // lengthTextBox
-            // 
-            this.lengthTextBox.Location = new System.Drawing.Point(96, 264);
-            this.lengthTextBox.Name = "lengthTextBox";
-            this.lengthTextBox.Size = new System.Drawing.Size(127, 22);
-            this.lengthTextBox.TabIndex = 18;
             // 
             // EditMovieForm
             // 
@@ -277,7 +277,7 @@
         private System.Windows.Forms.TextBox actorsTextBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox genresTextBox;
-        private System.Windows.Forms.Button deleteButton;
+        protected System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox lengthTextBox;

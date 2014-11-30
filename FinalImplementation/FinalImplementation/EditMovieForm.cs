@@ -8,40 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using System.Xml;
 
 namespace FinalImplementation
 {
     public partial class EditMovieForm : Form
     {
-        private bool editFlag;
         private Movie movie;
 
         public EditMovieForm()
         {
             InitializeComponent();
-
-            this.editFlag = false;
-            this.Text = "Add new movie to database";
-            this.formLabel.Text = "Add New Movie";
-
-            SetupFormForAddingMovie();
         }
 
         public EditMovieForm(Movie movie)
         {
             InitializeComponent();
 
-            this.editFlag = true;
             this.movie = movie;
-
             this.Text = "Edit \"" + movie.GetTitle() + "\"";
 
             LoadCurrentMovieDetails();
-        }
-
-        private void SetupFormForAddingMovie() 
-        {
-            this.deleteButton.Text = "Cancel";
         }
 
         private void LoadCurrentMovieDetails()
@@ -67,36 +54,27 @@ namespace FinalImplementation
             this.genresTextBox.Text = genresString;
         }
 
-        private void deleteButton_Click(object sender, EventArgs e)
+        protected virtual void deleteButton_Click(object sender, EventArgs e)
         {
-            if(this.editFlag)
+            XDocument doc = XDocument.Load("../../../../movies.xml");
+            XElement element = doc.Root.Descendants("movie").SingleOrDefault(m => (string)m.Element("title") == this.movie.GetTitle());
+
+            if (element != null)
             {
-                this.Close();
-            }
-            else
-            {
-                this.Close();
-            }
+                element.Remove();
+                doc.Save("../../../../movies.xml");
+            }            
+
+            this.Close();
         }
 
-        private void saveButton_Click(object sender, EventArgs e)
+        protected virtual void saveButton_Click(object sender, EventArgs e)
         {
-            if (this.editFlag)
-            {
-                this.movie = SaveMovieDetails();
-                this.Close();
-            }
-            else
-            {
-                Movie newMovie = SaveMovieDetails();
-
-                WriteChangesToXML(newMovie);
-
-                this.Close();
-            }
+            this.movie = SaveMovieDetails();
+            this.Close();
         }
 
-        private void WriteChangesToXML(Movie movie)
+        protected void WriteChangesToXML(Movie movie)
         {
             XDocument doc = XDocument.Load("../../../../movies.xml");
             XElement movieXElement = movie.ToXElement();
@@ -106,7 +84,7 @@ namespace FinalImplementation
 
         // TODO: need to make sure that edits effect the main movies and actors lists
         // TODO: make sure that main page and junk is updated after editing or adding
-        private Movie SaveMovieDetails()
+        protected Movie SaveMovieDetails()
         {
             List<Actor> actors = new List<Actor>();
             string[] actorStrings = this.actorsTextBox.Text.Split('\n');
