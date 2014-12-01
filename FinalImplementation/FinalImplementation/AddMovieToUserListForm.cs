@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 using System.Xml.Linq;
 
 namespace FinalImplementation
@@ -17,6 +18,9 @@ namespace FinalImplementation
 
         string MUST_WATCH = "Must-Watch";
         string MUST_BUY = "Must-Buy";
+
+        string mustWatchXmlFile = "../../../../mustWatch.xml";
+        string mustBuyXmlFile = "../../../../mustBuy.xml";
 
         public AddMovieToUserListForm()
         {
@@ -47,10 +51,9 @@ namespace FinalImplementation
 
         private void listTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string mustWatchXmlFile = "../../../../mustWatch.xml";
-            string mustBuyXmlFile = "../../../../mustBuy.xml";
-
-            string selected = listTypeComboBox.SelectedText;
+            this.listComboBox.Items.Clear();
+            
+            string selected = listTypeComboBox.SelectedItem.ToString();
             if (selected == MUST_WATCH)
             {
                 LoadListComboBox(mustWatchXmlFile);
@@ -59,15 +62,19 @@ namespace FinalImplementation
             {
                 LoadListComboBox(mustBuyXmlFile);
             }
-            else
-            {
-                this.listComboBox.Items.Clear();
-            }
         }
 
         private void LoadListComboBox(string xmlFile)
         {
-            XDocument doc = XDocument.Load(xmlFile);
+            XmlDocument xml = new XmlDocument();
+            xml.Load(xmlFile);
+
+            XmlNode lists = xml.DocumentElement.SelectSingleNode("/lists");
+
+            foreach (XmlNode list in lists.ChildNodes)
+            {
+                this.listComboBox.Items.Add(list.SelectSingleNode("title").InnerText);
+            } 
         }
 
         private bool ValidateInput()
@@ -95,17 +102,42 @@ namespace FinalImplementation
             return allFieldsValid;
         }
 
+        private void AddNewList()
+        {
+            string xmlFile = this.listTypeComboBox.SelectedItem.ToString() == MUST_WATCH ? mustWatchXmlFile : mustBuyXmlFile;
+            XDocument doc = XDocument.Load(xmlFile);
+            XElement element = new XElement("list",
+                new XElement("title", this.newListTextBox.Text)
+                );
+            doc.Root.Add(element);
+            doc.Save(xmlFile);
+        }
+
+        private void AddMovieToList(string listTitle)
+        {
+            string xmlFile = this.listTypeComboBox.SelectedItem.ToString() == MUST_WATCH ? mustWatchXmlFile : mustBuyXmlFile;
+            XDocument doc = XDocument.Load(xmlFile);
+            XElement element = new XElement("movieTitle", this.movie.GetTitle());
+
+            XElement listElement = doc.Root.Descendants("list").SingleOrDefault(m => (string)m.Element("title") == listTitle);
+            listElement.Add(element);
+            doc.Save(xmlFile);
+
+            this.Close();
+        }
+
         private void addButton_Click(object sender, EventArgs e)
         {
             if (ValidateInput())
             {
                 if (checkBox1.Checked)
                 {
-
+                    AddNewList();
+                    AddMovieToList(this.newListTextBox.Text);
                 }
                 else
                 {
-
+                    AddMovieToList(this.listComboBox.SelectedItem.ToString());
                 }
             }
         }

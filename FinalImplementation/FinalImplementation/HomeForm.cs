@@ -269,7 +269,7 @@ namespace FinalImplementation
 
         private void userListsButton_Click(object sender, EventArgs e)
         {
-            UserListsForm form = new UserListsForm();
+            UserListsForm form = new UserListsForm(this.actors);
             form.ShowDialog();
         }
 

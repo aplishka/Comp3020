@@ -71,6 +71,7 @@
             this.buyListBox.Name = "buyListBox";
             this.buyListBox.Size = new System.Drawing.Size(308, 276);
             this.buyListBox.TabIndex = 4;
+            this.buyListBox.SelectedIndexChanged += new System.EventHandler(this.buyListBox_SelectedIndexChanged);
             // 
             // mustWatchListBox
             // 
@@ -80,6 +81,7 @@
             this.mustWatchListBox.Name = "mustWatchListBox";
             this.mustWatchListBox.Size = new System.Drawing.Size(331, 276);
             this.mustWatchListBox.TabIndex = 5;
+            this.mustWatchListBox.SelectedIndexChanged += new System.EventHandler(this.mustWatchListBox_SelectedIndexChanged);
             // 
             // label6
             // 
