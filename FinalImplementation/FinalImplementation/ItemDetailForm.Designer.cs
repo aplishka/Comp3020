@@ -53,7 +53,9 @@
             this.movieLabel = new System.Windows.Forms.Label();
             this.movieBox = new System.Windows.Forms.ListBox();
             this.addToListButton = new System.Windows.Forms.Button();
-            this.stars = new RatingControls.StarRatingControl();
+            this.ratingBar = new System.Windows.Forms.ProgressBar();
+            this.ratingLabel = new System.Windows.Forms.Label();
+            this.ratingValueLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -150,45 +152,51 @@
             // directorLabel
             // 
             this.directorLabel.AutoSize = true;
-            this.directorLabel.Location = new System.Drawing.Point(12, 117);
+            this.directorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.directorLabel.Location = new System.Drawing.Point(14, 172);
             this.directorLabel.Name = "directorLabel";
-            this.directorLabel.Size = new System.Drawing.Size(62, 17);
+            this.directorLabel.Size = new System.Drawing.Size(71, 17);
             this.directorLabel.TabIndex = 52;
             this.directorLabel.Text = "Director:";
             // 
             // timeLabel
             // 
             this.timeLabel.AutoSize = true;
-            this.timeLabel.Location = new System.Drawing.Point(14, 85);
+            this.timeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeLabel.Location = new System.Drawing.Point(15, 129);
             this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(43, 17);
+            this.timeLabel.Size = new System.Drawing.Size(48, 17);
             this.timeLabel.TabIndex = 53;
             this.timeLabel.Text = "Time:";
             // 
             // certificationLabel
             // 
             this.certificationLabel.AutoSize = true;
-            this.certificationLabel.Location = new System.Drawing.Point(14, 150);
+            this.certificationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.certificationLabel.Location = new System.Drawing.Point(14, 217);
             this.certificationLabel.Name = "certificationLabel";
-            this.certificationLabel.Size = new System.Drawing.Size(86, 17);
+            this.certificationLabel.Size = new System.Drawing.Size(100, 17);
             this.certificationLabel.TabIndex = 54;
             this.certificationLabel.Text = "Certification:";
+            this.certificationLabel.Click += new System.EventHandler(this.certificationLabel_Click);
             // 
             // genreLabel
             // 
             this.genreLabel.AutoSize = true;
-            this.genreLabel.Location = new System.Drawing.Point(15, 207);
+            this.genreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genreLabel.Location = new System.Drawing.Point(15, 263);
             this.genreLabel.Name = "genreLabel";
-            this.genreLabel.Size = new System.Drawing.Size(59, 17);
+            this.genreLabel.Size = new System.Drawing.Size(66, 17);
             this.genreLabel.TabIndex = 55;
             this.genreLabel.Text = "Genres:";
             // 
             // actorLabel
             // 
             this.actorLabel.AutoSize = true;
-            this.actorLabel.Location = new System.Drawing.Point(319, 207);
+            this.actorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.actorLabel.Location = new System.Drawing.Point(319, 263);
             this.actorLabel.Name = "actorLabel";
-            this.actorLabel.Size = new System.Drawing.Size(52, 17);
+            this.actorLabel.Size = new System.Drawing.Size(59, 17);
             this.actorLabel.TabIndex = 56;
             this.actorLabel.Text = "Actors:";
             // 
@@ -200,12 +208,13 @@
             this.reviewBox.Name = "reviewBox";
             this.reviewBox.Size = new System.Drawing.Size(420, 452);
             this.reviewBox.TabIndex = 57;
+            this.reviewBox.SelectedIndexChanged += new System.EventHandler(this.reviewBox_SelectedIndexChanged);
             // 
             // genreBox
             // 
             this.genreBox.FormattingEnabled = true;
             this.genreBox.ItemHeight = 16;
-            this.genreBox.Location = new System.Drawing.Point(17, 232);
+            this.genreBox.Location = new System.Drawing.Point(18, 283);
             this.genreBox.Name = "genreBox";
             this.genreBox.ScrollAlwaysVisible = true;
             this.genreBox.SelectionMode = System.Windows.Forms.SelectionMode.None;
@@ -216,7 +225,7 @@
             // 
             this.actorBox.FormattingEnabled = true;
             this.actorBox.ItemHeight = 16;
-            this.actorBox.Location = new System.Drawing.Point(322, 232);
+            this.actorBox.Location = new System.Drawing.Point(322, 283);
             this.actorBox.Name = "actorBox";
             this.actorBox.ScrollAlwaysVisible = true;
             this.actorBox.Size = new System.Drawing.Size(250, 244);
@@ -225,26 +234,26 @@
             // 
             // timeBox
             // 
-            this.timeBox.Location = new System.Drawing.Point(110, 85);
+            this.timeBox.Location = new System.Drawing.Point(120, 126);
             this.timeBox.Name = "timeBox";
             this.timeBox.ReadOnly = true;
-            this.timeBox.Size = new System.Drawing.Size(214, 22);
+            this.timeBox.Size = new System.Drawing.Size(321, 22);
             this.timeBox.TabIndex = 60;
             // 
             // directorBox
             // 
-            this.directorBox.Location = new System.Drawing.Point(110, 117);
+            this.directorBox.Location = new System.Drawing.Point(120, 169);
             this.directorBox.Name = "directorBox";
             this.directorBox.ReadOnly = true;
-            this.directorBox.Size = new System.Drawing.Size(214, 22);
+            this.directorBox.Size = new System.Drawing.Size(321, 22);
             this.directorBox.TabIndex = 61;
             // 
             // certificationBox
             // 
-            this.certificationBox.Location = new System.Drawing.Point(110, 150);
+            this.certificationBox.Location = new System.Drawing.Point(120, 214);
             this.certificationBox.Name = "certificationBox";
             this.certificationBox.ReadOnly = true;
-            this.certificationBox.Size = new System.Drawing.Size(214, 22);
+            this.certificationBox.Size = new System.Drawing.Size(321, 22);
             this.certificationBox.TabIndex = 62;
             // 
             // movieLabel
@@ -268,38 +277,53 @@
             // 
             // addToListButton
             // 
-            this.addToListButton.Location = new System.Drawing.Point(447, 85);
+            this.addToListButton.Location = new System.Drawing.Point(462, 87);
             this.addToListButton.Name = "addToListButton";
-            this.addToListButton.Size = new System.Drawing.Size(125, 23);
+            this.addToListButton.Size = new System.Drawing.Size(110, 23);
             this.addToListButton.TabIndex = 65;
             this.addToListButton.Text = "Save to a list...";
             this.addToListButton.UseVisualStyleBackColor = true;
             this.addToListButton.Click += new System.EventHandler(this.addToListButton_Click);
             // 
-            // stars
+            // ratingBar
             // 
-            this.stars.BottomMargin = 2;
-            this.stars.Enabled = false;
-            this.stars.HoverColor = System.Drawing.Color.Yellow;
-            this.stars.LeftMargin = 2;
-            this.stars.Location = new System.Drawing.Point(12, 482);
-            this.stars.Name = "stars";
-            this.stars.OutlineColor = System.Drawing.Color.DarkGray;
-            this.stars.OutlineThickness = 1;
-            this.stars.RightMargin = 2;
-            this.stars.SelectedColor = System.Drawing.Color.Yellow;
-            this.stars.Size = new System.Drawing.Size(570, 42);
-            this.stars.StarCount = 10;
-            this.stars.StarSpacing = 8;
-            this.stars.TabIndex = 51;
-            this.stars.Text = "starRatingControl1";
-            this.stars.TopMargin = 2;
+            this.ratingBar.Location = new System.Drawing.Point(166, 86);
+            this.ratingBar.Maximum = 10;
+            this.ratingBar.Name = "ratingBar";
+            this.ratingBar.Size = new System.Drawing.Size(275, 23);
+            this.ratingBar.TabIndex = 66;
+            this.ratingBar.Value = 7;
+            // 
+            // ratingLabel
+            // 
+            this.ratingLabel.AutoSize = true;
+            this.ratingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ratingLabel.Location = new System.Drawing.Point(15, 90);
+            this.ratingLabel.Name = "ratingLabel";
+            this.ratingLabel.Size = new System.Drawing.Size(60, 17);
+            this.ratingLabel.TabIndex = 67;
+            this.ratingLabel.Text = "Rating:";
+            // 
+            // ratingValueLabel
+            // 
+            this.ratingValueLabel.AutoSize = true;
+            this.ratingValueLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.ratingValueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ratingValueLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ratingValueLabel.Location = new System.Drawing.Point(119, 90);
+            this.ratingValueLabel.Name = "ratingValueLabel";
+            this.ratingValueLabel.Size = new System.Drawing.Size(40, 17);
+            this.ratingValueLabel.TabIndex = 68;
+            this.ratingValueLabel.Text = "7/10";
             // 
             // ItemDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 536);
+            this.Controls.Add(this.ratingValueLabel);
+            this.Controls.Add(this.ratingLabel);
+            this.Controls.Add(this.ratingBar);
             this.Controls.Add(this.addToListButton);
             this.Controls.Add(this.certificationBox);
             this.Controls.Add(this.directorBox);
@@ -312,7 +336,6 @@
             this.Controls.Add(this.certificationLabel);
             this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.directorLabel);
-            this.Controls.Add(this.stars);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.reviewButton);
             this.Controls.Add(this.titleLabel);
@@ -346,7 +369,6 @@
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.ToolStripMenuItem editMovieToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
-        private RatingControls.StarRatingControl stars;
         private System.Windows.Forms.Label directorLabel;
         private System.Windows.Forms.Label timeLabel;
         private System.Windows.Forms.Label certificationLabel;
@@ -361,5 +383,8 @@
         private System.Windows.Forms.Label movieLabel;
         private System.Windows.Forms.ListBox movieBox;
         private System.Windows.Forms.Button addToListButton;
+        private System.Windows.Forms.ProgressBar ratingBar;
+        private System.Windows.Forms.Label ratingLabel;
+        private System.Windows.Forms.Label ratingValueLabel;
     }
 }

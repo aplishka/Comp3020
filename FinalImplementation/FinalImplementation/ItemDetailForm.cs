@@ -37,6 +37,8 @@ namespace FinalImplementation
             genreBox.Items.AddRange(movie.GetGenres().ToArray());
             actorBox.Items.AddRange(movie.GetActors().ToArray());
             reviewBox.Items.AddRange(movie.GetReviews().ToArray());
+            ratingBar.Value = movie.GetRating();
+            ratingValueLabel.Text = movie.GetRating() + "/10";
             movieLabel.Visible = false;
             movieBox.Visible = false;
         }
@@ -60,7 +62,9 @@ namespace FinalImplementation
             certificationLabel.Visible = false;
             genreLabel.Visible = false;
             actorLabel.Visible = false;
-            stars.Visible = false;
+            ratingLabel.Visible = false;
+            ratingBar.Visible = false;
+            ratingValueLabel.Visible = false;
             reviewBox.Visible = false;
             reviewButton.Visible = false;
             directorLabel.Visible = false;
@@ -79,7 +83,7 @@ namespace FinalImplementation
 
         private void reviewButton_Click(object sender, EventArgs e)
         {
-            ReviewForm form = new ReviewForm(movie);
+            ReviewForm form = new ReviewForm(movie, "edit", null);
             form.ShowDialog();
 
             // refresh reviews
@@ -165,6 +169,17 @@ namespace FinalImplementation
         private void addToListButton_Click(object sender, EventArgs e)
         {
             AddMovieToUserListForm form = new AddMovieToUserListForm(this.movie);
+            form.ShowDialog();
+        }
+
+        private void certificationLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reviewBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ReviewForm form = new ReviewForm(movie, "view",(Review)reviewBox.SelectedItem);
             form.ShowDialog();
         }
     }

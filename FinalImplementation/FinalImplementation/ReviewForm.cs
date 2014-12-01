@@ -15,19 +15,45 @@ namespace FinalImplementation
     public partial class ReviewForm : Form
     {
         private Movie Movie;
+        private string state;
 
-        public ReviewForm(Movie movie)
+        public ReviewForm(Movie movie, string state, Review review)
         {
             InitializeComponent();
             this.Movie = movie;
+            this.state = state;
+
+            if (state == "view")
+            {
+                plotReview.ReadOnly = true;
+                actorsReview.ReadOnly = true;
+                PublishReviewButton.Text = "Close";
+                starRating.Visible = false;
+                ratingBar.Value = review.GetRating();
+                plotReview.Text = review.GetPlot();
+                actorsReview.Text = review.GetActor();
+                ratingLabel.Text = review.GetRating() + "/10";
+            }
+            else
+            {
+                ratingBar.Visible = false;
+                ratingLabel.Visible = false;
+            }
         }
 
         private void PublishReviewButton_Click(object sender, EventArgs e)
         {
-            if (validateFields())
+            if (state == "edit")
             {
-                Review review = new Review(starRating.SelectedStar, plotReview.Text, actorsReview.Text);
-                WriteChangesToXML(review);
+                if (validateFields())
+                {
+                    Review review = new Review(starRating.SelectedStar, plotReview.Text, actorsReview.Text);
+                    WriteChangesToXML(review);
+                }
+            }
+            else
+            {
+                this.Close();
             }
         }
 

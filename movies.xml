@@ -184,6 +184,21 @@
     <review>5|break||break|</review>
     <review>6|break||break|</review>
     <review>2|break|This is a really long review becasue i want to test how muc i can write in here and it will still work yo|break|</review>
+    <review>9|break|The Label control supports transparency well. It is just that the designer won't let you place the label correctly. The PictureBox control is not a container control so the Form becomes the parent of the label. So you see the form's background.
+
+It is easy to fix by adding a bit of code to the form constructor. You'll need to change the label's Parent property and recalculate it's Location since it is now relative to the picture box instead of the form. Like this:|break|Hi</review>
+    <review>2|break|The Label control supports transparency well. It is just that the designer won't let you place the label correctly. The PictureBox control is not a container control so the Form becomes the parent of the label. So you see the form's background.
+
+It is easy to fix by adding a bit of code to the form constructor. You'll need to change the label's Parent property and recalculate it's Location since it is now relative to the picture box instead of the form. Like this:
+The Label control supports transparency well. It is just that the designer won't let you place the label correctly. The PictureBox control is not a container control so the Form becomes the parent of the label. So you see the form's background.
+
+It is easy to fix by adding a bit of code to the form constructor. You'll need to change the label's Parent property and recalculate it's Location since it is now relative to the picture box instead of the form. Like this:|break|The Label control supports transparency well. It is just that the designer won't let you place the label correctly. The PictureBox control is not a container control so the Form becomes the parent of the label. So you see the form's background.
+
+It is easy to fix by adding a bit of code to the form constructor. You'll need to change the label's Parent property and recalculate it's Location since it is now relative to the picture box instead of the form. Like this:
+The Label control supports transparency well. It is just that the designer won't let you place the label correctly. The PictureBox control is not a container control so the Form becomes the parent of the label. So you see the form's background.
+
+It is easy to fix by adding a bit of code to the form constructor. You'll need to change the label's Parent property and recalculate it's Location since it is now relative to the picture box instead of the form. Like this:</review>
+    <review>10|break||break|</review>
   </movie>
   <movie>
     <title>Behind Enemy Lines </title>
@@ -1165,6 +1180,7 @@
     <genre>Thriller</genre>
     <genre>Action</genre>
     <review>4|break||break|</review>
+    <review>10|break||break|</review>
   </movie>
   <movie>
     <title>Estrella del sur </title>
@@ -3582,19 +3598,23 @@
   <movie>
     <title>Steamboat Bill, Jr. </title>
     <year>1928</year>
-    <length>71 min</length>
-    <director>Charles Reisnermore</director>
+    <certification></certification>
     <rating>9</rating>
-    <genre>Action</genre>
-    <genre>Comedy</genre>
-    <genre>Drama</genre>
-    <genre>Family</genre>
-    <genre>Romance</genre>
+    <length>71</length>
+    <director>Charles Reisnermore</director>
     <actor>Buster Keaton</actor>
     <actor>Tom McGuire</actor>
     <actor>Ernest Torrence</actor>
     <actor>Tom Lewis</actor>
     <actor>Marion Byron</actor>
+    <genre>Action</genre>
+    <genre>Comedy</genre>
+    <genre>Drama</genre>
+    <genre>Family</genre>
+    <genre>Romance</genre>
+    <review>1|break|Didnt understand the movie...|break|They just sucked!</review>
+    <review>6|break||break|</review>
+    <review>1|break|What happens if i write to long. You better fix that issue! Nick...|break|</review>
   </movie>
   <movie>
     <title>The Story of Dr. Wassell </title>
