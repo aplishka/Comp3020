@@ -46,6 +46,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userListsButton = new System.Windows.Forms.Button();
+            this.graphButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -197,19 +198,30 @@
             // 
             // userListsButton
             // 
-            this.userListsButton.Location = new System.Drawing.Point(881, 35);
+            this.userListsButton.Location = new System.Drawing.Point(842, 35);
             this.userListsButton.Name = "userListsButton";
-            this.userListsButton.Size = new System.Drawing.Size(126, 23);
+            this.userListsButton.Size = new System.Drawing.Size(165, 23);
             this.userListsButton.TabIndex = 13;
             this.userListsButton.Text = "View saved lists";
             this.userListsButton.UseVisualStyleBackColor = true;
             this.userListsButton.Click += new System.EventHandler(this.userListsButton_Click);
+            // 
+            // graphButton
+            // 
+            this.graphButton.Location = new System.Drawing.Point(662, 35);
+            this.graphButton.Name = "graphButton";
+            this.graphButton.Size = new System.Drawing.Size(174, 23);
+            this.graphButton.TabIndex = 14;
+            this.graphButton.Text = "Graph Search";
+            this.graphButton.UseVisualStyleBackColor = true;
+            this.graphButton.Click += new System.EventHandler(this.graphButton_Click);
             // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 536);
+            this.Controls.Add(this.graphButton);
             this.Controls.Add(this.userListsButton);
             this.Controls.Add(this.topDecadesList);
             this.Controls.Add(this.topGenresList);
@@ -255,6 +267,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem addMovieToolStripMenuItem;
         private System.Windows.Forms.Button userListsButton;
+        private System.Windows.Forms.Button graphButton;
     }
 }
 

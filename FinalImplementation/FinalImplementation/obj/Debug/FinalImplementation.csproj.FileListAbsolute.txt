@@ -32,3 +32,4 @@ E:\University\Comp 3020\A3\FinalImplementation\FinalImplementation\obj\Debug\Fin
 E:\University\Comp 3020\A3\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.AddMovieToUserListForm.resources
 C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.AddMovieToUserListForm.resources
 C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.UserListsForm.resources
+C:\Users\umguilla\Source\Repos\Comp3020\FinalImplementation\FinalImplementation\obj\Debug\FinalImplementation.VisualSearchForm.resources

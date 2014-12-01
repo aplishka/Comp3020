@@ -5159,18 +5159,19 @@ It is easy to fix by adding a bit of code to the form constructor. You'll need t
   <movie>
     <title>Dances with Wolves </title>
     <year>1990</year>
-    <length>180 min</length>
     <certification>PG-13</certification>
-    <director>Kevin Costner</director>
     <rating>9</rating>
-    <genre>Adventure</genre>
-    <genre>Drama</genre>
-    <genre>Western</genre>
+    <length>180</length>
+    <director>Kevin Costner</director>
     <actor>Kevin Costner</actor>
     <actor>Mary McDonnell</actor>
     <actor>Graham Greene</actor>
     <actor>Rodney A. Grant</actor>
     <actor>Floyd 'Red Crow' Westerman</actor>
+    <genre>Adventure</genre>
+    <genre>Drama</genre>
+    <genre>Western</genre>
+    <review>5|break||break|</review>
   </movie>
   <movie>
     <title>Davy Crockett, King of the Wild Frontier </title>
@@ -33644,16 +33645,17 @@ It is easy to fix by adding a bit of code to the form constructor. You'll need t
   <movie>
     <title>Psychopathia Sexualis </title>
     <year>2006</year>
-    <length>102 min</length>
     <certification>R</certification>
-    <director>Bret Wood</director>
     <rating>9</rating>
-    <genre>Drama</genre>
+    <length>102</length>
+    <director>Bret Wood</director>
     <actor>Kristi Casey</actor>
     <actor>David Weber</actor>
     <actor>Zo  Cooper</actor>
     <actor>Patrick Parker</actor>
     <actor>David Sanders</actor>
+    <genre>Drama</genre>
+    <review>5|break||break|</review>
   </movie>
   <movie>
     <title>Putain d'histoire d'amour </title>

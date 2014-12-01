@@ -281,5 +281,11 @@ namespace FinalImplementation
             topDecadesList.Items.Clear();
             loadData();
         }
+
+        private void graphButton_Click(object sender, EventArgs e)
+        {
+            VisualSearchForm form = new VisualSearchForm();
+            form.ShowDialog();
+        }
     }
 }
