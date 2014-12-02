@@ -106,8 +106,9 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -130,7 +131,7 @@
             this.maxYearLabel.Name = "maxYearLabel";
             this.maxYearLabel.Size = new System.Drawing.Size(40, 17);
             this.maxYearLabel.TabIndex = 16;
-            this.maxYearLabel.Text = "2014";
+            this.maxYearLabel.Text = "2008";
             // 
             // minYearLabel
             // 
@@ -163,7 +164,7 @@
             // 
             this.minYearSlider.AutoSize = false;
             this.minYearSlider.Location = new System.Drawing.Point(830, 67);
-            this.minYearSlider.Maximum = 2014;
+            this.minYearSlider.Maximum = 2008;
             this.minYearSlider.Minimum = 1990;
             this.minYearSlider.Name = "minYearSlider";
             this.minYearSlider.Size = new System.Drawing.Size(186, 17);
@@ -176,13 +177,13 @@
             // 
             this.maxYearSlider.AutoSize = false;
             this.maxYearSlider.Location = new System.Drawing.Point(830, 90);
-            this.maxYearSlider.Maximum = 2014;
+            this.maxYearSlider.Maximum = 2008;
             this.maxYearSlider.Minimum = 1990;
             this.maxYearSlider.Name = "maxYearSlider";
             this.maxYearSlider.Size = new System.Drawing.Size(186, 17);
             this.maxYearSlider.TabIndex = 21;
             this.maxYearSlider.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.maxYearSlider.Value = 2014;
+            this.maxYearSlider.Value = 2008;
             this.maxYearSlider.Scroll += new System.EventHandler(this.maxYearSlider_Scroll);
             // 
             // minStarSlider
@@ -383,7 +384,7 @@
             this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label11.Location = new System.Drawing.Point(839, 472);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(179, 16);
+            this.label11.Size = new System.Drawing.Size(163, 15);
             this.label11.TabIndex = 64;
             this.label11.Text = "abcdefghijklmnopqrstuvwxyz";
             // 
@@ -443,7 +444,7 @@
             this.label15.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label15.Location = new System.Drawing.Point(839, 427);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(179, 16);
+            this.label15.Size = new System.Drawing.Size(163, 15);
             this.label15.TabIndex = 70;
             this.label15.Text = "abcdefghijklmnopqrstuvwxyz";
             // 
@@ -454,7 +455,7 @@
             this.label16.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label16.Location = new System.Drawing.Point(839, 378);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(179, 16);
+            this.label16.Size = new System.Drawing.Size(163, 15);
             this.label16.TabIndex = 71;
             this.label16.Text = "abcdefghijklmnopqrstuvwxyz";
             // 

@@ -41,9 +41,11 @@ namespace FinalImplementation
             int maxRate = maxStarSlider.Value;
             int xjump;
             int yjump;
-            if (maxYear - minYear != 0) { xjump = (graphBox.Width - 17) / (maxYear - minYear); }
+            Random rnd = new Random();
+
+            if (maxYear - minYear + 1 != 0) { xjump = (graphBox.Width) / (maxYear - minYear + 1); }
             else { xjump = 0; }
-            if (maxRate - minRate != 0) { yjump = (graphBox.Height - 17) / (maxRate - minRate); }
+            if (maxRate - minRate + 1 != 0) { yjump = (graphBox.Height) / (maxRate - minRate + 1); }
             else { yjump = 0; }
             currMovies = new List<Movie>();
 
@@ -58,14 +60,16 @@ namespace FinalImplementation
                     fmovies[x].GetYear() >= minYear && fmovies[x].GetYear() <= maxYear)
                 {
                     Button toAdd = new Button();
-                    toAdd.Width = 15;
-                    toAdd.Height = 15;
-                    toAdd.Left = xjump * (fmovies[x].GetYear() - minYear);
-                    toAdd.Top = yjump * (fmovies[x].GetRating() - minRate);
+                    if (maxYear - minYear + 3 != 0) { toAdd.Width = (graphBox.Width) / (maxYear - minYear + 3); }
+                    else { toAdd.Width = 0; }
+                    if (maxRate - minRate + 3 != 0) { toAdd.Height = (graphBox.Height) / (maxRate - minRate + 3); }
+                    else { toAdd.Height = 0; }
+                    toAdd.Left = (xjump * (fmovies[x].GetYear() - minYear)) + rnd.Next(0,15);
+                    toAdd.Top = (yjump * (fmovies[x].GetRating() - minRate)) + rnd.Next(0,15);
                     int index = 0;
                     for (int y = 0; y < genres.Count; y++) { if (fmovies[x].GetGenres().Contains(genres.ToArray()[y])) { index = y; } }
                     toAdd.BackColor = colors[index];
-                    toAdd.Text = count+"";
+                    toAdd.Name = count+"";
                     toAdd.Click += new EventHandler(movieClick);
                     currMovies.Add(fmovies[x]);
                     graphBox.Controls.Add(toAdd);
@@ -217,7 +221,7 @@ namespace FinalImplementation
         protected void movieClick(object sender, EventArgs e)
         {
             Button button = sender as Button;
-            int index = Convert.ToInt32(button.Text);
+            int index = Convert.ToInt32(button.Name);
             ItemDetailForm form = new ItemDetailForm(currMovies[index]);
             form.ShowDialog();
         }
@@ -333,6 +337,11 @@ namespace FinalImplementation
         private void directorSlider_Scroll(object sender, EventArgs e)
         {
             addMovies();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -9474,21 +9474,25 @@ It is easy to fix by adding a bit of code to the form constructor. You'll need t
     <actor>Juano Hernandez</actor>
   </movie>
   <movie>
-    <title>20 Dates </title>
-    <year>1999</year>
-    <length>87 min</length>
-    <certification>R</certification>
-    <director>Myles Berkowitz</director>
-    <rating>9</rating>
-    <genre>Biography</genre>
-    <genre>Comedy</genre>
-    <genre>Reality-TV</genre>
-    <genre>Romance</genre>
-    <actor>Myles Berkowitz</actor>
-    <actor>Elisabeth Wagner</actor>
-    <actor>Richard Arlook</actor>
-    <actor>Tia Carrere</actor>
-    <actor>Robert McKee</actor>
+    <movie>
+      <title>21 Dates </title>
+      <year>1999</year>
+      <certification>R</certification>
+      <rating>0</rating>
+      <length>87</length>
+      <director>Myles Berkowitz</director>
+      <actor>Myles Berkowitz</actor>
+      <actor>Elisabeth Wagner</actor>
+      <actor>Richard Arlook</actor>
+      <actor>Tia Carrere</actor>
+      <actor>Robert McKee</actor>
+      <actor></actor>
+      <genre>Biography</genre>
+      <genre>Comedy</genre>
+      <genre>Reality-TV</genre>
+      <genre>Romance</genre>
+      <genre></genre>
+    </movie>
   </movie>
   <movie>
     <title>Aaltoska orkaniseeraa </title>
