@@ -124,7 +124,7 @@ namespace FinalImplementation
                 XDocument doc = XDocument.Load("../../../../movies.xml");
                 XElement element = doc.Root.Descendants("movie").SingleOrDefault(m => (string)m.Element("title") == oldTitle);
 
-                element.ReplaceAll(this.movie.ToXElement());
+                element.ReplaceWith(this.movie.ToXElement());
                 doc.Save("../../../../movies.xml");
 
                 this.Close();
@@ -139,10 +139,9 @@ namespace FinalImplementation
             doc.Save("../../../../movies.xml");
         }
 
-        // TODO: need to make sure that edits effect the main movies and actors lists
-        // TODO: make sure that main page and junk is updated after editing or adding
         protected Movie SaveMovieDetails()
         {
+            List<Review> reviews = new List<Review>();
             List<Actor> actors = new List<Actor>();
             string[] actorStrings = this.actorsTextBox.Text.Split('\n');
             foreach (string actor in actorStrings)
@@ -158,16 +157,37 @@ namespace FinalImplementation
                 genres.Add(genre);
             }
 
-            return new Movie(this.titleTextBox.Text,
-                                    Int32.Parse(this.yearTextBox.Text),
-                                    actors,
-                                    genres,
-                                    this.certificationTextBox.Text,
-                                    this.starRatingControl1.SelectedStar,
-                                    Int32.Parse(this.lengthTextBox.Text.Split(' ')[0]),
-                                    this.directorTextBox.Text,
-                                    this.movie.GetReviews()
-                                    );
+            if (movie == null)
+            {
+                return new Movie(this.titleTextBox.Text,
+                                        Int32.Parse(this.yearTextBox.Text),
+                                        actors,
+                                        genres,
+                                        this.certificationTextBox.Text,
+                                        this.starRatingControl1.SelectedStar,
+                                        Int32.Parse(this.lengthTextBox.Text.Split(' ')[0]),
+                                        this.directorTextBox.Text,
+                                        reviews
+                                        );
+            }
+            else
+            {
+                return new Movie(this.titleTextBox.Text,
+                                        Int32.Parse(this.yearTextBox.Text),
+                                        actors,
+                                        genres,
+                                        this.certificationTextBox.Text,
+                                        this.starRatingControl1.SelectedStar,
+                                        Int32.Parse(this.lengthTextBox.Text.Split(' ')[0]),
+                                        this.directorTextBox.Text,
+                                        this.movie.GetReviews()
+                                        );
+            }
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

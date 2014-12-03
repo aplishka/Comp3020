@@ -63,7 +63,7 @@ namespace FinalImplementation
 
             if (starRating.SelectedStar == 0)
             {
-                errorText.Text = "* Please enter a star rating before publishing.";
+                errorProvider.SetError(this.starRating, "Please enter a star rating before publishing.");
                 result = false;
             }
 
@@ -77,8 +77,7 @@ namespace FinalImplementation
             XDocument doc = XDocument.Load("../../../../movies.xml");
             XElement element = doc.Root.Descendants("movie").SingleOrDefault(m => (string)m.Element("title") == Movie.GetTitle());
 
-            element.ReplaceWith(this.Movie.ToXElement());//(.ReplaceAll(this.Movie.ToXElement());
-            //doc.Root.Add(this.Movie.ToXElement());
+            element.ReplaceWith(this.Movie.ToXElement());
             doc.Save("../../../../movies.xml");
 
             this.Close();

@@ -85,8 +85,75 @@ namespace FinalImplementation
         {
             ReviewForm form = new ReviewForm(movie, "edit", null);
             form.ShowDialog();
+            loadingPanel.Visible = true;
+            refresh();
 
-            // refresh reviews
+            reviewBox.Items.Clear();
+
+            reviewBox.Items.AddRange(this.movie.GetReviews().ToArray());
+
+            loadingPanel.Visible = false;
+        }
+
+        private void editMovieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditMovieForm form = new EditMovieForm(this.movie);
+            form.ShowDialog();
+            loadingPanel.Visible = true;
+            refresh();
+            timeBox.Text = movie.GetMovieLength() + "min";
+            directorBox.Text = movie.GetDirectorsName();
+            certificationBox.Text = movie.GetCertification();
+            genreBox.Items.Clear();
+            genreBox.Items.AddRange(movie.GetGenres().ToArray());
+            actorBox.Items.Clear();
+            actorBox.Items.AddRange(movie.GetActors().ToArray());
+            reviewBox.Items.Clear();
+            reviewBox.Items.AddRange(movie.GetReviews().ToArray());
+            ratingBar.Value = movie.GetRating();
+            ratingValueLabel.Text = movie.GetRating() + "/10";
+            loadingPanel.Visible = false;
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void actorBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Actor temp = new Actor();
+            if (actorBox.SelectedItem != null && actorBox.SelectedItem.GetType() == temp.GetType())
+            {
+                ItemDetailForm form = new ItemDetailForm((Actor)actorBox.SelectedItem);
+                form.ShowDialog();
+            }
+        }
+
+        private void movieBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Movie temp = new Movie();
+            if (movieBox.SelectedItem != null && movieBox.SelectedItem.GetType() == temp.GetType())
+            {
+                ItemDetailForm form = new ItemDetailForm((Movie)movieBox.SelectedItem);
+                form.ShowDialog();
+            }
+        }
+
+        private void addToListButton_Click(object sender, EventArgs e)
+        {
+            AddMovieToUserListForm form = new AddMovieToUserListForm(this.movie);
+            form.ShowDialog();
+        }
+
+        private void reviewBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ReviewForm form = new ReviewForm(movie, "view",(Review)reviewBox.SelectedItem);
+            form.ShowDialog();
+        }
+
+        private void refresh()
+        {
             XmlDocument xml = new XmlDocument();
             xml.Load("../../../../movies.xml");
             XmlNode movieList = xml.DocumentElement.SelectSingleNode("/movielist");
@@ -130,57 +197,6 @@ namespace FinalImplementation
                     this.movie = newMovie;
                 }
             }
-            reviewBox.Items.Clear();
-
-            reviewBox.Items.AddRange(this.movie.GetReviews().ToArray());
-        }
-
-        private void editMovieToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            EditMovieForm form = new EditMovieForm(this.movie);
-            form.ShowDialog();
-        }
-
-        private void backButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void actorBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Actor temp = new Actor();
-            if (actorBox.SelectedItem != null && actorBox.SelectedItem.GetType() == temp.GetType())
-            {
-                ItemDetailForm form = new ItemDetailForm((Actor)actorBox.SelectedItem);
-                form.ShowDialog();
-            }
-        }
-
-        private void movieBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Movie temp = new Movie();
-            if (movieBox.SelectedItem != null && movieBox.SelectedItem.GetType() == temp.GetType())
-            {
-                ItemDetailForm form = new ItemDetailForm((Movie)movieBox.SelectedItem);
-                form.ShowDialog();
-            }
-        }
-
-        private void addToListButton_Click(object sender, EventArgs e)
-        {
-            AddMovieToUserListForm form = new AddMovieToUserListForm(this.movie);
-            form.ShowDialog();
-        }
-
-        private void certificationLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void reviewBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ReviewForm form = new ReviewForm(movie, "view",(Review)reviewBox.SelectedItem);
-            form.ShowDialog();
         }
     }
 }

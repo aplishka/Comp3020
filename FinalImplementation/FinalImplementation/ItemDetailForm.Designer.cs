@@ -35,7 +35,6 @@
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.titleLabel = new System.Windows.Forms.Label();
             this.reviewButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
@@ -56,14 +55,16 @@
             this.ratingBar = new System.Windows.Forms.ProgressBar();
             this.ratingLabel = new System.Windows.Forms.Label();
             this.ratingValueLabel = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.loadingPanel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1020, 28);
@@ -85,39 +86,33 @@
             // editMovieToolStripMenuItem
             // 
             this.editMovieToolStripMenuItem.Name = "editMovieToolStripMenuItem";
-            this.editMovieToolStripMenuItem.Size = new System.Drawing.Size(149, 24);
+            this.editMovieToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.editMovieToolStripMenuItem.Text = "Edit Movie";
             this.editMovieToolStripMenuItem.Click += new System.EventHandler(this.editMovieToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(146, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(172, 6);
             // 
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(149, 24);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.homeToolStripMenuItem.Text = "Back";
             this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(146, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(172, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(149, 24);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
-            this.helpToolStripMenuItem.Text = "Help";
             // 
             // titleLabel
             // 
@@ -178,7 +173,6 @@
             this.certificationLabel.Size = new System.Drawing.Size(100, 17);
             this.certificationLabel.TabIndex = 54;
             this.certificationLabel.Text = "Certification:";
-            this.certificationLabel.Click += new System.EventHandler(this.certificationLabel_Click);
             // 
             // genreLabel
             // 
@@ -316,11 +310,33 @@
             this.ratingValueLabel.TabIndex = 68;
             this.ratingValueLabel.Text = "7/10";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.loadingPanel);
+            this.panel1.Location = new System.Drawing.Point(343, 197);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(327, 83);
+            this.panel1.TabIndex = 69;
+            this.panel1.Visible = false;
+            // 
+            // loadingPanel
+            // 
+            this.loadingPanel.AutoSize = true;
+            this.loadingPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loadingPanel.Location = new System.Drawing.Point(102, 25);
+            this.loadingPanel.Name = "loadingPanel";
+            this.loadingPanel.Size = new System.Drawing.Size(128, 29);
+            this.loadingPanel.TabIndex = 0;
+            this.loadingPanel.Text = "Loading...";
+            // 
             // ItemDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 536);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.ratingValueLabel);
             this.Controls.Add(this.ratingLabel);
             this.Controls.Add(this.ratingBar);
@@ -351,6 +367,8 @@
             this.TopMost = true;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,7 +381,6 @@
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Button reviewButton;
         private System.Windows.Forms.Button backButton;
@@ -386,5 +403,7 @@
         private System.Windows.Forms.ProgressBar ratingBar;
         private System.Windows.Forms.Label ratingLabel;
         private System.Windows.Forms.Label ratingValueLabel;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label loadingPanel;
     }
 }

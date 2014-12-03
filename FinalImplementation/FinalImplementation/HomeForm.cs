@@ -43,6 +43,9 @@ namespace FinalImplementation
             xml.Load("../../../../movies.xml");
 
             XmlNode movieList = xml.DocumentElement.SelectSingleNode("/movielist");
+            movies = new List<Movie>();
+            actors = new List<Actor>();
+            genres = new HashSet<string>();
 
             foreach (XmlNode movie in movieList.ChildNodes)
             {
@@ -158,20 +161,11 @@ namespace FinalImplementation
 
         private void searchData() 
         {
-            if (searchTextBox.Text.Length == 0)
-            {
-                MessageBox.Show("Please enter text in the search box..",
-                                    "Invalid Search",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Exclamation,
-                                    MessageBoxDefaultButton.Button1);
-            }
-            else
-            {
-                SearchResultsForm form = new SearchResultsForm(searchTextBox.Text);
-                form.ShowDialog();
-                reloadPage();
-            }
+            loadingPanel.Visible = true;
+            loadingPanel.Update();
+            SearchResultsForm form = new SearchResultsForm(searchTextBox.Text);
+            form.ShowDialog();
+            reloadPage();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -183,6 +177,7 @@ namespace FinalImplementation
         {
             ItemDetailForm form = new ItemDetailForm((Movie)topMoviesList.SelectedItem);
             form.ShowDialog();
+            reloadPage();
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -194,6 +189,7 @@ namespace FinalImplementation
         {
             ItemDetailForm form = new ItemDetailForm((Actor)topActorsList.SelectedItem);
             form.ShowDialog();
+            reloadPage();
         }
 
         private void topGenresList_SelectedIndexChanged(object sender, EventArgs e)
@@ -224,6 +220,7 @@ namespace FinalImplementation
                 {
                     ItemDetailForm form = new ItemDetailForm((Movie)topGenresList.SelectedItem);
                     form.ShowDialog();
+                    reloadPage();
                 }
             }
         }
@@ -257,6 +254,8 @@ namespace FinalImplementation
                 {
                     ItemDetailForm form = new ItemDetailForm((Movie)topDecadesList.SelectedItem);
                     form.ShowDialog();
+                    loadingPanel.Update();
+                    reloadPage();
                 }
             }
         }
@@ -265,27 +264,48 @@ namespace FinalImplementation
         {
             AddMovieForm form = new AddMovieForm();
             form.ShowDialog();
+            reloadPage();
         }
 
         private void userListsButton_Click(object sender, EventArgs e)
         {
             UserListsForm form = new UserListsForm(this.actors);
             form.ShowDialog();
+            reloadPage();
         }
 
         private void reloadPage()
         {
+            loadingPanel.Visible = true;
+            loadingPanel.Update();
             topMoviesList.Items.Clear();
             topActorsList.Items.Clear();
             topGenresList.Items.Clear();
             topDecadesList.Items.Clear();
             loadData();
+            loadingPanel.Visible = false;
         }
 
         private void graphButton_Click(object sender, EventArgs e)
         {
+            loadingPanel.Visible = true;
+            loadingPanel.Update();
             VisualSearchForm form = new VisualSearchForm();
             form.ShowDialog();
+            reloadPage();
+        }
+
+        private void searchTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                searchData();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            searchData();
         }
     }
 }

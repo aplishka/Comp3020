@@ -50,6 +50,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.starRatingControl1 = new RatingControls.StarRatingControl();
+            this.cancelButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -180,7 +181,7 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(953, 17);
+            this.deleteButton.Location = new System.Drawing.Point(337, 15);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(75, 23);
             this.deleteButton.TabIndex = 15;
@@ -237,11 +238,22 @@
             this.starRatingControl1.Text = "starRatingControl1";
             this.starRatingControl1.TopMargin = 2;
             // 
+            // cancelButton
+            // 
+            this.cancelButton.Location = new System.Drawing.Point(953, 17);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 19;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            // 
             // EditMovieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1051, 305);
+            this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.lengthTextBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.saveButton);
@@ -265,8 +277,8 @@
             this.Name = "EditMovieForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "EditMovieForm";
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.TopMost = true;
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,5 +307,6 @@
         private System.Windows.Forms.TextBox lengthTextBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button cancelButton;
     }
 }

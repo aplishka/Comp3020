@@ -31,8 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addMovieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchButton = new System.Windows.Forms.Button();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.searchResultList = new System.Windows.Forms.ListBox();
@@ -64,16 +65,18 @@
             this.backButton = new System.Windows.Forms.Button();
             this.starRatingTo = new RatingControls.StarRatingControl();
             this.starRatingFrom = new RatingControls.StarRatingControl();
+            this.labellll = new System.Windows.Forms.Label();
+            this.loadingPanel = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fromSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toSlider)).BeginInit();
+            this.loadingPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1020, 28);
@@ -83,23 +86,31 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addMovieToolStripMenuItem,
+            this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // addMovieToolStripMenuItem
+            // 
+            this.addMovieToolStripMenuItem.Name = "addMovieToolStripMenuItem";
+            this.addMovieToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
+            this.addMovieToolStripMenuItem.Text = "Add Movie";
+            this.addMovieToolStripMenuItem.Click += new System.EventHandler(this.addMovieToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(148, 6);
+            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
-            this.helpToolStripMenuItem.Text = "Help";
             // 
             // searchButton
             // 
@@ -118,6 +129,7 @@
             this.searchTextBox.Size = new System.Drawing.Size(490, 22);
             this.searchTextBox.TabIndex = 14;
             this.searchTextBox.Text = "Enter search query...";
+            this.searchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchTextBox_KeyDown);
             // 
             // searchResultList
             // 
@@ -415,11 +427,33 @@
             this.starRatingFrom.Text = "starRatingControl1";
             this.starRatingFrom.TopMargin = 2;
             // 
+            // labellll
+            // 
+            this.labellll.AutoSize = true;
+            this.labellll.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labellll.Location = new System.Drawing.Point(102, 25);
+            this.labellll.Name = "labellll";
+            this.labellll.Size = new System.Drawing.Size(128, 29);
+            this.labellll.TabIndex = 0;
+            this.labellll.Text = "Loading...";
+            // 
+            // loadingPanel
+            // 
+            this.loadingPanel.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.loadingPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.loadingPanel.Controls.Add(this.labellll);
+            this.loadingPanel.Location = new System.Drawing.Point(347, 227);
+            this.loadingPanel.Name = "loadingPanel";
+            this.loadingPanel.Size = new System.Drawing.Size(327, 83);
+            this.loadingPanel.TabIndex = 71;
+            this.loadingPanel.Visible = false;
+            // 
             // SearchResultsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 536);
+            this.Controls.Add(this.loadingPanel);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.toDateBox);
             this.Controls.Add(this.fromDateBox);
@@ -462,6 +496,8 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fromSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toSlider)).EndInit();
+            this.loadingPanel.ResumeLayout(false);
+            this.loadingPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -472,7 +508,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.ListBox searchResultList;
@@ -504,5 +539,9 @@
         private System.Windows.Forms.TextBox fromDateBox;
         private System.Windows.Forms.TextBox toDateBox;
         private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.ToolStripMenuItem addMovieToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.Label labellll;
+        private System.Windows.Forms.Panel loadingPanel;
     }
 }

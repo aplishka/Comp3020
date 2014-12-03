@@ -1047,18 +1047,19 @@ It is easy to fix by adding a bit of code to the form constructor. You'll need t
   <movie>
     <title>The Dogs of War </title>
     <year>1981</year>
-    <length>105 min</length>
     <certification>R</certification>
-    <director>John Irvin</director>
     <rating>2</rating>
-    <genre>Adventure</genre>
-    <genre>War</genre>
-    <genre>Action</genre>
+    <length>105</length>
+    <director>John Irvin</director>
     <actor>Christopher Walken</actor>
     <actor>Tom Berenger</actor>
     <actor>Colin Blakely</actor>
     <actor>Hugh Millais</actor>
     <actor>Paul Freeman</actor>
+    <genre>Adventure</genre>
+    <genre>War</genre>
+    <genre>Action</genre>
+    <review>5|break|good|break|bad</review>
   </movie>
   <movie>
     <title>Don Camillo </title>
@@ -1168,7 +1169,7 @@ It is easy to fix by adding a bit of code to the form constructor. You'll need t
     <title>Eskapo </title>
     <year>1995</year>
     <certification></certification>
-    <rating>9</rating>
+    <rating>3</rating>
     <length>114</length>
     <director>Chito S. Roo</director>
     <actor>Christopher De Leon</actor>
@@ -1176,9 +1177,11 @@ It is easy to fix by adding a bit of code to the form constructor. You'll need t
     <actor>Dina Bonnevie</actor>
     <actor>Ricky Davao</actor>
     <actor>Armando Goyena</actor>
+    <actor></actor>
     <genre>Drama</genre>
     <genre>Thriller</genre>
     <genre>Action</genre>
+    <genre></genre>
     <review>4|break||break|</review>
     <review>10|break||break|</review>
   </movie>
@@ -1784,35 +1787,38 @@ It is easy to fix by adding a bit of code to the form constructor. You'll need t
   <movie>
     <title>House of the Dead </title>
     <year>2003</year>
-    <length>90 min</length>
     <certification>R</certification>
+    <rating>8</rating>
+    <length>90</length>
     <director>Uwe Boll</director>
-    <rating>9</rating>
-    <genre>Action</genre>
-    <genre>Drama</genre>
-    <genre>Horror</genre>
-    <genre>Mystery</genre>
-    <genre>Thriller</genre>
     <actor>Jonathan Cherry</actor>
     <actor>Tyron Leitso</actor>
     <actor>Clint Howard</actor>
     <actor>Ona Grauer</actor>
     <actor>Ellie Cornell</actor>
+    <genre>Action</genre>
+    <genre>Drama</genre>
+    <genre>Horror</genre>
+    <genre>Mystery</genre>
+    <genre>Thriller</genre>
+    <review>8|break||break|</review>
   </movie>
   <movie>
     <title>Hum Paanch </title>
     <year>1980</year>
-    <length>163 min</length>
-    <director>Bapu</director>
+    <certification></certification>
     <rating>9</rating>
-    <genre>Action</genre>
-    <genre>Drama</genre>
-    <genre>Family</genre>
+    <length>163</length>
+    <director>Bapu</director>
     <actor>Sanjeev Kumar</actor>
     <actor>Shabana Azmi</actor>
     <actor>Mithun Chakraborty</actor>
     <actor>Deepti Naval</actor>
     <actor>Naseeruddin Shah</actor>
+    <genre>Action</genre>
+    <genre>Drama</genre>
+    <genre>Family</genre>
+    <review>9|break|This movie was very good. It was a movie and good.|break|The actors were okay, but some of them were bad. They couldn't act well.</review>
   </movie>
   <movie>
     <title>The Hurricane </title>
@@ -2434,20 +2440,23 @@ It is easy to fix by adding a bit of code to the form constructor. You'll need t
   <movie>
     <title>Meng long guo jiang </title>
     <year>1972</year>
-    <length>100 min</length>
     <certification>R</certification>
-    <director>Bruce Lee</director>
     <rating>9</rating>
-    <genre>Action</genre>
-    <genre>Comedy</genre>
-    <genre>Crime</genre>
-    <genre>Drama</genre>
-    <genre>Thriller</genre>
+    <length>100</length>
+    <director>Bruce Lee</director>
     <actor>Bruce Lee</actor>
     <actor>Nora Miao</actor>
     <actor>Chuck Norris</actor>
     <actor>Ping-Ao Wei</actor>
     <actor>Chung-Hsin Huang</actor>
+    <genre>Action</genre>
+    <genre>Comedy</genre>
+    <genre>Crime</genre>
+    <genre>Drama</genre>
+    <genre>Thriller</genre>
+    <review>6|break||break|</review>
+    <review>3|break||break|</review>
+    <review>10|break||break|</review>
   </movie>
   <movie>
     <title>Messalina </title>
@@ -2485,16 +2494,17 @@ It is easy to fix by adding a bit of code to the form constructor. You'll need t
   <movie>
     <title>Mijn Nachten met Susan, Olga, Albert, Julie, Piet &amp; Sandra </title>
     <year>1975</year>
-    <length>85 min</length>
+    <certification></certification>
+    <rating>3</rating>
+    <length>85</length>
     <director>Pim de la Parra</director>
-    <rating>9</rating>
-    <genre>Action</genre>
-    <genre>Drama</genre>
     <actor>Willeke van Ammelrooy</actor>
     <actor>Hans van der Gragt</actor>
     <actor>Nelly Frijda</actor>
     <actor>Jerry Brouer</actor>
     <actor>Franulka Heyermans</actor>
+    <genre>Action</genre>
+    <genre>Drama</genre>
   </movie>
   <movie>
     <title>Ming yue dao xue ye jian chou </title>
@@ -2804,20 +2814,22 @@ It is easy to fix by adding a bit of code to the form constructor. You'll need t
   <movie>
     <title>Pitch Black </title>
     <year>2000</year>
-    <length>110 min</length>
     <certification>R</certification>
+    <rating>3</rating>
+    <length>110</length>
     <director>David Twohy</director>
-    <rating>9</rating>
-    <genre>Action</genre>
-    <genre>Adventure</genre>
-    <genre>Horror</genre>
-    <genre>Sci-Fi</genre>
-    <genre>Thriller</genre>
     <actor>Vin Diesel</actor>
     <actor>Radha Mitchell</actor>
     <actor>Cole Hauser</actor>
     <actor>Keith David</actor>
     <actor>Lewis Fitz-Gerald</actor>
+    <actor></actor>
+    <genre>Action</genre>
+    <genre>Adventure</genre>
+    <genre>Horror</genre>
+    <genre>Sci-Fi</genre>
+    <genre>Thriller</genre>
+    <genre></genre>
   </movie>
   <movie>
     <title>Planet of the Apes </title>
@@ -3861,18 +3873,30 @@ It is easy to fix by adding a bit of code to the form constructor. You'll need t
   <movie>
     <title>Timecop </title>
     <year>1994</year>
-    <length>98 min</length>
     <certification>R</certification>
+    <rating>9</rating>
+    <length>15</length>
     <director>Peter Hyams</director>
-    <rating>4</rating>
-    <genre>Thriller</genre>
-    <genre>Action</genre>
-    <genre>Sci-Fi</genre>
     <actor>Jean-Claude Van Damme</actor>
     <actor>Mia Sara</actor>
     <actor>Ron Silver</actor>
     <actor>Bruce McGill</actor>
     <actor>Gloria Reuben</actor>
+    <actor></actor>
+    <actor></actor>
+    <actor></actor>
+    <actor></actor>
+    <actor></actor>
+    <actor></actor>
+    <genre>Thriller</genre>
+    <genre>Action</genre>
+    <genre>Sci-Fi</genre>
+    <genre></genre>
+    <genre></genre>
+    <genre></genre>
+    <genre></genre>
+    <genre></genre>
+    <genre></genre>
   </movie>
   <movie>
     <title>TKKG und die rätselhafte Mind-Machine </title>
@@ -6447,20 +6471,22 @@ It is easy to fix by adding a bit of code to the form constructor. You'll need t
   <movie>
     <title>Seven Years in Tibet </title>
     <year>1997</year>
-    <length>139 min</length>
     <certification>PG-13</certification>
+    <rating>10</rating>
+    <length>139</length>
     <director>Jean-Jacques Annaud</director>
-    <rating>6</rating>
-    <genre>Adventure</genre>
-    <genre>Biography</genre>
-    <genre>Drama</genre>
-    <genre>History</genre>
-    <genre>War</genre>
     <actor>Brad Pitt</actor>
     <actor>David Thewlis</actor>
     <actor>B.D. Wong</actor>
     <actor>Mako</actor>
     <actor>Danny Denzongpa</actor>
+    <actor></actor>
+    <genre>Adventure</genre>
+    <genre>Biography</genre>
+    <genre>Drama</genre>
+    <genre>History</genre>
+    <genre>War</genre>
+    <genre></genre>
   </movie>
   <movie>
     <title>Sharks' Treasure </title>
@@ -9474,25 +9500,21 @@ It is easy to fix by adding a bit of code to the form constructor. You'll need t
     <actor>Juano Hernandez</actor>
   </movie>
   <movie>
-    <movie>
-      <title>21 Dates </title>
-      <year>1999</year>
-      <certification>R</certification>
-      <rating>0</rating>
-      <length>87</length>
-      <director>Myles Berkowitz</director>
-      <actor>Myles Berkowitz</actor>
-      <actor>Elisabeth Wagner</actor>
-      <actor>Richard Arlook</actor>
-      <actor>Tia Carrere</actor>
-      <actor>Robert McKee</actor>
-      <actor></actor>
-      <genre>Biography</genre>
-      <genre>Comedy</genre>
-      <genre>Reality-TV</genre>
-      <genre>Romance</genre>
-      <genre></genre>
-    </movie>
+    <title>21 Dates </title>
+    <year>1999</year>
+    <certification>R</certification>
+    <rating>0</rating>
+    <length>87</length>
+    <director>Myles Berkowitz</director>
+    <actor>Myles Berkowitz</actor>
+    <actor>Elisabeth Wagner</actor>
+    <actor>Richard Arlook</actor>
+    <actor>Tia Carrere</actor>
+    <actor>Robert McKee</actor>
+    <genre>Biography</genre>
+    <genre>Comedy</genre>
+    <genre>Reality-TV</genre>
+    <genre>Romance</genre>
   </movie>
   <movie>
     <title>Aaltoska orkaniseeraa </title>
@@ -23766,18 +23788,20 @@ It is easy to fix by adding a bit of code to the form constructor. You'll need t
   <movie>
     <title>A Town Like Alice </title>
     <year>1956</year>
-    <length>117 min</length>
-    <director>Jack Lee</director>
+    <certification></certification>
     <rating>0</rating>
-    <genre>Crime</genre>
-    <genre>Drama</genre>
-    <genre>Romance</genre>
-    <genre>War</genre>
+    <length>117</length>
+    <director>Jack Lee</director>
     <actor>Virginia McKenna</actor>
     <actor>Peter Finch</actor>
     <actor>Kenji Takaki</actor>
     <actor>Tran Van Khe</actor>
     <actor>Jean Anderson</actor>
+    <genre>Crime</genre>
+    <genre>Drama</genre>
+    <genre>Romance</genre>
+    <genre>War</genre>
+    <review>10|break|great movie|break|amazing!!!!!!!!</review>
   </movie>
   <movie>
     <title>The Transformation of Mike </title>
@@ -37761,15 +37785,18 @@ It is easy to fix by adding a bit of code to the form constructor. You'll need t
   <movie>
     <title>Insel der Seligen, Die </title>
     <year>1913</year>
-    <length>49 min</length>
+    <certification></certification>
+    <rating>10</rating>
+    <length>49</length>
     <director>Max Reinhardt</director>
-    <rating>9</rating>
-    <genre>Fantasy</genre>
     <actor>Paul Davidson</actor>
     <actor>Erika De Planque</actor>
     <actor>Wilhelm Diegelmann</actor>
     <actor>Mary Dietrich</actor>
     <actor>Gertrud Hackelberg</actor>
+    <actor></actor>
+    <genre>Fantasy</genre>
+    <genre></genre>
   </movie>
   <movie>
     <title>Kamen gakuen </title>
@@ -43304,5 +43331,15 @@ It is easy to fix by adding a bit of code to the form constructor. You'll need t
     <genre>Action</genre>
     <genre>Drama</genre>
     <review>10|break|It was alright|break|it sucked</review>
+  </movie>
+  <movie>
+    <title>barf!!!</title>
+    <year>1992</year>
+    <certification></certification>
+    <rating>0</rating>
+    <length>8006</length>
+    <director>Tim</director>
+    <actor>dgf</actor>
+    <genre>jhfb</genre>
   </movie>
 </movielist>

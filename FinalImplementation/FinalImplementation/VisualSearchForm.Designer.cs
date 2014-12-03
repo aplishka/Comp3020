@@ -30,8 +30,9 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addMovieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.graphBox = new System.Windows.Forms.Panel();
             this.maxYearLabel = new System.Windows.Forms.Label();
             this.minYearLabel = new System.Windows.Forms.Label();
@@ -72,6 +73,9 @@
             this.pgRating = new System.Windows.Forms.CheckBox();
             this.pg13Rating = new System.Windows.Forms.CheckBox();
             this.rRating = new System.Windows.Forms.CheckBox();
+            this.labellll = new System.Windows.Forms.Label();
+            this.loadingPanel = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minYearSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maxYearSlider)).BeginInit();
@@ -82,13 +86,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.directorSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.titleSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actorSlider)).BeginInit();
+            this.loadingPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1020, 28);
@@ -98,23 +102,31 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addMovieToolStripMenuItem,
+            this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // addMovieToolStripMenuItem
+            // 
+            this.addMovieToolStripMenuItem.Name = "addMovieToolStripMenuItem";
+            this.addMovieToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
+            this.addMovieToolStripMenuItem.Text = "Add Movie";
+            this.addMovieToolStripMenuItem.Click += new System.EventHandler(this.addMovieToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(148, 6);
+            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
-            this.helpToolStripMenuItem.Text = "Help";
             // 
             // graphBox
             // 
@@ -127,58 +139,62 @@
             // maxYearLabel
             // 
             this.maxYearLabel.AutoSize = true;
+            this.maxYearLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maxYearLabel.Location = new System.Drawing.Point(717, 41);
             this.maxYearLabel.Name = "maxYearLabel";
-            this.maxYearLabel.Size = new System.Drawing.Size(40, 17);
+            this.maxYearLabel.Size = new System.Drawing.Size(44, 17);
             this.maxYearLabel.TabIndex = 16;
             this.maxYearLabel.Text = "2008";
             // 
             // minYearLabel
             // 
             this.minYearLabel.AutoSize = true;
+            this.minYearLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minYearLabel.Location = new System.Drawing.Point(53, 41);
             this.minYearLabel.Name = "minYearLabel";
-            this.minYearLabel.Size = new System.Drawing.Size(40, 17);
+            this.minYearLabel.Size = new System.Drawing.Size(44, 17);
             this.minYearLabel.TabIndex = 17;
-            this.minYearLabel.Text = "1990";
+            this.minYearLabel.Text = "1900";
             // 
             // maxStarLabel
             // 
             this.maxStarLabel.AutoSize = true;
+            this.maxStarLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maxStarLabel.Location = new System.Drawing.Point(18, 507);
             this.maxStarLabel.Name = "maxStarLabel";
-            this.maxStarLabel.Size = new System.Drawing.Size(24, 17);
+            this.maxStarLabel.Size = new System.Drawing.Size(26, 17);
             this.maxStarLabel.TabIndex = 18;
             this.maxStarLabel.Text = "10";
             // 
             // minStarLabel
             // 
             this.minStarLabel.AutoSize = true;
+            this.minStarLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minStarLabel.Location = new System.Drawing.Point(20, 65);
             this.minStarLabel.Name = "minStarLabel";
-            this.minStarLabel.Size = new System.Drawing.Size(16, 17);
+            this.minStarLabel.Size = new System.Drawing.Size(17, 17);
             this.minStarLabel.TabIndex = 19;
             this.minStarLabel.Text = "0";
             // 
             // minYearSlider
             // 
             this.minYearSlider.AutoSize = false;
-            this.minYearSlider.Location = new System.Drawing.Point(830, 67);
+            this.minYearSlider.Location = new System.Drawing.Point(830, 253);
             this.minYearSlider.Maximum = 2008;
-            this.minYearSlider.Minimum = 1990;
+            this.minYearSlider.Minimum = 1900;
             this.minYearSlider.Name = "minYearSlider";
             this.minYearSlider.Size = new System.Drawing.Size(186, 17);
             this.minYearSlider.TabIndex = 20;
             this.minYearSlider.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.minYearSlider.Value = 1990;
+            this.minYearSlider.Value = 1900;
             this.minYearSlider.Scroll += new System.EventHandler(this.minYearSlider_Scroll);
             // 
             // maxYearSlider
             // 
             this.maxYearSlider.AutoSize = false;
-            this.maxYearSlider.Location = new System.Drawing.Point(830, 90);
+            this.maxYearSlider.Location = new System.Drawing.Point(830, 276);
             this.maxYearSlider.Maximum = 2008;
-            this.maxYearSlider.Minimum = 1990;
+            this.maxYearSlider.Minimum = 1900;
             this.maxYearSlider.Name = "maxYearSlider";
             this.maxYearSlider.Size = new System.Drawing.Size(186, 17);
             this.maxYearSlider.TabIndex = 21;
@@ -189,7 +205,7 @@
             // minStarSlider
             // 
             this.minStarSlider.AutoSize = false;
-            this.minStarSlider.Location = new System.Drawing.Point(830, 113);
+            this.minStarSlider.Location = new System.Drawing.Point(830, 299);
             this.minStarSlider.Name = "minStarSlider";
             this.minStarSlider.Size = new System.Drawing.Size(186, 17);
             this.minStarSlider.TabIndex = 22;
@@ -199,7 +215,7 @@
             // maxStarSlider
             // 
             this.maxStarSlider.AutoSize = false;
-            this.maxStarSlider.Location = new System.Drawing.Point(830, 136);
+            this.maxStarSlider.Location = new System.Drawing.Point(830, 322);
             this.maxStarSlider.Name = "maxStarSlider";
             this.maxStarSlider.Size = new System.Drawing.Size(186, 17);
             this.maxStarSlider.TabIndex = 23;
@@ -210,7 +226,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(763, 67);
+            this.label1.Location = new System.Drawing.Point(763, 253);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 17);
             this.label1.TabIndex = 24;
@@ -219,7 +235,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(762, 136);
+            this.label3.Location = new System.Drawing.Point(762, 322);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 17);
             this.label3.TabIndex = 25;
@@ -228,7 +244,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(762, 113);
+            this.label4.Location = new System.Drawing.Point(762, 299);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 17);
             this.label4.TabIndex = 26;
@@ -237,7 +253,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(762, 90);
+            this.label5.Location = new System.Drawing.Point(762, 276);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 17);
             this.label5.TabIndex = 27;
@@ -256,7 +272,7 @@
             // genreSelector
             // 
             this.genreSelector.FormattingEnabled = true;
-            this.genreSelector.Location = new System.Drawing.Point(830, 164);
+            this.genreSelector.Location = new System.Drawing.Point(830, 75);
             this.genreSelector.Name = "genreSelector";
             this.genreSelector.Size = new System.Drawing.Size(186, 24);
             this.genreSelector.TabIndex = 51;
@@ -265,7 +281,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(763, 167);
+            this.label2.Location = new System.Drawing.Point(763, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 17);
             this.label2.TabIndex = 52;
@@ -274,7 +290,7 @@
             // lengthMinSlider
             // 
             this.lengthMinSlider.AutoSize = false;
-            this.lengthMinSlider.Location = new System.Drawing.Point(830, 204);
+            this.lengthMinSlider.Location = new System.Drawing.Point(830, 114);
             this.lengthMinSlider.Maximum = 500;
             this.lengthMinSlider.Name = "lengthMinSlider";
             this.lengthMinSlider.Size = new System.Drawing.Size(186, 17);
@@ -285,7 +301,7 @@
             // lengthMaxSlider
             // 
             this.lengthMaxSlider.AutoSize = false;
-            this.lengthMaxSlider.Location = new System.Drawing.Point(830, 255);
+            this.lengthMaxSlider.Location = new System.Drawing.Point(830, 159);
             this.lengthMaxSlider.Maximum = 500;
             this.lengthMaxSlider.Name = "lengthMaxSlider";
             this.lengthMaxSlider.Size = new System.Drawing.Size(186, 17);
@@ -297,7 +313,7 @@
             // lengthMaxLabel
             // 
             this.lengthMaxLabel.AutoSize = true;
-            this.lengthMaxLabel.Location = new System.Drawing.Point(977, 229);
+            this.lengthMaxLabel.Location = new System.Drawing.Point(977, 136);
             this.lengthMaxLabel.Name = "lengthMaxLabel";
             this.lengthMaxLabel.Size = new System.Drawing.Size(32, 17);
             this.lengthMaxLabel.TabIndex = 55;
@@ -306,7 +322,7 @@
             // lengthMinLabel
             // 
             this.lengthMinLabel.AutoSize = true;
-            this.lengthMinLabel.Location = new System.Drawing.Point(836, 229);
+            this.lengthMinLabel.Location = new System.Drawing.Point(836, 136);
             this.lengthMinLabel.Name = "lengthMinLabel";
             this.lengthMinLabel.Size = new System.Drawing.Size(16, 17);
             this.lengthMinLabel.TabIndex = 56;
@@ -315,7 +331,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(903, 229);
+            this.label8.Location = new System.Drawing.Point(903, 136);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(20, 17);
             this.label8.TabIndex = 57;
@@ -324,7 +340,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(763, 229);
+            this.label9.Location = new System.Drawing.Point(763, 136);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(56, 17);
             this.label9.TabIndex = 58;
@@ -360,7 +376,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(4, 243);
+            this.label7.Location = new System.Drawing.Point(4, 261);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 17);
             this.label7.TabIndex = 62;
@@ -462,7 +478,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(767, 293);
+            this.label17.Location = new System.Drawing.Point(764, 189);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(53, 17);
             this.label17.TabIndex = 72;
@@ -471,7 +487,7 @@
             // gRating
             // 
             this.gRating.AutoSize = true;
-            this.gRating.Location = new System.Drawing.Point(842, 293);
+            this.gRating.Location = new System.Drawing.Point(839, 189);
             this.gRating.Name = "gRating";
             this.gRating.Size = new System.Drawing.Size(41, 21);
             this.gRating.TabIndex = 73;
@@ -482,7 +498,7 @@
             // pgRating
             // 
             this.pgRating.AutoSize = true;
-            this.pgRating.Location = new System.Drawing.Point(842, 320);
+            this.pgRating.Location = new System.Drawing.Point(839, 216);
             this.pgRating.Name = "pgRating";
             this.pgRating.Size = new System.Drawing.Size(50, 21);
             this.pgRating.TabIndex = 74;
@@ -493,7 +509,7 @@
             // pg13Rating
             // 
             this.pg13Rating.AutoSize = true;
-            this.pg13Rating.Location = new System.Drawing.Point(916, 293);
+            this.pg13Rating.Location = new System.Drawing.Point(913, 189);
             this.pg13Rating.Name = "pg13Rating";
             this.pg13Rating.Size = new System.Drawing.Size(71, 21);
             this.pg13Rating.TabIndex = 75;
@@ -504,7 +520,7 @@
             // rRating
             // 
             this.rRating.AutoSize = true;
-            this.rRating.Location = new System.Drawing.Point(916, 320);
+            this.rRating.Location = new System.Drawing.Point(913, 216);
             this.rRating.Name = "rRating";
             this.rRating.Size = new System.Drawing.Size(40, 21);
             this.rRating.TabIndex = 76;
@@ -512,11 +528,44 @@
             this.rRating.UseVisualStyleBackColor = true;
             this.rRating.CheckedChanged += new System.EventHandler(this.rRating_CheckedChanged);
             // 
+            // labellll
+            // 
+            this.labellll.AutoSize = true;
+            this.labellll.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labellll.Location = new System.Drawing.Point(102, 25);
+            this.labellll.Name = "labellll";
+            this.labellll.Size = new System.Drawing.Size(128, 29);
+            this.labellll.TabIndex = 0;
+            this.labellll.Text = "Loading...";
+            // 
+            // loadingPanel
+            // 
+            this.loadingPanel.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.loadingPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.loadingPanel.Controls.Add(this.labellll);
+            this.loadingPanel.Location = new System.Drawing.Point(259, 249);
+            this.loadingPanel.Name = "loadingPanel";
+            this.loadingPanel.Size = new System.Drawing.Size(317, 83);
+            this.loadingPanel.TabIndex = 77;
+            this.loadingPanel.Visible = false;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(858, 34);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(71, 25);
+            this.label18.TabIndex = 78;
+            this.label18.Text = "Filters";
+            // 
             // VisualSearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 536);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.loadingPanel);
             this.Controls.Add(this.rRating);
             this.Controls.Add(this.pg13Rating);
             this.Controls.Add(this.pgRating);
@@ -573,6 +622,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.directorSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.titleSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.actorSlider)).EndInit();
+            this.loadingPanel.ResumeLayout(false);
+            this.loadingPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -583,7 +634,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.Panel graphBox;
         private System.Windows.Forms.Label maxYearLabel;
         private System.Windows.Forms.Label minYearLabel;
@@ -624,5 +674,10 @@
         private System.Windows.Forms.CheckBox pgRating;
         private System.Windows.Forms.CheckBox pg13Rating;
         private System.Windows.Forms.CheckBox rRating;
+        private System.Windows.Forms.ToolStripMenuItem addMovieToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.Label labellll;
+        private System.Windows.Forms.Panel loadingPanel;
+        private System.Windows.Forms.Label label18;
     }
 }

@@ -29,13 +29,20 @@ namespace FinalImplementation
             searchTextBox.Text = _searchstring;
             this.searchString = _searchstring;
             loadXML();
-            searchForString();
+            if (_searchstring.Length > 0)
+            {
+                searchForString();
+            }
         }
 
         private void searchForString()
         {
             List<Movie> mResults = new List<Movie>();;
             List<Actor> aResults = new List<Actor>(); ;
+            searchString = searchTextBox.Text;
+
+            loadingPanel.Visible = true;
+            loadingPanel.Update();
 
             searchResultList.Items.Clear();
 
@@ -68,6 +75,8 @@ namespace FinalImplementation
                 searchResultList.Items.Add(" "); 
             }
             searchResultList.Items.AddRange(aResults.ToArray());
+
+            loadingPanel.Visible = false;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -142,6 +151,14 @@ namespace FinalImplementation
 
         private void advancedSearchButton_Click(object sender, EventArgs e)
         {
+            loadingPanel.Visible = true;
+            loadingPanel.Update();
+            advancedSearch();
+            loadingPanel.Visible = false;
+        }
+
+        private void advancedSearch()
+        {
             var fromCount = starRatingFrom.SelectedStar;
             var toCount = starRatingTo.SelectedStar;
             var genre = genreSelector.SelectedItem;
@@ -155,6 +172,10 @@ namespace FinalImplementation
             List<Movie> mResults = new List<Movie>();
             List<Movie> mResultsAdv = new List<Movie>();
             List<Actor> aResults = new List<Actor>();
+            searchString = searchTextBox.Text;
+
+            loadingPanel.Visible = true;
+            loadingPanel.Update();
 
             searchResultList.Items.Clear();
 
@@ -271,6 +292,7 @@ namespace FinalImplementation
                 searchResultList.Items.Add(" ");
             }
             searchResultList.Items.AddRange(aResults.ToArray());
+            loadingPanel.Visible = false;
         }
 
         private void loadXML()
@@ -281,6 +303,8 @@ namespace FinalImplementation
             XmlNode movieList = xml.DocumentElement.SelectSingleNode("/movielist");
 
             HashSet<string> genres = new HashSet<string>();
+            movies = new List<Movie>();
+            actors = new List<Actor>();
 
             foreach (XmlNode movie in movieList.ChildNodes)
             {
@@ -343,7 +367,6 @@ namespace FinalImplementation
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            searchString = searchTextBox.Text;
             searchForString();
         }
 
@@ -377,17 +400,46 @@ namespace FinalImplementation
             {
                 ItemDetailForm form = new ItemDetailForm((Movie)searchResultList.SelectedItem);
                 form.ShowDialog();
+                loadingPanel.Visible = true;
+                loadingPanel.Update();
+                loadXML();
+                advancedSearch();
+                loadingPanel.Visible = false;
             }
             else if (searchResultList.SelectedItem.GetType() == actors[0].GetType())
             {
                 ItemDetailForm form = new ItemDetailForm((Actor)searchResultList.SelectedItem);
                 form.ShowDialog();
+                loadingPanel.Visible = true;
+                loadingPanel.Update();
+                loadXML();
+                advancedSearch();
+                loadingPanel.Visible = false;
             }
         }
 
         private void backButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void addMovieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddMovieForm form = new AddMovieForm();
+            form.ShowDialog();
+            loadingPanel.Visible = true;
+            loadingPanel.Update();
+            loadXML();
+            advancedSearch();
+            loadingPanel.Visible = false;
+        }
+
+        private void searchTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                searchForString();
+            }
         }
     }
 }

@@ -113,51 +113,57 @@ namespace FinalImplementation
 
         private void mustWatchListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (mustWatchFlag)
+            if (this.mustWatchListBox.SelectedItem != null)
             {
-                if (this.mustWatchListBox.SelectedItem.ToString() == "<< Back")
+                if (mustWatchFlag)
                 {
-                    mustWatchFlag = false;
-                    LoadListFromXml(mustWatchXmlFile, this.mustWatchListBox);
+                    if (this.mustWatchListBox.SelectedItem.ToString() == "<< Back")
+                    {
+                        mustWatchFlag = false;
+                        LoadListFromXml(mustWatchXmlFile, this.mustWatchListBox);
+                    }
+                    else
+                    {
+                        OpenMovieDetailForm(this.mustWatchListBox.SelectedItem.ToString());
+                    }
                 }
                 else
                 {
-                    OpenMovieDetailForm(this.mustWatchListBox.SelectedItem.ToString());
-                }
-            }
-            else
-            {
-                mustWatchFlag = true;
+                    mustWatchFlag = true;
 
-                LoadListMoviesFromXml(this.mustWatchListBox.SelectedItem.ToString(),
-                    mustWatchXmlFile,
-                    this.mustWatchListBox
-                    );
+                    LoadListMoviesFromXml(this.mustWatchListBox.SelectedItem.ToString(),
+                        mustWatchXmlFile,
+                        this.mustWatchListBox
+                        );
+                }
             }
         }
 
         private void buyListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (mustBuyFlag)
+            if (this.buyListBox.SelectedItem != null)
             {
-                if (this.buyListBox.SelectedItem.ToString() == "<< Back")
+                if (mustBuyFlag)
                 {
-                    mustBuyFlag = false;
-                    LoadListFromXml(mustBuyXmlFile, this.buyListBox);
+                    if (this.buyListBox.SelectedItem.ToString() == "<< Back")
+                    {
+                        mustBuyFlag = false;
+                        LoadListFromXml(mustBuyXmlFile, this.buyListBox);
+                    }
+                    else
+                    {
+                        OpenMovieDetailForm(this.buyListBox.SelectedItem.ToString());
+                    }
                 }
                 else
                 {
-                    OpenMovieDetailForm(this.buyListBox.SelectedItem.ToString());
-                }
-            }
-            else
-            {
-                mustBuyFlag = true;
+                    mustBuyFlag = true;
 
-                LoadListMoviesFromXml(this.buyListBox.SelectedItem.ToString(),
-                    mustBuyXmlFile,
-                    this.buyListBox
-                    );
+                    LoadListMoviesFromXml(this.buyListBox.SelectedItem.ToString(),
+                        mustBuyXmlFile,
+                        this.buyListBox
+                        );
+                }
             }
         }
 

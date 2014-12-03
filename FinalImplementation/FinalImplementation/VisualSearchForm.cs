@@ -43,6 +43,9 @@ namespace FinalImplementation
             int yjump;
             Random rnd = new Random();
 
+            loadingPanel.Visible = true;
+            loadingPanel.Update();
+
             if (maxYear - minYear + 1 != 0) { xjump = (graphBox.Width) / (maxYear - minYear + 1); }
             else { xjump = 0; }
             if (maxRate - minRate + 1 != 0) { yjump = (graphBox.Height) / (maxRate - minRate + 1); }
@@ -77,6 +80,8 @@ namespace FinalImplementation
                 }
             }
             filmCountLabel.Text = count + "";
+
+            loadingPanel.Visible = false;
         }
 
         private List<Movie> filterMovies()
@@ -112,27 +117,36 @@ namespace FinalImplementation
                             if (!(movie.GetTitle().ToLower().StartsWith(letters[titleSlider.Value-1]))) { add = false; }
                         }
 
-                        if (gRating.Checked == true)
+                        if ((gRating.Checked || pgRating.Checked || pg13Rating.Checked || rRating.Checked))
                         {
-                            if (!(movie.GetCertification() == "G")) { add = false; }
-                        }
+                            add = false;
 
-                        if (pgRating.Checked == true)
+                            if (gRating.Checked == true)
+                            {
+                                if ((movie.GetCertification() == "G")) { add = true; }
+                            }
+
+                            if (pgRating.Checked == true)
+                            {
+                                if ((movie.GetCertification() == "PG")) { add = true; }
+                            }
+
+                            if (pg13Rating.Checked == true)
+                            {
+                                if ((movie.GetCertification() == "PG-13")) { add = true; }
+                            }
+
+                            if (rRating.Checked == true)
+                            {
+                                if ((movie.GetCertification() == "R")) { add = true; }
+                            }
+
+                            if (add) { result.Add(movie); }
+                        }
+                        else
                         {
-                            if (!(movie.GetCertification() == "PG")) { add = false; }
+                            if (add) { result.Add(movie); }
                         }
-
-                        if (pg13Rating.Checked == true)
-                        {
-                            if (!(movie.GetCertification() == "PG-13")) { add = false; }
-                        }
-
-                        if (rRating.Checked == true)
-                        {
-                            if (!(movie.GetCertification() == "R")) { add = false; }
-                        }
-
-                        if (add) { result.Add(movie); }
                     }
                 }
             }
@@ -224,6 +238,11 @@ namespace FinalImplementation
             int index = Convert.ToInt32(button.Name);
             ItemDetailForm form = new ItemDetailForm(currMovies[index]);
             form.ShowDialog();
+            loadingPanel.Visible = true;
+            loadingPanel.Update();
+            loadXML();
+            addMovies();
+            loadingPanel.Visible = false;
         }
 
         private void loadXML()
@@ -233,6 +252,10 @@ namespace FinalImplementation
 
             XmlNode movieList = xml.DocumentElement.SelectSingleNode("/movielist");
             genres.Add("All");
+
+            movies = new List<Movie>();
+            actors = new List<Actor>();
+            genres = new HashSet<string>();
 
             foreach (XmlNode movie in movieList.ChildNodes)
             {
@@ -342,6 +365,17 @@ namespace FinalImplementation
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void addMovieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddMovieForm form = new AddMovieForm();
+            form.ShowDialog();
+            loadingPanel.Visible = true;
+            loadingPanel.Update();
+            loadXML();
+            addMovies();
+            loadingPanel.Visible = false;
         }
     }
 }

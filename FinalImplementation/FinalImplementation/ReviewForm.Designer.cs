@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,7 +38,9 @@
             this.errorText = new System.Windows.Forms.Label();
             this.ratingBar = new System.Windows.Forms.ProgressBar();
             this.ratingLabel = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.starRating = new RatingControls.StarRatingControl();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -128,6 +131,10 @@
             this.ratingLabel.Text = "7/10";
             this.ratingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // starRating
             // 
             this.starRating.BottomMargin = 2;
@@ -139,7 +146,7 @@
             this.starRating.OutlineThickness = 1;
             this.starRating.RightMargin = 2;
             this.starRating.SelectedColor = System.Drawing.Color.Yellow;
-            this.starRating.Size = new System.Drawing.Size(676, 57);
+            this.starRating.Size = new System.Drawing.Size(668, 57);
             this.starRating.StarCount = 10;
             this.starRating.StarSpacing = 8;
             this.starRating.TabIndex = 6;
@@ -166,6 +173,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Write a Review";
             this.TopMost = true;
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,5 +191,6 @@
         private System.Windows.Forms.Label errorText;
         private System.Windows.Forms.ProgressBar ratingBar;
         private System.Windows.Forms.Label ratingLabel;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
