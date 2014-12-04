@@ -29,6 +29,8 @@ namespace FinalImplementation
             InitializeComponent();
             loadData();
             SendMessage(searchTextBox.Handle, EM_SETCUEBANNER, 0, "Enter Search Query...");
+            toolTip1.SetToolTip(topMoviesLabel,"Movies with a rating over 9 stars.");
+            toolTip1.SetToolTip(topActorsLabel, "Actors that are in movies with over 9 stars.");
         }
 
         private void loadData()
@@ -111,6 +113,7 @@ namespace FinalImplementation
                     topMovies.Add(movies[x]);
                 }
             }
+            topMovies.Sort(new Comparison<Movie>((x, y) => string.Compare(x.GetTitle(), y.GetTitle())));
             topMoviesList.Items.AddRange(topMovies.ToArray());
 
             // Add actor titles to list
@@ -130,11 +133,13 @@ namespace FinalImplementation
                     topActors.Add(actors[x]);
                 }
             }
-
+            topActors.Sort(new Comparison<Actor>((x, y) => string.Compare(x.GetName(), y.GetName())));
             AddActorsToTopList(topActors);
 
             // Add genres to UI
-            topGenresList.Items.AddRange(genres.ToArray());
+            string[] genres_to_add = genres.ToArray();
+            Array.Sort(genres_to_add);
+            topGenresList.Items.AddRange(genres_to_add);
         }
 
         private void setDecades()
@@ -197,15 +202,19 @@ namespace FinalImplementation
             if (genreState == "genre")
             {
                 string selected = (string)topGenresList.SelectedItem;
+                List<Movie> movies_to_add = new List<Movie>();
                 topGenresList.Items.Clear();
-                topGenresList.Items.Add("<< Back");
+                
                 for (int x = 0; x < movies.Count; x++)
                 {
                     if (movies[x].GetGenres().Contains(selected))
                     {
-                        topGenresList.Items.Add(movies[x]);
+                        movies_to_add.Add(movies[x]);
                     }
                 }
+                topGenresList.Items.Add("<< Back");
+                movies_to_add.Sort(new Comparison<Movie>((x, y) => string.Compare(x.GetTitle(), y.GetTitle())));
+                topGenresList.Items.AddRange(movies_to_add.ToArray());
                 genreState = "movies";
             }
             else if (genreState == "movies")
@@ -213,7 +222,9 @@ namespace FinalImplementation
                 if (topGenresList.SelectedItem.GetType() == "".GetType())
                 {
                     topGenresList.Items.Clear();
-                    topGenresList.Items.AddRange(genres.ToArray());
+                    string[] genres_to_add = genres.ToArray();
+                    Array.Sort(genres_to_add);
+                    topGenresList.Items.AddRange(genres_to_add);
                     genreState = "genre";
                 }
                 else
@@ -232,14 +243,17 @@ namespace FinalImplementation
                 string selected = (string)topDecadesList.SelectedItem;
                 int currDec = Convert.ToInt32(selected.Substring(0,4));
                 topDecadesList.Items.Clear();
-                topDecadesList.Items.Add("<< Back");
+                List<Movie> movies_to_add = new List<Movie>();
                 for (int x = 0; x < movies.Count; x++)
                 {
                     if (movies[x].GetYear() >= currDec && movies[x].GetYear() <= currDec+9)
                     {
-                        topDecadesList.Items.Add(movies[x]);
+                        movies_to_add.Add(movies[x]);
                     }
                 }
+                topDecadesList.Items.Add("<< Back");
+                movies_to_add.Sort(new Comparison<Movie>((x, y) => x.CompareTo(y)));
+                topDecadesList.Items.AddRange(movies_to_add.ToArray());
                 decadeState = "movies";
             }
             else if (decadeState == "movies")

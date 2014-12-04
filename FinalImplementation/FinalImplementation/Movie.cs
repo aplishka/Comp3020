@@ -113,5 +113,14 @@ namespace FinalImplementation
 
             return movieXElement;
         }
+
+        public int CompareTo(Movie other)
+        {
+            if (this.year == other.GetYear())
+            {
+                return this.title.CompareTo(other.GetTitle());
+            }
+            return this.year.CompareTo(other.GetYear());
+        }
     }
 }

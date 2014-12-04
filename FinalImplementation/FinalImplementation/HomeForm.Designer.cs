@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.topMoviesLabel = new System.Windows.Forms.Label();
+            this.topActorsLabel = new System.Windows.Forms.Label();
             this.topMoviesList = new System.Windows.Forms.ListBox();
             this.topActorsList = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,6 +49,7 @@
             this.labellll = new System.Windows.Forms.Label();
             this.loadingPanel = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             this.loadingPanel.SuspendLayout();
             this.SuspendLayout();
@@ -70,23 +72,23 @@
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
-            // label1
+            // topMoviesLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 64);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Top Movies";
+            this.topMoviesLabel.AutoSize = true;
+            this.topMoviesLabel.Location = new System.Drawing.Point(9, 64);
+            this.topMoviesLabel.Name = "topMoviesLabel";
+            this.topMoviesLabel.Size = new System.Drawing.Size(81, 17);
+            this.topMoviesLabel.TabIndex = 2;
+            this.topMoviesLabel.Text = "Top Movies";
             // 
-            // label2
+            // topActorsLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(323, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Top Actors";
+            this.topActorsLabel.AutoSize = true;
+            this.topActorsLabel.Location = new System.Drawing.Point(323, 64);
+            this.topActorsLabel.Name = "topActorsLabel";
+            this.topActorsLabel.Size = new System.Drawing.Size(77, 17);
+            this.topActorsLabel.TabIndex = 3;
+            this.topActorsLabel.Text = "Top Actors";
             // 
             // topMoviesList
             // 
@@ -169,19 +171,19 @@
             // addMovieToolStripMenuItem
             // 
             this.addMovieToolStripMenuItem.Name = "addMovieToolStripMenuItem";
-            this.addMovieToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.addMovieToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
             this.addMovieToolStripMenuItem.Text = "Add Movie";
             this.addMovieToolStripMenuItem.Click += new System.EventHandler(this.addMovieToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(172, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(148, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -251,8 +253,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.topActorsList);
             this.Controls.Add(this.topMoviesList);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.topActorsLabel);
+            this.Controls.Add(this.topMoviesLabel);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.searchTextBox);
             this.Controls.Add(this.menuStrip1);
@@ -275,8 +277,8 @@
 
         private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Button searchButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label topMoviesLabel;
+        private System.Windows.Forms.Label topActorsLabel;
         private System.Windows.Forms.ListBox topMoviesList;
         private System.Windows.Forms.ListBox topActorsList;
         private System.Windows.Forms.Label label3;
@@ -293,6 +295,7 @@
         private System.Windows.Forms.Label labellll;
         private System.Windows.Forms.Panel loadingPanel;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

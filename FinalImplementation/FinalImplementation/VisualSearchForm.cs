@@ -20,11 +20,11 @@ namespace FinalImplementation
         private List<Movie> movies = new List<Movie>();
         private List<Actor> actors = new List<Actor>();
         HashSet<string> genres = new HashSet<string>();
-        private Color[] colors = {Color.YellowGreen,Color.Yellow,Color.WhiteSmoke,Color.White,Color.Wheat,Color.Violet,
+        private Color[] colors = {Color.YellowGreen,Color.Yellow,Color.DarkViolet,Color.DarkSeaGreen,Color.DarkSlateBlue,Color.Violet,
                                     Color.Turquoise,Color.Tomato,Color.Thistle,Color.Teal,Color.Tan,Color.SteelBlue,
-                                    Color.SpringGreen,Color.Snow,Color.SlateGray,Color.SlateBlue,Color.SkyBlue,Color.Silver,
-                                    Color.Sienna,Color.SeaShell,Color.AliceBlue,Color.AntiqueWhite,Color.Aqua,Color.Azure,
-                                    Color.Beige,Color.Bisque,Color.Black};
+                                    Color.SpringGreen,Color.DeepPink,Color.DodgerBlue,Color.SlateBlue,Color.SkyBlue,Color.Silver,
+                                    Color.Sienna,Color.Gray,Color.Goldenrod,Color.Fuchsia,Color.Aqua,Color.Gold,
+                                    Color.ForestGreen,Color.Firebrick,Color.Black};
         public VisualSearchForm()
         {
             InitializeComponent();
@@ -313,7 +313,10 @@ namespace FinalImplementation
             }
 
             // Add genres to UI
-            genreSelector.Items.AddRange(genres.ToArray());
+            genreSelector.Items.Clear();
+            string[] genres_to_add = genres.ToArray();
+            Array.Sort(genres_to_add);
+            genreSelector.Items.AddRange(genres_to_add);
         }
 
         private void backButton_Click(object sender, EventArgs e)
@@ -376,6 +379,14 @@ namespace FinalImplementation
             loadXML();
             addMovies();
             loadingPanel.Visible = false;
+        }
+
+        private void genreSelector_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            e.DrawBackground();
+            string text = ((ComboBox)sender).Items[e.Index].ToString();  
+            Brush brush = new SolidBrush(colors[e.Index]); 
+            e.Graphics.DrawString(text, ((Control)sender).Font, brush, e.Bounds.X, e.Bounds.Y);
         }
     }
 }

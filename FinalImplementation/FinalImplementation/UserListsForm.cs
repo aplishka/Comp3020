@@ -81,8 +81,7 @@ namespace FinalImplementation
 
         private void LoadListFromXml(string xmlFile, ListBox listBox)
         {
-            listBox.Items.Clear();
-
+            List<string> list_list = new List<string>();
             XmlDocument xml = new XmlDocument();
             xml.Load(xmlFile);
 
@@ -90,15 +89,18 @@ namespace FinalImplementation
 
             foreach (XmlNode list in lists.ChildNodes)
             {
-                listBox.Items.Add(list.SelectSingleNode("title").InnerText);
+                list_list.Add(list.SelectSingleNode("title").InnerText);
             }
+
+            listBox.Items.Clear();
+            string[] lists_to_add = list_list.ToArray();
+            Array.Sort(lists_to_add);
+            listBox.Items.AddRange(lists_to_add);
         }
 
         private void LoadListMoviesFromXml(string listTitle, string xmlFile, ListBox listBox) 
         {
-            listBox.Items.Clear();
-            listBox.Items.Add("<< Back");
-
+            List<string> list_list = new List<string>();
             XDocument doc = XDocument.Load(xmlFile);
             XElement element = doc.Root.Descendants("list").SingleOrDefault(l => (string)l.Element("title") == listTitle);
 
@@ -106,9 +108,15 @@ namespace FinalImplementation
             {
                 foreach (XElement movie in element.Descendants("movieTitle"))
                 {
-                    listBox.Items.Add(movie.Value);
+                    list_list.Add(movie.Value);
                 }
-            }            
+            }
+
+            listBox.Items.Clear();
+            listBox.Items.Add("<< Back");
+            string[] lists_to_add = list_list.ToArray();
+            Array.Sort(lists_to_add);
+            listBox.Items.AddRange(lists_to_add);
         }
 
         private void mustWatchListBox_SelectedIndexChanged(object sender, EventArgs e)

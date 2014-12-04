@@ -69,6 +69,7 @@ namespace FinalImplementation
             reviewButton.Visible = false;
             directorLabel.Visible = false;
             addToListButton.Visible = false;
+            editMovieToolStripMenuItem.Visible = false;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)

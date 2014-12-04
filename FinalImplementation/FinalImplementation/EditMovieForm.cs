@@ -157,6 +157,9 @@ namespace FinalImplementation
                 genres.Add(genre);
             }
 
+            int new_rating = movie.GetRating();
+            if (this.starRatingControl1.SelectedStar != 0) { new_rating = this.starRatingControl1.SelectedStar; }
+
             if (movie == null)
             {
                 return new Movie(this.titleTextBox.Text,
@@ -164,7 +167,7 @@ namespace FinalImplementation
                                         actors,
                                         genres,
                                         this.certificationTextBox.Text,
-                                        this.starRatingControl1.SelectedStar,
+                                        new_rating,
                                         Int32.Parse(this.lengthTextBox.Text.Split(' ')[0]),
                                         this.directorTextBox.Text,
                                         reviews
@@ -177,7 +180,7 @@ namespace FinalImplementation
                                         actors,
                                         genres,
                                         this.certificationTextBox.Text,
-                                        this.starRatingControl1.SelectedStar,
+                                        new_rating,
                                         Int32.Parse(this.lengthTextBox.Text.Split(' ')[0]),
                                         this.directorTextBox.Text,
                                         this.movie.GetReviews()

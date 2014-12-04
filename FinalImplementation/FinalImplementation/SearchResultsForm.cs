@@ -67,6 +67,7 @@ namespace FinalImplementation
                 searchResultList.Items.Add("Movies:");
                 searchResultList.Items.Add(" "); 
             }
+            mResults.Sort(new Comparison<Movie>((x, y) => string.Compare(x.GetTitle(), y.GetTitle())));
             searchResultList.Items.AddRange(mResults.ToArray());
             if (aResults.Count > 0) 
             {
@@ -74,6 +75,7 @@ namespace FinalImplementation
                 searchResultList.Items.Add("Actors:");
                 searchResultList.Items.Add(" "); 
             }
+            aResults.Sort(new Comparison<Actor>((x, y) => string.Compare(x.GetName(), y.GetName())));
             searchResultList.Items.AddRange(aResults.ToArray());
 
             loadingPanel.Visible = false;
@@ -284,6 +286,7 @@ namespace FinalImplementation
                 searchResultList.Items.Add("Movies:");
                 searchResultList.Items.Add(" ");
             }
+            mResultsAdv.Sort(new Comparison<Movie>((x, y) => string.Compare(x.GetTitle(), y.GetTitle())));
             searchResultList.Items.AddRange(mResultsAdv.ToArray());
             if (aResults.Count > 0)
             {
@@ -291,6 +294,7 @@ namespace FinalImplementation
                 searchResultList.Items.Add("Actors:");
                 searchResultList.Items.Add(" ");
             }
+            aResults.Sort(new Comparison<Actor>((x, y) => string.Compare(x.GetName(), y.GetName())));
             searchResultList.Items.AddRange(aResults.ToArray());
             loadingPanel.Visible = false;
         }
@@ -356,13 +360,14 @@ namespace FinalImplementation
                 // Add movie to Actors credits
                 foreach (Actor currActor in currActors)
                 {
-                    //int index = actors.FindIndex(a => a.GetName() == name);
                     currActor.AddMovie(newMovie);
                 }
             }
 
             // Add genres to UI
-            genreSelector.Items.AddRange(genres.ToArray());
+            string[] genres_to_add = genres.ToArray();
+            Array.Sort(genres_to_add);
+            genreSelector.Items.AddRange(genres_to_add);
         }
 
         private void searchButton_Click(object sender, EventArgs e)

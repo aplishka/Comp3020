@@ -154,7 +154,7 @@
             this.minYearLabel.Name = "minYearLabel";
             this.minYearLabel.Size = new System.Drawing.Size(44, 17);
             this.minYearLabel.TabIndex = 17;
-            this.minYearLabel.Text = "1900";
+            this.minYearLabel.Text = "2000";
             // 
             // maxStarLabel
             // 
@@ -180,20 +180,20 @@
             // 
             this.minYearSlider.AutoSize = false;
             this.minYearSlider.Location = new System.Drawing.Point(830, 253);
-            this.minYearSlider.Maximum = 2008;
+            this.minYearSlider.Maximum = 2014;
             this.minYearSlider.Minimum = 1900;
             this.minYearSlider.Name = "minYearSlider";
             this.minYearSlider.Size = new System.Drawing.Size(186, 17);
             this.minYearSlider.TabIndex = 20;
             this.minYearSlider.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.minYearSlider.Value = 1900;
+            this.minYearSlider.Value = 1990;
             this.minYearSlider.Scroll += new System.EventHandler(this.minYearSlider_Scroll);
             // 
             // maxYearSlider
             // 
             this.maxYearSlider.AutoSize = false;
             this.maxYearSlider.Location = new System.Drawing.Point(830, 276);
-            this.maxYearSlider.Maximum = 2008;
+            this.maxYearSlider.Maximum = 2014;
             this.maxYearSlider.Minimum = 1900;
             this.maxYearSlider.Name = "maxYearSlider";
             this.maxYearSlider.Size = new System.Drawing.Size(186, 17);
@@ -271,11 +271,13 @@
             // 
             // genreSelector
             // 
+            this.genreSelector.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.genreSelector.FormattingEnabled = true;
             this.genreSelector.Location = new System.Drawing.Point(830, 75);
             this.genreSelector.Name = "genreSelector";
-            this.genreSelector.Size = new System.Drawing.Size(186, 24);
+            this.genreSelector.Size = new System.Drawing.Size(186, 23);
             this.genreSelector.TabIndex = 51;
+            this.genreSelector.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.genreSelector_DrawItem);
             this.genreSelector.SelectedIndexChanged += new System.EventHandler(this.genreSelector_SelectedIndexChanged);
             // 
             // label2
