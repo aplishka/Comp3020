@@ -3869,18 +3869,20 @@ It is easy to fix by adding a bit of code to the form constructor. You'll need t
   <movie>
     <title>Timecop </title>
     <year>1994</year>
-    <certification>R</certification>
+    <certification>PG-13</certification>
     <rating>9</rating>
-    <length>15</length>
+    <length>145</length>
     <director>Peter Hyams</director>
     <actor>Jean-Claude Van Damme</actor>
     <actor>Mia Sara</actor>
     <actor>Ron Silver</actor>
     <actor>Bruce McGill</actor>
     <actor>Gloria Reuben</actor>
+    <actor></actor>
     <genre>Thriller</genre>
     <genre>Action</genre>
     <genre>Sci-Fi</genre>
+    <genre></genre>
   </movie>
   <movie>
     <title>TKKG und die rätselhafte Mind-Machine </title>
@@ -24073,15 +24075,18 @@ It is easy to fix by adding a bit of code to the form constructor. You'll need t
   <movie>
     <title>1973 </title>
     <year>2006</year>
-    <length>96 min</length>
+    <certification></certification>
+    <rating>3</rating>
+    <length>96</length>
     <director>Antonino Isordia</director>
-    <rating>9</rating>
-    <genre>Documentary</genre>
-    <genre>Crime</genre>
-    <genre>History</genre>
     <actor>Alejandro Cota</actor>
     <actor>Rodolfo Escogido</actor>
     <actor>Mar  a Fernanda Ramos Mac  n</actor>
+    <actor></actor>
+    <genre>Documentary</genre>
+    <genre>Crime</genre>
+    <genre>History</genre>
+    <genre></genre>
   </movie>
   <movie>
     <title>Africa Unite </title>
@@ -30402,17 +30407,19 @@ It is easy to fix by adding a bit of code to the form constructor. You'll need t
   <movie>
     <title>Katyn </title>
     <year>2007</year>
-    <length>118 min</length>
-    <director>Andrzej Wajda</director>
+    <certification></certification>
     <rating>1</rating>
-    <genre>Drama</genre>
-    <genre>History</genre>
-    <genre>War</genre>
+    <length>118</length>
+    <director>Andrzej Wajda</director>
     <actor>Artur Zmijewski</actor>
     <actor>Maja Ostaszewska</actor>
     <actor>Andrzej Chyra</actor>
     <actor>Danuta Stenka</actor>
     <actor>Jan Englert</actor>
+    <genre>Drama</genre>
+    <genre>History</genre>
+    <genre>War</genre>
+    <review>7|break|Ithought the pplot was good.|break|The actors sucked.</review>
   </movie>
   <movie>
     <title>Kazdy den odvahu </title>

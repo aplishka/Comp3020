@@ -117,7 +117,7 @@ namespace FinalImplementation
                             if (!(movie.GetTitle().ToLower().StartsWith(letters[titleSlider.Value-1]))) { add = false; }
                         }
 
-                        if ((gRating.Checked || pgRating.Checked || pg13Rating.Checked || rRating.Checked))
+                        if (add && (gRating.Checked || pgRating.Checked || pg13Rating.Checked || rRating.Checked))
                         {
                             add = false;
 

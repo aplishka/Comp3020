@@ -157,11 +157,10 @@ namespace FinalImplementation
                 genres.Add(genre);
             }
 
-            int new_rating = movie.GetRating();
-            if (this.starRatingControl1.SelectedStar != 0) { new_rating = this.starRatingControl1.SelectedStar; }
-
             if (movie == null)
             {
+                int new_rating = 0;
+                if (this.starRatingControl1.SelectedStar != 0) { new_rating = this.starRatingControl1.SelectedStar; }
                 return new Movie(this.titleTextBox.Text,
                                         Int32.Parse(this.yearTextBox.Text),
                                         actors,
@@ -175,6 +174,8 @@ namespace FinalImplementation
             }
             else
             {
+                int new_rating = movie.GetRating();
+                if (this.starRatingControl1.SelectedStar != 0) { new_rating = this.starRatingControl1.SelectedStar; }
                 return new Movie(this.titleTextBox.Text,
                                         Int32.Parse(this.yearTextBox.Text),
                                         actors,
